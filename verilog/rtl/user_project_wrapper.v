@@ -82,42 +82,73 @@ module user_project_wrapper #(
 /* User project is instantiated  here   */
 /*--------------------------------------*/
 
-user_proj_example mprj (
+    //Intermediate signals
+//    wire [31:0] mem_rdata  = la_data_in[31:0];
+//    wire [31:0] mem_wdata  = la_data_in[63:32];
+//    wire [31:0] mem_addr   = la_data_in[95:64];
+//    wire [31:0] pcpi_rs1   = la_data_in[127:96];
+
+// Memory interface
+wire [31:0] mem_rdata;    // unused
+wire [31:0] mem_wdata;    // unused
+wire [31:0] mem_addr;     // unused
+wire mem_valid;           // unused
+wire mem_ready;           // unused
+wire mem_instr;           // unused
+wire [31:0] mem_la_addr;  // unused
+wire mem_la_read;         // unused
+wire [31:0] mem_la_wdata; // unused
+wire mem_la_write;        // unused
+wire [3:0] mem_la_wstrb;  // unused
+
+// PCPI interface
+wire [31:0] pcpi_insn;    // unused
+wire [31:0] pcpi_rs1;     // unused
+wire [31:0] pcpi_rs2;     // unused
+wire [31:0] pcpi_rd;      // unused
+wire pcpi_wait;           // unused
+wire pcpi_ready;          // unused
+wire pcpi_wr;             // unused
+
+// IRQ/Eoi/trace
+wire [31:0] eoi;          // unused
+wire [31:0] irq;          // unused
+wire [35:0] trace_data;   // unused
+wire trap;                // unused
+
+picorv32 u_picorv32 (
+
 `ifdef USE_POWER_PINS
 	.vccd1(vccd1),	// User area 1 1.8V power
 	.vssd1(vssd1),	// User area 1 digital ground
 `endif
-
-    .wb_clk_i(wb_clk_i),
-    .wb_rst_i(wb_rst_i),
-
-    // MGMT SoC Wishbone Slave
-
-    .wbs_cyc_i(wbs_cyc_i),
-    .wbs_stb_i(wbs_stb_i),
-    .wbs_we_i(wbs_we_i),
-    .wbs_sel_i(wbs_sel_i),
-    .wbs_adr_i(wbs_adr_i),
-    .wbs_dat_i(wbs_dat_i),
-    .wbs_ack_o(wbs_ack_o),
-    .wbs_dat_o(wbs_dat_o),
-
-    // Logic Analyzer
-
-    .la_data_in(la_data_in),
-    .la_data_out(la_data_out),
-    .la_oenb (la_oenb),
-
-    // IO Pads
-
-    .io_in ({io_in[37:30],io_in[7:0]}),
-    .io_out({io_out[37:30],io_out[7:0]}),
-    .io_oeb({io_oeb[37:30],io_oeb[7:0]}),
-
-    // IRQ
-    .irq(user_irq)
+    .clk         (wb_clk_i),
+    .resetn      (wb_rst_i),
+    .trap        (trap),
+    .mem_instr   (mem_instr),
+    .mem_la_read (mem_la_read),
+    .mem_la_write(mem_la_write),
+    .mem_ready   (mem_ready),
+    .mem_valid   (mem_valid),
+    .mem_addr    (mem_addr),
+    .mem_wdata   (mem_wdata),
+    .mem_wstrb   (mem_wstrb),
+    .mem_rdata   (mem_rdata),
+    .mem_la_addr (mem_la_addr),
+    .mem_la_wdata(mem_la_wdata),
+    .mem_la_wstrb(mem_la_wstrb),
+    .pcpi_ready  (pcpi_ready),
+    .pcpi_valid  (pcpi_valid),
+    .pcpi_wait   (pcpi_wait),
+    .pcpi_wr     (pcpi_wr),
+    .pcpi_insn   (pcpi_insn),
+    .pcpi_rd     (pcpi_rd),
+    .pcpi_rs1    (pcpi_rs1),
+    .pcpi_rs2    (pcpi_rs2),
+    .trace_valid (trace_valid),
+    .trace_data  (trace_data),
+    .eoi         (eoi),
 );
-
-endmodule	// user_project_wrapper
+endmodule
 
 `default_nettype wire
