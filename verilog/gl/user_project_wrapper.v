@@ -53,548 +53,791 @@ module user_project_wrapper (user_clock2,
  output [31:0] wbs_dat_o;
  input [3:0] wbs_sel_i;
 
+ wire _0_;
+ wire _1_;
+ wire _2_;
+ wire \eoi[0] ;
+ wire \eoi[10] ;
+ wire \eoi[11] ;
+ wire \eoi[12] ;
+ wire \eoi[13] ;
+ wire \eoi[14] ;
+ wire \eoi[15] ;
+ wire \eoi[16] ;
+ wire \eoi[17] ;
+ wire \eoi[18] ;
+ wire \eoi[19] ;
+ wire \eoi[1] ;
+ wire \eoi[20] ;
+ wire \eoi[21] ;
+ wire \eoi[22] ;
+ wire \eoi[23] ;
+ wire \eoi[24] ;
+ wire \eoi[25] ;
+ wire \eoi[26] ;
+ wire \eoi[27] ;
+ wire \eoi[28] ;
+ wire \eoi[29] ;
+ wire \eoi[2] ;
+ wire \eoi[30] ;
+ wire \eoi[31] ;
+ wire \eoi[3] ;
+ wire \eoi[4] ;
+ wire \eoi[5] ;
+ wire \eoi[6] ;
+ wire \eoi[7] ;
+ wire \eoi[8] ;
+ wire \eoi[9] ;
+ wire \mem_addr[0] ;
+ wire \mem_addr[10] ;
+ wire \mem_addr[11] ;
+ wire \mem_addr[12] ;
+ wire \mem_addr[13] ;
+ wire \mem_addr[14] ;
+ wire \mem_addr[15] ;
+ wire \mem_addr[16] ;
+ wire \mem_addr[17] ;
+ wire \mem_addr[18] ;
+ wire \mem_addr[19] ;
+ wire \mem_addr[1] ;
+ wire \mem_addr[20] ;
+ wire \mem_addr[21] ;
+ wire \mem_addr[22] ;
+ wire \mem_addr[23] ;
+ wire \mem_addr[24] ;
+ wire \mem_addr[25] ;
+ wire \mem_addr[26] ;
+ wire \mem_addr[27] ;
+ wire \mem_addr[28] ;
+ wire \mem_addr[29] ;
+ wire \mem_addr[2] ;
+ wire \mem_addr[30] ;
+ wire \mem_addr[31] ;
+ wire \mem_addr[3] ;
+ wire \mem_addr[4] ;
+ wire \mem_addr[5] ;
+ wire \mem_addr[6] ;
+ wire \mem_addr[7] ;
+ wire \mem_addr[8] ;
+ wire \mem_addr[9] ;
+ wire mem_instr;
+ wire \mem_la_addr[0] ;
+ wire \mem_la_addr[10] ;
+ wire \mem_la_addr[11] ;
+ wire \mem_la_addr[12] ;
+ wire \mem_la_addr[13] ;
+ wire \mem_la_addr[14] ;
+ wire \mem_la_addr[15] ;
+ wire \mem_la_addr[16] ;
+ wire \mem_la_addr[17] ;
+ wire \mem_la_addr[18] ;
+ wire \mem_la_addr[19] ;
+ wire \mem_la_addr[1] ;
+ wire \mem_la_addr[20] ;
+ wire \mem_la_addr[21] ;
+ wire \mem_la_addr[22] ;
+ wire \mem_la_addr[23] ;
+ wire \mem_la_addr[24] ;
+ wire \mem_la_addr[25] ;
+ wire \mem_la_addr[26] ;
+ wire \mem_la_addr[27] ;
+ wire \mem_la_addr[28] ;
+ wire \mem_la_addr[29] ;
+ wire \mem_la_addr[2] ;
+ wire \mem_la_addr[30] ;
+ wire \mem_la_addr[31] ;
+ wire \mem_la_addr[3] ;
+ wire \mem_la_addr[4] ;
+ wire \mem_la_addr[5] ;
+ wire \mem_la_addr[6] ;
+ wire \mem_la_addr[7] ;
+ wire \mem_la_addr[8] ;
+ wire \mem_la_addr[9] ;
+ wire mem_la_read;
+ wire \mem_la_wdata[0] ;
+ wire \mem_la_wdata[10] ;
+ wire \mem_la_wdata[11] ;
+ wire \mem_la_wdata[12] ;
+ wire \mem_la_wdata[13] ;
+ wire \mem_la_wdata[14] ;
+ wire \mem_la_wdata[15] ;
+ wire \mem_la_wdata[16] ;
+ wire \mem_la_wdata[17] ;
+ wire \mem_la_wdata[18] ;
+ wire \mem_la_wdata[19] ;
+ wire \mem_la_wdata[1] ;
+ wire \mem_la_wdata[20] ;
+ wire \mem_la_wdata[21] ;
+ wire \mem_la_wdata[22] ;
+ wire \mem_la_wdata[23] ;
+ wire \mem_la_wdata[24] ;
+ wire \mem_la_wdata[25] ;
+ wire \mem_la_wdata[26] ;
+ wire \mem_la_wdata[27] ;
+ wire \mem_la_wdata[28] ;
+ wire \mem_la_wdata[29] ;
+ wire \mem_la_wdata[2] ;
+ wire \mem_la_wdata[30] ;
+ wire \mem_la_wdata[31] ;
+ wire \mem_la_wdata[3] ;
+ wire \mem_la_wdata[4] ;
+ wire \mem_la_wdata[5] ;
+ wire \mem_la_wdata[6] ;
+ wire \mem_la_wdata[7] ;
+ wire \mem_la_wdata[8] ;
+ wire \mem_la_wdata[9] ;
+ wire mem_la_write;
+ wire \mem_la_wstrb[0] ;
+ wire \mem_la_wstrb[1] ;
+ wire \mem_la_wstrb[2] ;
+ wire \mem_la_wstrb[3] ;
+ wire \mem_rdata[0] ;
+ wire \mem_rdata[10] ;
+ wire \mem_rdata[11] ;
+ wire \mem_rdata[12] ;
+ wire \mem_rdata[13] ;
+ wire \mem_rdata[14] ;
+ wire \mem_rdata[15] ;
+ wire \mem_rdata[16] ;
+ wire \mem_rdata[17] ;
+ wire \mem_rdata[18] ;
+ wire \mem_rdata[19] ;
+ wire \mem_rdata[1] ;
+ wire \mem_rdata[20] ;
+ wire \mem_rdata[21] ;
+ wire \mem_rdata[22] ;
+ wire \mem_rdata[23] ;
+ wire \mem_rdata[24] ;
+ wire \mem_rdata[25] ;
+ wire \mem_rdata[26] ;
+ wire \mem_rdata[27] ;
+ wire \mem_rdata[28] ;
+ wire \mem_rdata[29] ;
+ wire \mem_rdata[2] ;
+ wire \mem_rdata[30] ;
+ wire \mem_rdata[31] ;
+ wire \mem_rdata[3] ;
+ wire \mem_rdata[4] ;
+ wire \mem_rdata[5] ;
+ wire \mem_rdata[6] ;
+ wire \mem_rdata[7] ;
+ wire \mem_rdata[8] ;
+ wire \mem_rdata[9] ;
+ wire mem_ready;
+ wire mem_valid;
+ wire \mem_wdata[0] ;
+ wire \mem_wdata[10] ;
+ wire \mem_wdata[11] ;
+ wire \mem_wdata[12] ;
+ wire \mem_wdata[13] ;
+ wire \mem_wdata[14] ;
+ wire \mem_wdata[15] ;
+ wire \mem_wdata[16] ;
+ wire \mem_wdata[17] ;
+ wire \mem_wdata[18] ;
+ wire \mem_wdata[19] ;
+ wire \mem_wdata[1] ;
+ wire \mem_wdata[20] ;
+ wire \mem_wdata[21] ;
+ wire \mem_wdata[22] ;
+ wire \mem_wdata[23] ;
+ wire \mem_wdata[24] ;
+ wire \mem_wdata[25] ;
+ wire \mem_wdata[26] ;
+ wire \mem_wdata[27] ;
+ wire \mem_wdata[28] ;
+ wire \mem_wdata[29] ;
+ wire \mem_wdata[2] ;
+ wire \mem_wdata[30] ;
+ wire \mem_wdata[31] ;
+ wire \mem_wdata[3] ;
+ wire \mem_wdata[4] ;
+ wire \mem_wdata[5] ;
+ wire \mem_wdata[6] ;
+ wire \mem_wdata[7] ;
+ wire \mem_wdata[8] ;
+ wire \mem_wdata[9] ;
+ wire mem_wstrb;
+ wire \pcpi_insn[0] ;
+ wire \pcpi_insn[10] ;
+ wire \pcpi_insn[11] ;
+ wire \pcpi_insn[12] ;
+ wire \pcpi_insn[13] ;
+ wire \pcpi_insn[14] ;
+ wire \pcpi_insn[15] ;
+ wire \pcpi_insn[16] ;
+ wire \pcpi_insn[17] ;
+ wire \pcpi_insn[18] ;
+ wire \pcpi_insn[19] ;
+ wire \pcpi_insn[1] ;
+ wire \pcpi_insn[20] ;
+ wire \pcpi_insn[21] ;
+ wire \pcpi_insn[22] ;
+ wire \pcpi_insn[23] ;
+ wire \pcpi_insn[24] ;
+ wire \pcpi_insn[25] ;
+ wire \pcpi_insn[26] ;
+ wire \pcpi_insn[27] ;
+ wire \pcpi_insn[28] ;
+ wire \pcpi_insn[29] ;
+ wire \pcpi_insn[2] ;
+ wire \pcpi_insn[30] ;
+ wire \pcpi_insn[31] ;
+ wire \pcpi_insn[3] ;
+ wire \pcpi_insn[4] ;
+ wire \pcpi_insn[5] ;
+ wire \pcpi_insn[6] ;
+ wire \pcpi_insn[7] ;
+ wire \pcpi_insn[8] ;
+ wire \pcpi_insn[9] ;
+ wire \pcpi_rd[0] ;
+ wire \pcpi_rd[10] ;
+ wire \pcpi_rd[11] ;
+ wire \pcpi_rd[12] ;
+ wire \pcpi_rd[13] ;
+ wire \pcpi_rd[14] ;
+ wire \pcpi_rd[15] ;
+ wire \pcpi_rd[16] ;
+ wire \pcpi_rd[17] ;
+ wire \pcpi_rd[18] ;
+ wire \pcpi_rd[19] ;
+ wire \pcpi_rd[1] ;
+ wire \pcpi_rd[20] ;
+ wire \pcpi_rd[21] ;
+ wire \pcpi_rd[22] ;
+ wire \pcpi_rd[23] ;
+ wire \pcpi_rd[24] ;
+ wire \pcpi_rd[25] ;
+ wire \pcpi_rd[26] ;
+ wire \pcpi_rd[27] ;
+ wire \pcpi_rd[28] ;
+ wire \pcpi_rd[29] ;
+ wire \pcpi_rd[2] ;
+ wire \pcpi_rd[30] ;
+ wire \pcpi_rd[31] ;
+ wire \pcpi_rd[3] ;
+ wire \pcpi_rd[4] ;
+ wire \pcpi_rd[5] ;
+ wire \pcpi_rd[6] ;
+ wire \pcpi_rd[7] ;
+ wire \pcpi_rd[8] ;
+ wire \pcpi_rd[9] ;
+ wire pcpi_ready;
+ wire \pcpi_rs1[0] ;
+ wire \pcpi_rs1[10] ;
+ wire \pcpi_rs1[11] ;
+ wire \pcpi_rs1[12] ;
+ wire \pcpi_rs1[13] ;
+ wire \pcpi_rs1[14] ;
+ wire \pcpi_rs1[15] ;
+ wire \pcpi_rs1[16] ;
+ wire \pcpi_rs1[17] ;
+ wire \pcpi_rs1[18] ;
+ wire \pcpi_rs1[19] ;
+ wire \pcpi_rs1[1] ;
+ wire \pcpi_rs1[20] ;
+ wire \pcpi_rs1[21] ;
+ wire \pcpi_rs1[22] ;
+ wire \pcpi_rs1[23] ;
+ wire \pcpi_rs1[24] ;
+ wire \pcpi_rs1[25] ;
+ wire \pcpi_rs1[26] ;
+ wire \pcpi_rs1[27] ;
+ wire \pcpi_rs1[28] ;
+ wire \pcpi_rs1[29] ;
+ wire \pcpi_rs1[2] ;
+ wire \pcpi_rs1[30] ;
+ wire \pcpi_rs1[31] ;
+ wire \pcpi_rs1[3] ;
+ wire \pcpi_rs1[4] ;
+ wire \pcpi_rs1[5] ;
+ wire \pcpi_rs1[6] ;
+ wire \pcpi_rs1[7] ;
+ wire \pcpi_rs1[8] ;
+ wire \pcpi_rs1[9] ;
+ wire \pcpi_rs2[0] ;
+ wire \pcpi_rs2[10] ;
+ wire \pcpi_rs2[11] ;
+ wire \pcpi_rs2[12] ;
+ wire \pcpi_rs2[13] ;
+ wire \pcpi_rs2[14] ;
+ wire \pcpi_rs2[15] ;
+ wire \pcpi_rs2[16] ;
+ wire \pcpi_rs2[17] ;
+ wire \pcpi_rs2[18] ;
+ wire \pcpi_rs2[19] ;
+ wire \pcpi_rs2[1] ;
+ wire \pcpi_rs2[20] ;
+ wire \pcpi_rs2[21] ;
+ wire \pcpi_rs2[22] ;
+ wire \pcpi_rs2[23] ;
+ wire \pcpi_rs2[24] ;
+ wire \pcpi_rs2[25] ;
+ wire \pcpi_rs2[26] ;
+ wire \pcpi_rs2[27] ;
+ wire \pcpi_rs2[28] ;
+ wire \pcpi_rs2[29] ;
+ wire \pcpi_rs2[2] ;
+ wire \pcpi_rs2[30] ;
+ wire \pcpi_rs2[31] ;
+ wire \pcpi_rs2[3] ;
+ wire \pcpi_rs2[4] ;
+ wire \pcpi_rs2[5] ;
+ wire \pcpi_rs2[6] ;
+ wire \pcpi_rs2[7] ;
+ wire \pcpi_rs2[8] ;
+ wire \pcpi_rs2[9] ;
+ wire pcpi_valid;
+ wire pcpi_wait;
+ wire pcpi_wr;
+ wire \trace_data[0] ;
+ wire \trace_data[10] ;
+ wire \trace_data[11] ;
+ wire \trace_data[12] ;
+ wire \trace_data[13] ;
+ wire \trace_data[14] ;
+ wire \trace_data[15] ;
+ wire \trace_data[16] ;
+ wire \trace_data[17] ;
+ wire \trace_data[18] ;
+ wire \trace_data[19] ;
+ wire \trace_data[1] ;
+ wire \trace_data[20] ;
+ wire \trace_data[21] ;
+ wire \trace_data[22] ;
+ wire \trace_data[23] ;
+ wire \trace_data[24] ;
+ wire \trace_data[25] ;
+ wire \trace_data[26] ;
+ wire \trace_data[27] ;
+ wire \trace_data[28] ;
+ wire \trace_data[29] ;
+ wire \trace_data[2] ;
+ wire \trace_data[30] ;
+ wire \trace_data[31] ;
+ wire \trace_data[32] ;
+ wire \trace_data[33] ;
+ wire \trace_data[34] ;
+ wire \trace_data[35] ;
+ wire \trace_data[3] ;
+ wire \trace_data[4] ;
+ wire \trace_data[5] ;
+ wire \trace_data[6] ;
+ wire \trace_data[7] ;
+ wire \trace_data[8] ;
+ wire \trace_data[9] ;
+ wire trace_valid;
+ wire trap;
 
- user_proj_example mprj (.vccd1(vccd1),
+ picorv32 u_picorv32 (.clk(wb_clk_i),
+    .mem_instr(mem_instr),
+    .mem_la_read(mem_la_read),
+    .mem_la_write(mem_la_write),
+    .mem_ready(mem_ready),
+    .mem_valid(mem_valid),
+    .pcpi_ready(pcpi_ready),
+    .pcpi_valid(pcpi_valid),
+    .pcpi_wait(pcpi_wait),
+    .pcpi_wr(pcpi_wr),
+    .resetn(wb_rst_i),
+    .trace_valid(trace_valid),
+    .trap(trap),
+    .vccd1(vccd1),
     .vssd1(vssd1),
-    .wb_clk_i(wb_clk_i),
-    .wb_rst_i(wb_rst_i),
-    .wbs_ack_o(wbs_ack_o),
-    .wbs_cyc_i(wbs_cyc_i),
-    .wbs_stb_i(wbs_stb_i),
-    .wbs_we_i(wbs_we_i),
-    .io_in({io_in[37],
-    io_in[36],
-    io_in[35],
-    io_in[34],
-    io_in[33],
-    io_in[32],
-    io_in[31],
-    io_in[30],
-    io_in[7],
-    io_in[6],
-    io_in[5],
-    io_in[4],
-    io_in[3],
-    io_in[2],
-    io_in[1],
-    io_in[0]}),
-    .io_oeb({io_oeb[37],
-    io_oeb[36],
-    io_oeb[35],
-    io_oeb[34],
-    io_oeb[33],
-    io_oeb[32],
-    io_oeb[31],
-    io_oeb[30],
-    io_oeb[7],
-    io_oeb[6],
-    io_oeb[5],
-    io_oeb[4],
-    io_oeb[3],
-    io_oeb[2],
-    io_oeb[1],
-    io_oeb[0]}),
-    .io_out({io_out[37],
-    io_out[36],
-    io_out[35],
-    io_out[34],
-    io_out[33],
-    io_out[32],
-    io_out[31],
-    io_out[30],
-    io_out[7],
-    io_out[6],
-    io_out[5],
-    io_out[4],
-    io_out[3],
-    io_out[2],
-    io_out[1],
-    io_out[0]}),
-    .irq({user_irq[2],
-    user_irq[1],
-    user_irq[0]}),
-    .la_data_in({la_data_in[127],
-    la_data_in[126],
-    la_data_in[125],
-    la_data_in[124],
-    la_data_in[123],
-    la_data_in[122],
-    la_data_in[121],
-    la_data_in[120],
-    la_data_in[119],
-    la_data_in[118],
-    la_data_in[117],
-    la_data_in[116],
-    la_data_in[115],
-    la_data_in[114],
-    la_data_in[113],
-    la_data_in[112],
-    la_data_in[111],
-    la_data_in[110],
-    la_data_in[109],
-    la_data_in[108],
-    la_data_in[107],
-    la_data_in[106],
-    la_data_in[105],
-    la_data_in[104],
-    la_data_in[103],
-    la_data_in[102],
-    la_data_in[101],
-    la_data_in[100],
-    la_data_in[99],
-    la_data_in[98],
-    la_data_in[97],
-    la_data_in[96],
-    la_data_in[95],
-    la_data_in[94],
-    la_data_in[93],
-    la_data_in[92],
-    la_data_in[91],
-    la_data_in[90],
-    la_data_in[89],
-    la_data_in[88],
-    la_data_in[87],
-    la_data_in[86],
-    la_data_in[85],
-    la_data_in[84],
-    la_data_in[83],
-    la_data_in[82],
-    la_data_in[81],
-    la_data_in[80],
-    la_data_in[79],
-    la_data_in[78],
-    la_data_in[77],
-    la_data_in[76],
-    la_data_in[75],
-    la_data_in[74],
-    la_data_in[73],
-    la_data_in[72],
-    la_data_in[71],
-    la_data_in[70],
-    la_data_in[69],
-    la_data_in[68],
-    la_data_in[67],
-    la_data_in[66],
-    la_data_in[65],
-    la_data_in[64],
-    la_data_in[63],
-    la_data_in[62],
-    la_data_in[61],
-    la_data_in[60],
-    la_data_in[59],
-    la_data_in[58],
-    la_data_in[57],
-    la_data_in[56],
-    la_data_in[55],
-    la_data_in[54],
-    la_data_in[53],
-    la_data_in[52],
-    la_data_in[51],
-    la_data_in[50],
-    la_data_in[49],
-    la_data_in[48],
-    la_data_in[47],
-    la_data_in[46],
-    la_data_in[45],
-    la_data_in[44],
-    la_data_in[43],
-    la_data_in[42],
-    la_data_in[41],
-    la_data_in[40],
-    la_data_in[39],
-    la_data_in[38],
-    la_data_in[37],
-    la_data_in[36],
-    la_data_in[35],
-    la_data_in[34],
-    la_data_in[33],
-    la_data_in[32],
-    la_data_in[31],
-    la_data_in[30],
-    la_data_in[29],
-    la_data_in[28],
-    la_data_in[27],
-    la_data_in[26],
-    la_data_in[25],
-    la_data_in[24],
-    la_data_in[23],
-    la_data_in[22],
-    la_data_in[21],
-    la_data_in[20],
-    la_data_in[19],
-    la_data_in[18],
-    la_data_in[17],
-    la_data_in[16],
-    la_data_in[15],
-    la_data_in[14],
-    la_data_in[13],
-    la_data_in[12],
-    la_data_in[11],
-    la_data_in[10],
-    la_data_in[9],
-    la_data_in[8],
-    la_data_in[7],
-    la_data_in[6],
-    la_data_in[5],
-    la_data_in[4],
-    la_data_in[3],
-    la_data_in[2],
-    la_data_in[1],
-    la_data_in[0]}),
-    .la_data_out({la_data_out[127],
-    la_data_out[126],
-    la_data_out[125],
-    la_data_out[124],
-    la_data_out[123],
-    la_data_out[122],
-    la_data_out[121],
-    la_data_out[120],
-    la_data_out[119],
-    la_data_out[118],
-    la_data_out[117],
-    la_data_out[116],
-    la_data_out[115],
-    la_data_out[114],
-    la_data_out[113],
-    la_data_out[112],
-    la_data_out[111],
-    la_data_out[110],
-    la_data_out[109],
-    la_data_out[108],
-    la_data_out[107],
-    la_data_out[106],
-    la_data_out[105],
-    la_data_out[104],
-    la_data_out[103],
-    la_data_out[102],
-    la_data_out[101],
-    la_data_out[100],
-    la_data_out[99],
-    la_data_out[98],
-    la_data_out[97],
-    la_data_out[96],
-    la_data_out[95],
-    la_data_out[94],
-    la_data_out[93],
-    la_data_out[92],
-    la_data_out[91],
-    la_data_out[90],
-    la_data_out[89],
-    la_data_out[88],
-    la_data_out[87],
-    la_data_out[86],
-    la_data_out[85],
-    la_data_out[84],
-    la_data_out[83],
-    la_data_out[82],
-    la_data_out[81],
-    la_data_out[80],
-    la_data_out[79],
-    la_data_out[78],
-    la_data_out[77],
-    la_data_out[76],
-    la_data_out[75],
-    la_data_out[74],
-    la_data_out[73],
-    la_data_out[72],
-    la_data_out[71],
-    la_data_out[70],
-    la_data_out[69],
-    la_data_out[68],
-    la_data_out[67],
-    la_data_out[66],
-    la_data_out[65],
-    la_data_out[64],
-    la_data_out[63],
-    la_data_out[62],
-    la_data_out[61],
-    la_data_out[60],
-    la_data_out[59],
-    la_data_out[58],
-    la_data_out[57],
-    la_data_out[56],
-    la_data_out[55],
-    la_data_out[54],
-    la_data_out[53],
-    la_data_out[52],
-    la_data_out[51],
-    la_data_out[50],
-    la_data_out[49],
-    la_data_out[48],
-    la_data_out[47],
-    la_data_out[46],
-    la_data_out[45],
-    la_data_out[44],
-    la_data_out[43],
-    la_data_out[42],
-    la_data_out[41],
-    la_data_out[40],
-    la_data_out[39],
-    la_data_out[38],
-    la_data_out[37],
-    la_data_out[36],
-    la_data_out[35],
-    la_data_out[34],
-    la_data_out[33],
-    la_data_out[32],
-    la_data_out[31],
-    la_data_out[30],
-    la_data_out[29],
-    la_data_out[28],
-    la_data_out[27],
-    la_data_out[26],
-    la_data_out[25],
-    la_data_out[24],
-    la_data_out[23],
-    la_data_out[22],
-    la_data_out[21],
-    la_data_out[20],
-    la_data_out[19],
-    la_data_out[18],
-    la_data_out[17],
-    la_data_out[16],
-    la_data_out[15],
-    la_data_out[14],
-    la_data_out[13],
-    la_data_out[12],
-    la_data_out[11],
-    la_data_out[10],
-    la_data_out[9],
-    la_data_out[8],
-    la_data_out[7],
-    la_data_out[6],
-    la_data_out[5],
-    la_data_out[4],
-    la_data_out[3],
-    la_data_out[2],
-    la_data_out[1],
-    la_data_out[0]}),
-    .la_oenb({la_oenb[127],
-    la_oenb[126],
-    la_oenb[125],
-    la_oenb[124],
-    la_oenb[123],
-    la_oenb[122],
-    la_oenb[121],
-    la_oenb[120],
-    la_oenb[119],
-    la_oenb[118],
-    la_oenb[117],
-    la_oenb[116],
-    la_oenb[115],
-    la_oenb[114],
-    la_oenb[113],
-    la_oenb[112],
-    la_oenb[111],
-    la_oenb[110],
-    la_oenb[109],
-    la_oenb[108],
-    la_oenb[107],
-    la_oenb[106],
-    la_oenb[105],
-    la_oenb[104],
-    la_oenb[103],
-    la_oenb[102],
-    la_oenb[101],
-    la_oenb[100],
-    la_oenb[99],
-    la_oenb[98],
-    la_oenb[97],
-    la_oenb[96],
-    la_oenb[95],
-    la_oenb[94],
-    la_oenb[93],
-    la_oenb[92],
-    la_oenb[91],
-    la_oenb[90],
-    la_oenb[89],
-    la_oenb[88],
-    la_oenb[87],
-    la_oenb[86],
-    la_oenb[85],
-    la_oenb[84],
-    la_oenb[83],
-    la_oenb[82],
-    la_oenb[81],
-    la_oenb[80],
-    la_oenb[79],
-    la_oenb[78],
-    la_oenb[77],
-    la_oenb[76],
-    la_oenb[75],
-    la_oenb[74],
-    la_oenb[73],
-    la_oenb[72],
-    la_oenb[71],
-    la_oenb[70],
-    la_oenb[69],
-    la_oenb[68],
-    la_oenb[67],
-    la_oenb[66],
-    la_oenb[65],
-    la_oenb[64],
-    la_oenb[63],
-    la_oenb[62],
-    la_oenb[61],
-    la_oenb[60],
-    la_oenb[59],
-    la_oenb[58],
-    la_oenb[57],
-    la_oenb[56],
-    la_oenb[55],
-    la_oenb[54],
-    la_oenb[53],
-    la_oenb[52],
-    la_oenb[51],
-    la_oenb[50],
-    la_oenb[49],
-    la_oenb[48],
-    la_oenb[47],
-    la_oenb[46],
-    la_oenb[45],
-    la_oenb[44],
-    la_oenb[43],
-    la_oenb[42],
-    la_oenb[41],
-    la_oenb[40],
-    la_oenb[39],
-    la_oenb[38],
-    la_oenb[37],
-    la_oenb[36],
-    la_oenb[35],
-    la_oenb[34],
-    la_oenb[33],
-    la_oenb[32],
-    la_oenb[31],
-    la_oenb[30],
-    la_oenb[29],
-    la_oenb[28],
-    la_oenb[27],
-    la_oenb[26],
-    la_oenb[25],
-    la_oenb[24],
-    la_oenb[23],
-    la_oenb[22],
-    la_oenb[21],
-    la_oenb[20],
-    la_oenb[19],
-    la_oenb[18],
-    la_oenb[17],
-    la_oenb[16],
-    la_oenb[15],
-    la_oenb[14],
-    la_oenb[13],
-    la_oenb[12],
-    la_oenb[11],
-    la_oenb[10],
-    la_oenb[9],
-    la_oenb[8],
-    la_oenb[7],
-    la_oenb[6],
-    la_oenb[5],
-    la_oenb[4],
-    la_oenb[3],
-    la_oenb[2],
-    la_oenb[1],
-    la_oenb[0]}),
-    .wbs_adr_i({wbs_adr_i[31],
-    wbs_adr_i[30],
-    wbs_adr_i[29],
-    wbs_adr_i[28],
-    wbs_adr_i[27],
-    wbs_adr_i[26],
-    wbs_adr_i[25],
-    wbs_adr_i[24],
-    wbs_adr_i[23],
-    wbs_adr_i[22],
-    wbs_adr_i[21],
-    wbs_adr_i[20],
-    wbs_adr_i[19],
-    wbs_adr_i[18],
-    wbs_adr_i[17],
-    wbs_adr_i[16],
-    wbs_adr_i[15],
-    wbs_adr_i[14],
-    wbs_adr_i[13],
-    wbs_adr_i[12],
-    wbs_adr_i[11],
-    wbs_adr_i[10],
-    wbs_adr_i[9],
-    wbs_adr_i[8],
-    wbs_adr_i[7],
-    wbs_adr_i[6],
-    wbs_adr_i[5],
-    wbs_adr_i[4],
-    wbs_adr_i[3],
-    wbs_adr_i[2],
-    wbs_adr_i[1],
-    wbs_adr_i[0]}),
-    .wbs_dat_i({wbs_dat_i[31],
-    wbs_dat_i[30],
-    wbs_dat_i[29],
-    wbs_dat_i[28],
-    wbs_dat_i[27],
-    wbs_dat_i[26],
-    wbs_dat_i[25],
-    wbs_dat_i[24],
-    wbs_dat_i[23],
-    wbs_dat_i[22],
-    wbs_dat_i[21],
-    wbs_dat_i[20],
-    wbs_dat_i[19],
-    wbs_dat_i[18],
-    wbs_dat_i[17],
-    wbs_dat_i[16],
-    wbs_dat_i[15],
-    wbs_dat_i[14],
-    wbs_dat_i[13],
-    wbs_dat_i[12],
-    wbs_dat_i[11],
-    wbs_dat_i[10],
-    wbs_dat_i[9],
-    wbs_dat_i[8],
-    wbs_dat_i[7],
-    wbs_dat_i[6],
-    wbs_dat_i[5],
-    wbs_dat_i[4],
-    wbs_dat_i[3],
-    wbs_dat_i[2],
-    wbs_dat_i[1],
-    wbs_dat_i[0]}),
-    .wbs_dat_o({wbs_dat_o[31],
-    wbs_dat_o[30],
-    wbs_dat_o[29],
-    wbs_dat_o[28],
-    wbs_dat_o[27],
-    wbs_dat_o[26],
-    wbs_dat_o[25],
-    wbs_dat_o[24],
-    wbs_dat_o[23],
-    wbs_dat_o[22],
-    wbs_dat_o[21],
-    wbs_dat_o[20],
-    wbs_dat_o[19],
-    wbs_dat_o[18],
-    wbs_dat_o[17],
-    wbs_dat_o[16],
-    wbs_dat_o[15],
-    wbs_dat_o[14],
-    wbs_dat_o[13],
-    wbs_dat_o[12],
-    wbs_dat_o[11],
-    wbs_dat_o[10],
-    wbs_dat_o[9],
-    wbs_dat_o[8],
-    wbs_dat_o[7],
-    wbs_dat_o[6],
-    wbs_dat_o[5],
-    wbs_dat_o[4],
-    wbs_dat_o[3],
-    wbs_dat_o[2],
-    wbs_dat_o[1],
-    wbs_dat_o[0]}),
-    .wbs_sel_i({wbs_sel_i[3],
-    wbs_sel_i[2],
-    wbs_sel_i[1],
-    wbs_sel_i[0]}));
+    .eoi({\eoi[31] ,
+    \eoi[30] ,
+    \eoi[29] ,
+    \eoi[28] ,
+    \eoi[27] ,
+    \eoi[26] ,
+    \eoi[25] ,
+    \eoi[24] ,
+    \eoi[23] ,
+    \eoi[22] ,
+    \eoi[21] ,
+    \eoi[20] ,
+    \eoi[19] ,
+    \eoi[18] ,
+    \eoi[17] ,
+    \eoi[16] ,
+    \eoi[15] ,
+    \eoi[14] ,
+    \eoi[13] ,
+    \eoi[12] ,
+    \eoi[11] ,
+    \eoi[10] ,
+    \eoi[9] ,
+    \eoi[8] ,
+    \eoi[7] ,
+    \eoi[6] ,
+    \eoi[5] ,
+    \eoi[4] ,
+    \eoi[3] ,
+    \eoi[2] ,
+    \eoi[1] ,
+    \eoi[0] }),
+    .irq({_NC1,
+    _NC2,
+    _NC3,
+    _NC4,
+    _NC5,
+    _NC6,
+    _NC7,
+    _NC8,
+    _NC9,
+    _NC10,
+    _NC11,
+    _NC12,
+    _NC13,
+    _NC14,
+    _NC15,
+    _NC16,
+    _NC17,
+    _NC18,
+    _NC19,
+    _NC20,
+    _NC21,
+    _NC22,
+    _NC23,
+    _NC24,
+    _NC25,
+    _NC26,
+    _NC27,
+    _NC28,
+    _NC29,
+    _NC30,
+    _NC31,
+    _NC32}),
+    .mem_addr({\mem_addr[31] ,
+    \mem_addr[30] ,
+    \mem_addr[29] ,
+    \mem_addr[28] ,
+    \mem_addr[27] ,
+    \mem_addr[26] ,
+    \mem_addr[25] ,
+    \mem_addr[24] ,
+    \mem_addr[23] ,
+    \mem_addr[22] ,
+    \mem_addr[21] ,
+    \mem_addr[20] ,
+    \mem_addr[19] ,
+    \mem_addr[18] ,
+    \mem_addr[17] ,
+    \mem_addr[16] ,
+    \mem_addr[15] ,
+    \mem_addr[14] ,
+    \mem_addr[13] ,
+    \mem_addr[12] ,
+    \mem_addr[11] ,
+    \mem_addr[10] ,
+    \mem_addr[9] ,
+    \mem_addr[8] ,
+    \mem_addr[7] ,
+    \mem_addr[6] ,
+    \mem_addr[5] ,
+    \mem_addr[4] ,
+    \mem_addr[3] ,
+    \mem_addr[2] ,
+    \mem_addr[1] ,
+    \mem_addr[0] }),
+    .mem_la_addr({\mem_la_addr[31] ,
+    \mem_la_addr[30] ,
+    \mem_la_addr[29] ,
+    \mem_la_addr[28] ,
+    \mem_la_addr[27] ,
+    \mem_la_addr[26] ,
+    \mem_la_addr[25] ,
+    \mem_la_addr[24] ,
+    \mem_la_addr[23] ,
+    \mem_la_addr[22] ,
+    \mem_la_addr[21] ,
+    \mem_la_addr[20] ,
+    \mem_la_addr[19] ,
+    \mem_la_addr[18] ,
+    \mem_la_addr[17] ,
+    \mem_la_addr[16] ,
+    \mem_la_addr[15] ,
+    \mem_la_addr[14] ,
+    \mem_la_addr[13] ,
+    \mem_la_addr[12] ,
+    \mem_la_addr[11] ,
+    \mem_la_addr[10] ,
+    \mem_la_addr[9] ,
+    \mem_la_addr[8] ,
+    \mem_la_addr[7] ,
+    \mem_la_addr[6] ,
+    \mem_la_addr[5] ,
+    \mem_la_addr[4] ,
+    \mem_la_addr[3] ,
+    \mem_la_addr[2] ,
+    \mem_la_addr[1] ,
+    \mem_la_addr[0] }),
+    .mem_la_wdata({\mem_la_wdata[31] ,
+    \mem_la_wdata[30] ,
+    \mem_la_wdata[29] ,
+    \mem_la_wdata[28] ,
+    \mem_la_wdata[27] ,
+    \mem_la_wdata[26] ,
+    \mem_la_wdata[25] ,
+    \mem_la_wdata[24] ,
+    \mem_la_wdata[23] ,
+    \mem_la_wdata[22] ,
+    \mem_la_wdata[21] ,
+    \mem_la_wdata[20] ,
+    \mem_la_wdata[19] ,
+    \mem_la_wdata[18] ,
+    \mem_la_wdata[17] ,
+    \mem_la_wdata[16] ,
+    \mem_la_wdata[15] ,
+    \mem_la_wdata[14] ,
+    \mem_la_wdata[13] ,
+    \mem_la_wdata[12] ,
+    \mem_la_wdata[11] ,
+    \mem_la_wdata[10] ,
+    \mem_la_wdata[9] ,
+    \mem_la_wdata[8] ,
+    \mem_la_wdata[7] ,
+    \mem_la_wdata[6] ,
+    \mem_la_wdata[5] ,
+    \mem_la_wdata[4] ,
+    \mem_la_wdata[3] ,
+    \mem_la_wdata[2] ,
+    \mem_la_wdata[1] ,
+    \mem_la_wdata[0] }),
+    .mem_la_wstrb({\mem_la_wstrb[3] ,
+    \mem_la_wstrb[2] ,
+    \mem_la_wstrb[1] ,
+    \mem_la_wstrb[0] }),
+    .mem_rdata({\mem_rdata[31] ,
+    \mem_rdata[30] ,
+    \mem_rdata[29] ,
+    \mem_rdata[28] ,
+    \mem_rdata[27] ,
+    \mem_rdata[26] ,
+    \mem_rdata[25] ,
+    \mem_rdata[24] ,
+    \mem_rdata[23] ,
+    \mem_rdata[22] ,
+    \mem_rdata[21] ,
+    \mem_rdata[20] ,
+    \mem_rdata[19] ,
+    \mem_rdata[18] ,
+    \mem_rdata[17] ,
+    \mem_rdata[16] ,
+    \mem_rdata[15] ,
+    \mem_rdata[14] ,
+    \mem_rdata[13] ,
+    \mem_rdata[12] ,
+    \mem_rdata[11] ,
+    \mem_rdata[10] ,
+    \mem_rdata[9] ,
+    \mem_rdata[8] ,
+    \mem_rdata[7] ,
+    \mem_rdata[6] ,
+    \mem_rdata[5] ,
+    \mem_rdata[4] ,
+    \mem_rdata[3] ,
+    \mem_rdata[2] ,
+    \mem_rdata[1] ,
+    \mem_rdata[0] }),
+    .mem_wdata({\mem_wdata[31] ,
+    \mem_wdata[30] ,
+    \mem_wdata[29] ,
+    \mem_wdata[28] ,
+    \mem_wdata[27] ,
+    \mem_wdata[26] ,
+    \mem_wdata[25] ,
+    \mem_wdata[24] ,
+    \mem_wdata[23] ,
+    \mem_wdata[22] ,
+    \mem_wdata[21] ,
+    \mem_wdata[20] ,
+    \mem_wdata[19] ,
+    \mem_wdata[18] ,
+    \mem_wdata[17] ,
+    \mem_wdata[16] ,
+    \mem_wdata[15] ,
+    \mem_wdata[14] ,
+    \mem_wdata[13] ,
+    \mem_wdata[12] ,
+    \mem_wdata[11] ,
+    \mem_wdata[10] ,
+    \mem_wdata[9] ,
+    \mem_wdata[8] ,
+    \mem_wdata[7] ,
+    \mem_wdata[6] ,
+    \mem_wdata[5] ,
+    \mem_wdata[4] ,
+    \mem_wdata[3] ,
+    \mem_wdata[2] ,
+    \mem_wdata[1] ,
+    \mem_wdata[0] }),
+    .mem_wstrb({_2_,
+    _1_,
+    _0_,
+    mem_wstrb}),
+    .pcpi_insn({\pcpi_insn[31] ,
+    \pcpi_insn[30] ,
+    \pcpi_insn[29] ,
+    \pcpi_insn[28] ,
+    \pcpi_insn[27] ,
+    \pcpi_insn[26] ,
+    \pcpi_insn[25] ,
+    \pcpi_insn[24] ,
+    \pcpi_insn[23] ,
+    \pcpi_insn[22] ,
+    \pcpi_insn[21] ,
+    \pcpi_insn[20] ,
+    \pcpi_insn[19] ,
+    \pcpi_insn[18] ,
+    \pcpi_insn[17] ,
+    \pcpi_insn[16] ,
+    \pcpi_insn[15] ,
+    \pcpi_insn[14] ,
+    \pcpi_insn[13] ,
+    \pcpi_insn[12] ,
+    \pcpi_insn[11] ,
+    \pcpi_insn[10] ,
+    \pcpi_insn[9] ,
+    \pcpi_insn[8] ,
+    \pcpi_insn[7] ,
+    \pcpi_insn[6] ,
+    \pcpi_insn[5] ,
+    \pcpi_insn[4] ,
+    \pcpi_insn[3] ,
+    \pcpi_insn[2] ,
+    \pcpi_insn[1] ,
+    \pcpi_insn[0] }),
+    .pcpi_rd({\pcpi_rd[31] ,
+    \pcpi_rd[30] ,
+    \pcpi_rd[29] ,
+    \pcpi_rd[28] ,
+    \pcpi_rd[27] ,
+    \pcpi_rd[26] ,
+    \pcpi_rd[25] ,
+    \pcpi_rd[24] ,
+    \pcpi_rd[23] ,
+    \pcpi_rd[22] ,
+    \pcpi_rd[21] ,
+    \pcpi_rd[20] ,
+    \pcpi_rd[19] ,
+    \pcpi_rd[18] ,
+    \pcpi_rd[17] ,
+    \pcpi_rd[16] ,
+    \pcpi_rd[15] ,
+    \pcpi_rd[14] ,
+    \pcpi_rd[13] ,
+    \pcpi_rd[12] ,
+    \pcpi_rd[11] ,
+    \pcpi_rd[10] ,
+    \pcpi_rd[9] ,
+    \pcpi_rd[8] ,
+    \pcpi_rd[7] ,
+    \pcpi_rd[6] ,
+    \pcpi_rd[5] ,
+    \pcpi_rd[4] ,
+    \pcpi_rd[3] ,
+    \pcpi_rd[2] ,
+    \pcpi_rd[1] ,
+    \pcpi_rd[0] }),
+    .pcpi_rs1({\pcpi_rs1[31] ,
+    \pcpi_rs1[30] ,
+    \pcpi_rs1[29] ,
+    \pcpi_rs1[28] ,
+    \pcpi_rs1[27] ,
+    \pcpi_rs1[26] ,
+    \pcpi_rs1[25] ,
+    \pcpi_rs1[24] ,
+    \pcpi_rs1[23] ,
+    \pcpi_rs1[22] ,
+    \pcpi_rs1[21] ,
+    \pcpi_rs1[20] ,
+    \pcpi_rs1[19] ,
+    \pcpi_rs1[18] ,
+    \pcpi_rs1[17] ,
+    \pcpi_rs1[16] ,
+    \pcpi_rs1[15] ,
+    \pcpi_rs1[14] ,
+    \pcpi_rs1[13] ,
+    \pcpi_rs1[12] ,
+    \pcpi_rs1[11] ,
+    \pcpi_rs1[10] ,
+    \pcpi_rs1[9] ,
+    \pcpi_rs1[8] ,
+    \pcpi_rs1[7] ,
+    \pcpi_rs1[6] ,
+    \pcpi_rs1[5] ,
+    \pcpi_rs1[4] ,
+    \pcpi_rs1[3] ,
+    \pcpi_rs1[2] ,
+    \pcpi_rs1[1] ,
+    \pcpi_rs1[0] }),
+    .pcpi_rs2({\pcpi_rs2[31] ,
+    \pcpi_rs2[30] ,
+    \pcpi_rs2[29] ,
+    \pcpi_rs2[28] ,
+    \pcpi_rs2[27] ,
+    \pcpi_rs2[26] ,
+    \pcpi_rs2[25] ,
+    \pcpi_rs2[24] ,
+    \pcpi_rs2[23] ,
+    \pcpi_rs2[22] ,
+    \pcpi_rs2[21] ,
+    \pcpi_rs2[20] ,
+    \pcpi_rs2[19] ,
+    \pcpi_rs2[18] ,
+    \pcpi_rs2[17] ,
+    \pcpi_rs2[16] ,
+    \pcpi_rs2[15] ,
+    \pcpi_rs2[14] ,
+    \pcpi_rs2[13] ,
+    \pcpi_rs2[12] ,
+    \pcpi_rs2[11] ,
+    \pcpi_rs2[10] ,
+    \pcpi_rs2[9] ,
+    \pcpi_rs2[8] ,
+    \pcpi_rs2[7] ,
+    \pcpi_rs2[6] ,
+    \pcpi_rs2[5] ,
+    \pcpi_rs2[4] ,
+    \pcpi_rs2[3] ,
+    \pcpi_rs2[2] ,
+    \pcpi_rs2[1] ,
+    \pcpi_rs2[0] }),
+    .trace_data({\trace_data[35] ,
+    \trace_data[34] ,
+    \trace_data[33] ,
+    \trace_data[32] ,
+    \trace_data[31] ,
+    \trace_data[30] ,
+    \trace_data[29] ,
+    \trace_data[28] ,
+    \trace_data[27] ,
+    \trace_data[26] ,
+    \trace_data[25] ,
+    \trace_data[24] ,
+    \trace_data[23] ,
+    \trace_data[22] ,
+    \trace_data[21] ,
+    \trace_data[20] ,
+    \trace_data[19] ,
+    \trace_data[18] ,
+    \trace_data[17] ,
+    \trace_data[16] ,
+    \trace_data[15] ,
+    \trace_data[14] ,
+    \trace_data[13] ,
+    \trace_data[12] ,
+    \trace_data[11] ,
+    \trace_data[10] ,
+    \trace_data[9] ,
+    \trace_data[8] ,
+    \trace_data[7] ,
+    \trace_data[6] ,
+    \trace_data[5] ,
+    \trace_data[4] ,
+    \trace_data[3] ,
+    \trace_data[2] ,
+    \trace_data[1] ,
+    \trace_data[0] }));
 endmodule
