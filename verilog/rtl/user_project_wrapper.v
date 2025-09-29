@@ -78,43 +78,13 @@ module user_project_wrapper #(
     output [2:0] user_irq
 );
 
-/*--------------------------------------*/
-/* User project is instantiated  here   */
-/*--------------------------------------*/
+    // Memory Interface 
+    wire mem_ena;
+    wire [3:0] mem_wen;
+    wire [8:0] mem_addr;
+    wire [31:0] mem_wdata;
+    wire [31:0] mem_rdata; 
 
-    //Intermediate signals
-//    wire [31:0] mem_rdata  = la_data_in[31:0];
-//    wire [31:0] mem_wdata  = la_data_in[63:32];
-//    wire [31:0] mem_addr   = la_data_in[95:64];
-//    wire [31:0] pcpi_rs1   = la_data_in[127:96];
-
-// Memory interface
-wire [31:0] mem_rdata;    // unused
-wire [31:0] mem_wdata;    // unused
-wire [31:0] mem_addr;     // unused
-wire mem_valid;           // unused
-wire mem_ready;           // unused
-wire mem_instr;           // unused
-wire [31:0] mem_la_addr;  // unused
-wire mem_la_read;         // unused
-wire [31:0] mem_la_wdata; // unused
-wire mem_la_write;        // unused
-wire [3:0] mem_la_wstrb;  // unused
-
-// PCPI interface
-wire [31:0] pcpi_insn;    // unused
-wire [31:0] pcpi_rs1;     // unused
-wire [31:0] pcpi_rs2;     // unused
-wire [31:0] pcpi_rd;      // unused
-wire pcpi_wait;           // unused
-wire pcpi_ready;          // unused
-wire pcpi_wr;             // unused
-
-// IRQ/Eoi/trace
-wire [31:0] eoi;          // unused
-wire [31:0] irq;          // unused
-wire [35:0] trace_data;   // unused
-wire trap;                // unused
 
 picorv32 u_picorv32 (
 
@@ -124,31 +94,47 @@ picorv32 u_picorv32 (
 `endif
     .clk         (wb_clk_i),
     .resetn      (wb_rst_i),
-    .trap        (trap),
-    .mem_instr   (mem_instr),
-    .mem_la_read (mem_la_read),
-    .mem_la_write(mem_la_write),
-    .mem_ready   (mem_ready),
-    .mem_valid   (mem_valid),
+    .trap        (),
+    .mem_instr   (),
+    .mem_la_read (),
+    .mem_la_write(),
+    .mem_ready   (),
+    .mem_valid   (),
     .mem_addr    (mem_addr),
     .mem_wdata   (mem_wdata),
-    .mem_wstrb   (mem_wstrb),
+    .mem_wstrb   (mem_wen),
     .mem_rdata   (mem_rdata),
-    .mem_la_addr (mem_la_addr),
-    .mem_la_wdata(mem_la_wdata),
-    .mem_la_wstrb(mem_la_wstrb),
-    .pcpi_ready  (pcpi_ready),
-    .pcpi_valid  (pcpi_valid),
-    .pcpi_wait   (pcpi_wait),
-    .pcpi_wr     (pcpi_wr),
-    .pcpi_insn   (pcpi_insn),
-    .pcpi_rd     (pcpi_rd),
-    .pcpi_rs1    (pcpi_rs1),
-    .pcpi_rs2    (pcpi_rs2),
-    .trace_valid (trace_valid),
-    .trace_data  (trace_data),
-    .eoi         (eoi),
+    .mem_la_addr (),
+    .mem_la_wdata(),
+    .mem_la_wstrb(),
+    .pcpi_ready  (),
+    .pcpi_valid  (),
+    .pcpi_wait   (),
+    .pcpi_wr     (la_data_in[33]),
+    .pcpi_insn   (),
+    .pcpi_rd     (la_data_in[65:34]),
+    .pcpi_rs1    (),
+    .pcpi_rs2    (),
+    .trace_valid (),
+    .trace_data  (),
+    .eoi         (),
+    .irq         (la_data_in[97:66])
 );
+
+// DFFRAM
+DFFRAM512x32 DFFRAM (
+`ifdef USE_POWER_PINS
+    .VPWR(vccd1),
+    .VGND(vssd1),
+`endif
+    .CLK(wb_clk_i),
+    .WE0(mem_wen),
+    .EN0(mem_ena),
+    .Di0(mem_wdata),
+    .Do0(mem_rdata),
+    .A0(mem_addr)   // 8-bit address if using the default custom DFF RAM
+);
+
 endmodule
 
 `default_nettype wire

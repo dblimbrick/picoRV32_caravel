@@ -1,2 +1,4 @@
 */runs
 default.cvcrc
+.venv/
+*.gds
