@@ -1,5 +1,5 @@
 Clock: clk
-Sources: 
+Sources: clk 
 Generated: no
 Virtual: yes
 Propagated: no
@@ -16,9 +16,27 @@ clk                  25.000000    0.000000 12.500000
 report_clock_latency
 ============================================================================
 Clock clk
+rise -> rise
+    min     max
+4.650000 5.570000 source latency
+6.250772         network latency _10603_/CLK
+        7.675286 network latency _11173_/CLK
+---------------
+10.900772 13.245286 latency
+        2.344514 skew
+
+fall -> fall
+    min     max
+4.650000 5.570000 source latency
+6.063774         network latency _10603_/CLK
+        7.425252 network latency _11173_/CLK
+---------------
+10.713774 12.995252 latency
+        2.281478 skew
+
 
 
 ===========================================================================
 report_clock_min_period
 ============================================================================
-clk period_min = 0.00 fmax = inf
+clk period_min = 18.57 fmax = 53.85

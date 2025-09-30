@@ -1,9 +1,4 @@
 478 Lint warnings found.
-'PNR_SDC_FILE' is not defined. Using generic fallback SDC for OpenROAD PnR steps.
-'SIGNOFF_SDC_FILE' is not defined. Using generic fallback SDC for OpenROAD PnR steps.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -17,7 +12,6 @@
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -60,9 +54,6 @@
 [STA-0366] port 'user_irq[*]' not found.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -76,7 +67,6 @@
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -119,9 +109,6 @@
 [STA-0366] port 'user_irq[*]' not found.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -135,7 +122,6 @@
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -178,9 +164,6 @@
 [STA-0366] port 'user_irq[*]' not found.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -194,7 +177,6 @@
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -237,9 +219,6 @@
 [STA-0366] port 'user_irq[*]' not found.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -253,7 +232,6 @@
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -297,9 +275,6 @@
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 wb_.* not found in design but found in config.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -313,7 +288,6 @@ wb_.* not found in design but found in config.
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -356,10 +330,6 @@ wb_.* not found in design but found in config.
 [STA-0366] port 'user_irq[*]' not found.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
-[GPL-0102] Timing-driven: no slacks found. Timing-driven mode disabled.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -373,7 +343,6 @@ wb_.* not found in design but found in config.
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -417,9 +386,6 @@ wb_.* not found in design but found in config.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [GRT-0097] No global routing found for nets.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -433,7 +399,6 @@ wb_.* not found in design but found in config.
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -476,9 +441,6 @@ wb_.* not found in design but found in config.
 [STA-0366] port 'user_irq[*]' not found.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -492,7 +454,6 @@ wb_.* not found in design but found in config.
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -535,9 +496,6 @@ wb_.* not found in design but found in config.
 [STA-0366] port 'user_irq[*]' not found.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -551,7 +509,6 @@ wb_.* not found in design but found in config.
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -594,12 +551,7 @@ wb_.* not found in design but found in config.
 [STA-0366] port 'user_irq[*]' not found.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
-[CTS-0083] No clock nets have been found.
-[CTS-0082] No valid clock nets in the design.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
+[RSZ-0065] max wire length less than 5786u increases wire delays.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -613,7 +565,6 @@ wb_.* not found in design but found in config.
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -657,9 +608,6 @@ wb_.* not found in design but found in config.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [GRT-0097] No global routing found for nets.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -673,7 +621,6 @@ wb_.* not found in design but found in config.
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -716,10 +663,6 @@ wb_.* not found in design but found in config.
 [STA-0366] port 'user_irq[*]' not found.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -733,7 +676,6 @@ wb_.* not found in design but found in config.
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -777,9 +719,6 @@ wb_.* not found in design but found in config.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [GRT-0097] No global routing found for nets.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -793,7 +732,6 @@ wb_.* not found in design but found in config.
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -836,10 +774,6 @@ wb_.* not found in design but found in config.
 [STA-0366] port 'user_irq[*]' not found.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -853,7 +787,6 @@ wb_.* not found in design but found in config.
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -896,10 +829,6 @@ wb_.* not found in design but found in config.
 [STA-0366] port 'user_irq[*]' not found.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
-'GPL_CELL_PADDING' is set to 0. This step may cause overlap failures.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -913,7 +842,6 @@ wb_.* not found in design but found in config.
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -956,9 +884,6 @@ wb_.* not found in design but found in config.
 [STA-0366] port 'user_irq[*]' not found.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -972,7 +897,6 @@ wb_.* not found in design but found in config.
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -1015,10 +939,6 @@ wb_.* not found in design but found in config.
 [STA-0366] port 'user_irq[*]' not found.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -1032,7 +952,6 @@ wb_.* not found in design but found in config.
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -1075,10 +994,6 @@ wb_.* not found in design but found in config.
 [STA-0366] port 'user_irq[*]' not found.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -1092,7 +1007,6 @@ wb_.* not found in design but found in config.
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -1135,9 +1049,6 @@ wb_.* not found in design but found in config.
 [STA-0366] port 'user_irq[*]' not found.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -1151,7 +1062,6 @@ wb_.* not found in design but found in config.
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -1194,9 +1104,6 @@ wb_.* not found in design but found in config.
 [STA-0366] port 'user_irq[*]' not found.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -1210,7 +1117,116 @@ wb_.* not found in design but found in config.
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
+[STA-0366] port 'la_data_in[*]' not found.
+[STA-0366] port 'la_oenb[*]' not found.
+[STA-0366] port 'wbs_sel_i[*]' not found.
+[STA-0366] port 'wbs_we_i' not found.
+[STA-0366] port 'wbs_adr_i[*]' not found.
+[STA-0366] port 'wbs_stb_i' not found.
+[STA-0366] port 'wbs_dat_i[*]' not found.
+[STA-0366] port 'wbs_cyc_i' not found.
+[STA-0366] port 'la_data_in[*]' not found.
+[STA-0366] port 'la_oenb[*]' not found.
+[STA-0366] port 'wbs_adr_i[*]' not found.
+[STA-0366] port 'wbs_dat_i[*]' not found.
+[STA-0366] port 'wbs_sel_i[*]' not found.
+[STA-0366] port 'wbs_we_i' not found.
+[STA-0366] port 'wbs_cyc_i' not found.
+[STA-0366] port 'wbs_stb_i' not found.
+[STA-0366] port 'wbs_we_i' not found.
+[STA-0366] port 'wbs_stb_i' not found.
+[STA-0366] port 'wbs_cyc_i' not found.
+[STA-0366] port 'wbs_sel_i[*]' not found.
+[STA-0366] port 'io_in[*]' not found.
+[STA-0366] port 'wbs_dat_i[*]' not found.
+[STA-0366] port 'la_data_in[*]' not found.
+[STA-0366] port 'wbs_adr_i[*]' not found.
+[STA-0366] port 'la_oenb[*]' not found.
+[STA-0366] port 'io_in[*]' not found.
+[STA-0366] port 'la_oenb[*]' not found.
+[STA-0366] port 'la_data_in[*]' not found.
+[STA-0366] port 'wbs_adr_i[*]' not found.
+[STA-0366] port 'wbs_dat_i[*]' not found.
+[STA-0366] port 'wbs_cyc_i' not found.
+[STA-0366] port 'wbs_sel_i[*]' not found.
+[STA-0366] port 'wbs_we_i' not found.
+[STA-0366] port 'wbs_stb_i' not found.
+[STA-0366] port 'user_irq[*]' not found.
+[STA-0366] port 'la_data_out[*]' not found.
+[STA-0366] port 'wbs_dat_o[*]' not found.
+[STA-0366] port 'wbs_ack_o' not found.
+[STA-0366] port 'la_data_out[*]' not found.
+[STA-0366] port 'user_irq[*]' not found.
+[STA-0366] port 'wbs_dat_o[*]' not found.
+[STA-0366] port 'wbs_ack_o' not found.
+[STA-0366] port 'wb_rst_i' not found.
+[STA-0366] port 'wbs_ack_o' not found.
+[STA-0472] no valid objects specified for -through
+[STA-0366] port 'wbs_ack_o' not found.
+[STA-0472] no valid objects specified for -through
+[STA-0366] port 'wbs_cyc_i' not found.
+[STA-0472] no valid objects specified for -through
+[STA-0366] port 'wbs_cyc_i' not found.
+[STA-0472] no valid objects specified for -through
+[STA-0366] port 'wbs_stb_i' not found.
+[STA-0472] no valid objects specified for -through
+[STA-0366] port 'wbs_stb_i' not found.
+[STA-0472] no valid objects specified for -through
+[STA-0366] port 'la_data_in[*]' not found.
+[STA-0366] port 'la_oenb[*]' not found.
+[STA-0366] port 'wbs_sel_i[*]' not found.
+[STA-0366] port 'wbs_we_i' not found.
+[STA-0366] port 'wbs_adr_i[*]' not found.
+[STA-0366] port 'wbs_stb_i' not found.
+[STA-0366] port 'wbs_dat_i[*]' not found.
+[STA-0366] port 'wbs_cyc_i' not found.
+[STA-0366] port 'la_data_in[*]' not found.
+[STA-0366] port 'la_oenb[*]' not found.
+[STA-0366] port 'wbs_adr_i[*]' not found.
+[STA-0366] port 'wbs_dat_i[*]' not found.
+[STA-0366] port 'wbs_sel_i[*]' not found.
+[STA-0366] port 'wbs_we_i' not found.
+[STA-0366] port 'wbs_cyc_i' not found.
+[STA-0366] port 'wbs_stb_i' not found.
+[STA-0366] port 'wbs_we_i' not found.
+[STA-0366] port 'wbs_stb_i' not found.
+[STA-0366] port 'wbs_cyc_i' not found.
+[STA-0366] port 'wbs_sel_i[*]' not found.
+[STA-0366] port 'io_in[*]' not found.
+[STA-0366] port 'wbs_dat_i[*]' not found.
+[STA-0366] port 'la_data_in[*]' not found.
+[STA-0366] port 'wbs_adr_i[*]' not found.
+[STA-0366] port 'la_oenb[*]' not found.
+[STA-0366] port 'io_in[*]' not found.
+[STA-0366] port 'la_oenb[*]' not found.
+[STA-0366] port 'la_data_in[*]' not found.
+[STA-0366] port 'wbs_adr_i[*]' not found.
+[STA-0366] port 'wbs_dat_i[*]' not found.
+[STA-0366] port 'wbs_cyc_i' not found.
+[STA-0366] port 'wbs_sel_i[*]' not found.
+[STA-0366] port 'wbs_we_i' not found.
+[STA-0366] port 'wbs_stb_i' not found.
+[STA-0366] port 'user_irq[*]' not found.
+[STA-0366] port 'la_data_out[*]' not found.
+[STA-0366] port 'wbs_dat_o[*]' not found.
+[STA-0366] port 'wbs_ack_o' not found.
+[STA-0366] port 'la_data_out[*]' not found.
+[STA-0366] port 'user_irq[*]' not found.
+[STA-0366] port 'wbs_dat_o[*]' not found.
+[STA-0366] port 'wbs_ack_o' not found.
+[STA-0366] port 'wb_rst_i' not found.
+[STA-0366] port 'wbs_ack_o' not found.
+[STA-0472] no valid objects specified for -through
+[STA-0366] port 'wbs_ack_o' not found.
+[STA-0472] no valid objects specified for -through
+[STA-0366] port 'wbs_cyc_i' not found.
+[STA-0472] no valid objects specified for -through
+[STA-0366] port 'wbs_cyc_i' not found.
+[STA-0472] no valid objects specified for -through
+[STA-0366] port 'wbs_stb_i' not found.
+[STA-0472] no valid objects specified for -through
+[STA-0366] port 'wbs_stb_i' not found.
+[STA-0472] no valid objects specified for -through
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -1263,9 +1279,6 @@ wb_.* not found in design but found in config.
 [DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via3
 [DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via4
 [DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via4
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -1279,7 +1292,6 @@ wb_.* not found in design but found in config.
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -1323,9 +1335,6 @@ wb_.* not found in design but found in config.
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 Threshold for Threshold-surpassing long wires is not set. The checker will be skipped.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -1339,7 +1348,6 @@ Threshold for Threshold-surpassing long wires is not set. The checker will be sk
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -1383,9 +1391,6 @@ Threshold for Threshold-surpassing long wires is not set. The checker will be sk
 [STA-0366] port 'wbs_dat_o[*]' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 'VSRC_LOC_FILES' was not given a value, which may make the results of IR drop analysis inaccurate. If you are not integrating a top-level chip for manufacture, you may ignore this warning, otherwise, see the documentation for 'VSRC_LOC_FILES'.
-[STA-0366] port 'wb_clk_i' not found.
-[STA-0450] virtual clock clk can not be propagated.
-[STA-0419] transition time can not be specified for virtual clocks.
 [STA-0366] port 'wb_rst_i' not found.
 [STA-0366] port 'wbs_ack_o' not found.
 [STA-0472] no valid objects specified for -through
@@ -1399,7 +1404,6 @@ Threshold for Threshold-surpassing long wires is not set. The checker will be sk
 [STA-0472] no valid objects specified for -through
 [STA-0366] port 'wbs_stb_i' not found.
 [STA-0472] no valid objects specified for -through
-[STA-0366] port 'wb_clk_i' not found.
 [STA-0366] port 'la_data_in[*]' not found.
 [STA-0366] port 'la_oenb[*]' not found.
 [STA-0366] port 'wbs_sel_i[*]' not found.
@@ -1446,5 +1450,10 @@ Cell 'picorv32' has (67) input pin(s) without antenna gate information. They mig
 Cell 'picorv32' has (106) output pin(s) without antenna diffusion information. They might not be driven.
 Max Slew violations found in the following corners:
 * max_ss_100C_1v60
+* max_tt_025C_1v80
 * min_ss_100C_1v60
+* nom_ss_100C_1v60
+* nom_tt_025C_1v80
+Max Cap violations found in the following corners:
+* max_ss_100C_1v60
 * nom_ss_100C_1v60

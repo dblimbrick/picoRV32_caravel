@@ -31,7 +31,7 @@
             "lef": [
                 "dir::../../lef/picorv32.lef"
             ],
-            "instances": {
+            "//instances": {
                 "u_picorv32": {
                     "location": [300, 100],
                     "orientation": "N"
