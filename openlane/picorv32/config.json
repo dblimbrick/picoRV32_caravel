@@ -6,8 +6,9 @@
         "dir::../../verilog/rtl/picorv32.v"
     ],
     "CLOCK_PERIOD": 25,
-    "CLOCK_PORT": "wb_clk_i",
+    "CLOCK_PORT": "clk",
     "FP_SIZING": "relative",
+    "FP_CORE_UTIL": 40,
     "FP_PIN_ORDER_CFG": "dir::pin_order.cfg",
     "MAX_TRANSITION_CONSTRAINT": 1.0,
     "MAX_FANOUT_CONSTRAINT": 16,
@@ -30,7 +31,8 @@
     "GND_NETS": [
         "vssd1"
     ],
-    "FALLBACK_SDC_FILE": "dir::signoff.sdc",
+    "PNR_SDC_FILE": "dir::signoff.sdc",
+    "SIGNOFF_SDC_FILE": "dir::signoff.sdc",
     "MAGIC_DRC_USE_GDS": true,
     "DPL_CELL_PADDING": 2,
     "GPL_CELL_PADDING": 2,
