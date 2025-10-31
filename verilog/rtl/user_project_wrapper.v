@@ -78,61 +78,76 @@ module user_project_wrapper #(
     output [2:0] user_irq
 );
 
-    // Memory Interface 
-    wire mem_ena;
-    wire [3:0] mem_wen;
+    // Memory Interface Signals
+    wire mem_en;
+    wire [3:0] mem_we;
     wire [8:0] mem_addr;
     wire [31:0] mem_wdata;
-    wire [31:0] mem_rdata; 
+    wire [31:0] mem_rdata;
+    
+    // UART Interface - pass GPIO signals directly to SoC macro
+    // SoC macro will handle GPIO connections internally
 
-
-picorv32 u_picorv32 (
-
+// Memory Macro with Arbitration (Pre-hardened Macro)
+memory_macro u_memory (
 `ifdef USE_POWER_PINS
-	.vccd1(vccd1),	// User area 1 1.8V power
-	.vssd1(vssd1),	// User area 1 digital ground
+    .vccd1(vccd1),	// User area 1 1.8V power
+    .vssd1(vssd1),	// User area 1 digital ground
 `endif
-    .clk         (wb_clk_i),
-    .resetn      (wb_rst_i),
-    .trap        (),
-    .mem_instr   (),
-    .mem_la_read (),
-    .mem_la_write(),
-    .mem_ready   (),
-    .mem_valid   (),
-    .mem_addr    (mem_addr),
-    .mem_wdata   (mem_wdata),
-    .mem_wstrb   (mem_wen),
-    .mem_rdata   (mem_rdata),
-    .mem_la_addr (),
-    .mem_la_wdata(),
-    .mem_la_wstrb(),
-    .pcpi_ready  (),
-    .pcpi_valid  (),
-    .pcpi_wait   (),
-    .pcpi_wr     (la_data_in[33]),
-    .pcpi_insn   (),
-    .pcpi_rd     (la_data_in[65:34]),
-    .pcpi_rs1    (),
-    .pcpi_rs2    (),
-    .trace_valid (),
-    .trace_data  (),
-    .eoi         (),
-    .irq         (la_data_in[97:66])
+    .clk(wb_clk_i),
+    .rst_n(wb_rst_i),
+    
+    // CPU Memory Interface (to PicoRV32 SoC)
+    .cpu_mem_en(mem_en),
+    .cpu_mem_we(mem_we),
+    .cpu_mem_addr(mem_addr),
+    .cpu_mem_wdata(mem_wdata),
+    .cpu_mem_rdata(mem_rdata),
+    
+    // External Wishbone Slave Interface (for programming)
+    .wbs_stb_i(wbs_stb_i),
+    .wbs_cyc_i(wbs_cyc_i),
+    .wbs_we_i(wbs_we_i),
+    .wbs_sel_i(wbs_sel_i),
+    .wbs_adr_i(wbs_adr_i),
+    .wbs_dat_i(wbs_dat_i),
+    .wbs_ack_o(wbs_ack_o),
+    .wbs_dat_o(wbs_dat_o)
 );
 
-// DFFRAM
-DFFRAM512x32 DFFRAM (
+// PicoRV32 SoC Wrapper (Pre-hardened Macro)
+picorv32_soc u_soc (
 `ifdef USE_POWER_PINS
-    .VPWR(vccd1),
-    .VGND(vssd1),
+    .vccd1(vccd1),	// User area 1 1.8V power
+    .vssd1(vssd1),	// User area 1 digital ground
 `endif
-    .CLK(wb_clk_i),
-    .WE0(mem_wen),
-    .EN0(mem_ena),
-    .Di0(mem_wdata),
-    .Do0(mem_rdata),
-    .A0(mem_addr)   // 8-bit address if using the default custom DFF RAM
+    .clk(wb_clk_i),
+    .rst_n(wb_rst_i),
+    
+    // External Wishbone Slave Interface (unused - handled by memory macro)
+    .wbs_stb_i(1'b0),
+    .wbs_cyc_i(1'b0),
+    .wbs_we_i(1'b0),
+    .wbs_sel_i(4'h0),
+    .wbs_adr_i(32'h0),
+    .wbs_dat_i(32'h0),
+    .wbs_ack_o(),  // Unused
+    .wbs_dat_o(),  // Unused
+    
+    // Memory Interface (to memory macro)
+    .mem_en(mem_en),
+    .mem_we(mem_we),
+    .mem_addr(mem_addr),
+    .mem_wdata(mem_wdata),
+    .mem_rdata(mem_rdata),
+    
+    // GPIO Interface (for UART connection)
+    .io_out(io_out),
+    .io_in(io_in),
+    .io_oeb(io_oeb),
+    
+    // Interrupts
+    .irq_out(user_irq)
 );
 
 endmodule

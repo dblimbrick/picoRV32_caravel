@@ -20,75 +20,78 @@
     "RUN_IRDROP_REPORT": false,
     "ERROR_ON_SYNTH_CHECKS": false,
 
-    "IGNORE_DISCONNECTED_MODULES": ["u_picorv32"],
+    "IGNORE_DISCONNECTED_MODULES": ["u_soc"],
 
     "//": "Macros configurations",
     "MACROS": {
-        "picorv32": {
+        "picorv32_soc": {
             "gds": [
-                "dir::../../gds/picorv32.gds"
+                "dir::../../gds/picorv32_soc.gds"
             ],
             "lef": [
-                "dir::../../lef/picorv32.lef"
+                "dir::../../lef/picorv32_soc.lef"
             ],
-            "//instances": {
-                "u_picorv32": {
+            "instances": {
+                "u_soc": {
                     "location": [300, 100],
                     "orientation": "N"
                 }
             },
             "nl": [
-                "dir::../../verilog/gl/picorv32.v"
+                "dir::../../verilog/gl/picorv32_soc.v"
             ],
             "spef": {
                 "min_*": [
-                    "dir::../../spef/multicorner/picorv32.min.spef"
+                    "dir::../../spef/multicorner/picorv32_soc.min.spef"
                 ],
                 "nom_*": [
-                    "dir::../../spef/multicorner/picorv32.nom.spef"
+                    "dir::../../spef/multicorner/picorv32_soc.nom.spef"
                 ],
                 "max_*": [
-                    "dir::../../spef/multicorner/picorv32.max.spef"
+                    "dir::../../spef/multicorner/picorv32_soc.max.spef"
                 ]
             },
             "lib": {
-                "*": "dir::../../lib/picorv32.lib"
+                "*": "dir::../../lib/picorv32_soc.lib"
             }
         },
-        "DFFRAM512x32": {
+        "memory_macro": {
             "gds": [
-                "dir::../../ip/DFFRAM512x32/layout/gds/DFFRAM512x32.gds.gz"
+                "dir::../../gds/memory_macro.gds"
             ],
             "lef": [
-                "dir::../../ip/DFFRAM512x32/layout/lef/DFFRAM512x32.lef"
+                "dir::../../lef/memory_macro.lef"
             ],
             "instances": {
-                "DFFRAM": {
+                "u_memory": {
                     "location": [1200, 800],
-                    "orientation": "E"
+                    "orientation": "N"
                 }
             },
             "nl": [
-                "dir::../../ip/DFFRAM512x32/hdl/gl/DFFRAM512x32.v"
+                "dir::../../verilog/gl/memory_macro.v"
             ],
             "spef": {
                 "min_*": [
-                    "dir::../../ip/DFFRAM512x32/timing/spef/DFFRAM512x32.min.spef"
+                    "dir::../../spef/multicorner/memory_macro.min.spef"
                 ],
                 "nom_*": [
-                    "dir::../../ip/DFFRAM512x32/timing/spef/DFFRAM512x32.nom.spef"
+                    "dir::../../spef/multicorner/memory_macro.nom.spef"
                 ],
                 "max_*": [
-                    "dir::../../ip/DFFRAM512x32/timing/spef/DFFRAM512x32.max.spef"
+                    "dir::../../spef/multicorner/memory_macro.max.spef"
                 ]
             },
             "lib": {
-                "*": "dir::../../ip/DFFRAM512x32/timing/lib/nom/DFFRAM512x32.Typical.lib"
+                "*": "dir::../../lib/memory_macro.lib"
             }
         }
     },
     "ERROR_ON_DISCONNECTED_PINS": false,
-    "PDN_MACRO_CONNECTIONS": ["u_picorv32 vccd1 vssd1 vccd1 vssd1", "DFFRAM vccd1 vssd1 VPWR VGND"],
+    "PDN_MACRO_CONNECTIONS": [
+        "u_soc vccd1 vssd1 vccd1 vssd1", 
+        "u_memory vccd1 vssd1 vccd1 vssd1"
+    ],
 
     "//": "PDN configurations",
     "FP_PDN_VOFFSET": 5,

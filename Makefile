@@ -104,7 +104,7 @@ simenv:
 # Install cocotb docker
 .PHONY: simenv-cocotb
 simenv-cocotb:
-	docker pull chipfoundry/dv:cocotb
+	docker pull chipfoundry/dv:cocotb-mac
 
 .PHONY: setup
 setup: check_dependencies install check-env install_mcw openlane pdk-with-ciel setup-timing-scripts setup-cocotb precheck
