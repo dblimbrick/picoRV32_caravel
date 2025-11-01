@@ -24,7 +24,7 @@ This repository contains a complete System-on-Chip (SoC) implementation using th
 ### Key Features
 
 - **RISC-V RV32I Processor**: PicoRV32 core with Wishbone interface
-- **Memory Subsystem**: 2KB DFFRAM512x32 memory with arbitration logic
+- **Memory Subsystem**: 2KB DFFRAM512x32 memory with arbitration logic (DFFRAM512x32 placed at top level)
 - **UART Interface**: CF_UART with FIFO support, 16-byte TX/RX FIFOs, and interrupt capabilities
 - **Memory Programming**: External Wishbone slave interface for memory programming via Caravel management core
 - **GPIO Interface**: UART connected to GPIO pins 20 (TX) and 21 (RX)
@@ -58,13 +58,15 @@ The system architecture follows the NCAT PicoRV32 SoC template, consisting of:
 │           └────────────────────┼────────────────────┘      │
 │                                │                           │
 │  ┌─────────────────────────────▼─────────────────────────┐  │
-│  │              Memory Macro with Arbitration             │  │
-│  │  ┌─────────────────┐  ┌─────────────────────────────┐ │  │
-│  │  │ DFFRAM512x32    │  │ Memory Arbitration Logic      │ │  │
-│  │  │ Memory          │  │ (CPU Priority + External)    │ │  │
-│  │  │ (512 words ×    │  │                             │ │  │
-│  │  │ 32 bits = 2KB)  │  │                             │ │  │
-│  │  └─────────────────┘  └─────────────────────────────┘ │  │
+│  │              Memory Arbitration Logic                  │  │
+│  │              (CPU Priority + External Access)           │  │
+│  └─────────────────────────────────────────────────────┘  │
+│           │                    │                    │      │
+│           └────────────────────┼────────────────────┘      │
+│                                │                           │
+│  ┌─────────────────────────────▼─────────────────────────┐  │
+│  │              DFFRAM512x32 Memory Block                │  │
+│  │              (512 words × 32 bits = 2KB)               │  │
 │  └─────────────────────────────────────────────────────┘  │
 │                                │                           │
 │  ┌─────────────────────────────▼─────────────────────────┐  │
@@ -125,7 +127,7 @@ The system architecture follows the NCAT PicoRV32 SoC template, consisting of:
    This project uses a macro-first hardening strategy. Harden the macros in order:
 
      ```bash
-     # Harden the memory macro (includes DFFRAM512x32)
+     # Harden the memory arbitration logic (standard cell logic only)
      make memory_macro
      
      # Harden the PicoRV32 SoC
@@ -136,13 +138,16 @@ The system architecture follows the NCAT PicoRV32 SoC template, consisting of:
 
 4. Integrate modules into the user_project_wrapper:
 
-   The user_project_wrapper configuration already includes references to both hardened macros. Harden the wrapper:
+   The user_project_wrapper configuration includes references to both hardened macros plus DFFRAM512x32 (placed as a hard macro). Harden the wrapper:
 
      ```bash
      make user_project_wrapper
      ```
 
-   This will integrate both the `memory_macro` and `picorv32_soc` hardened macros into the top-level wrapper.
+   This will integrate:
+   - `memory_macro` (hardened macro with arbitration logic)
+   - `picorv32_soc` (hardened macro)
+   - `DFFRAM512x32` (hard macro, placed at top level due to met4 power straps)
 
 5. Run cocotb simulation on your design:
 
@@ -285,33 +290,36 @@ For more details, refer to the [Knowledgebase article](https://info.efabless.com
 
 For this project, we chose the first option: harden the user macros first, then insert them into the user project wrapper without standard cells at the top level.
 
-The design consists of two macros that must be hardened in order:
+The design consists of two macros that must be hardened in order, plus DFFRAM512x32 which is placed at the top level:
 
-1. **memory_macro**: Contains DFFRAM512x32 memory and memory arbitration logic
+1. **memory_macro**: Contains memory arbitration logic (standard cell logic only, no DFFRAM512x32)
 2. **picorv32_soc**: Contains PicoRV32 processor core, Wishbone interconnect, and peripherals
+3. **DFFRAM512x32**: Hard macro placed at top level in user_project_wrapper (not hardened separately)
+
+**Note**: DFFRAM512x32 is placed at the top level rather than inside memory_macro because it uses met4 power straps which conflict with hardening memory_macro as a macro. This architecture avoids PDN generation issues.
 
 To reproduce this process, run:
 
 ```bash
 # DO NOT cd into openlane
 
-# Step 1: Harden the memory macro (includes DFFRAM512x32)
+# Step 1: Harden the memory arbitration logic (standard cell logic only)
 make memory_macro
 
 # Step 2: Harden the PicoRV32 SoC
 make picorv32_soc
 
-# Step 3: Harden the user_project_wrapper (integrates both macros)
+# Step 3: Harden the user_project_wrapper (integrates both macros + DFFRAM512x32)
 make user_project_wrapper
 ```
 
 ### Architecture Details
 
-#### Memory Macro (`memory_macro`)
+#### Memory Arbitration Logic (`memory_macro`)
 
-The memory macro provides a complete memory subsystem:
-- **DFFRAM512x32**: 512 words × 32 bits = 2KB of instruction/data memory
-- **Memory Arbitration**: Handles access between CPU and external Wishbone slave
+The memory macro provides memory arbitration logic between CPU and external Wishbone slave:
+- **Memory Arbitration**: Handles CPU priority access and external Wishbone slave access
+- **DFFRAM512x32**: Not included in memory_macro; instantiated at top level due to met4 power strap conflicts
 - **CPU Priority**: PicoRV32 CPU has priority access to memory
 - **External Access**: Caravel management core can program memory when CPU is idle
 

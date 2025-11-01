@@ -7,18 +7,21 @@
 This repository contains a complete System-on-Chip (SoC) implementation using the PicoRV32 RISC-V processor core integrated within the Caravel user project wrapper. The design includes:
 
 - **PicoRV32 Core**: RISC-V RV32I instruction set architecture (ISA) processor
-- **Memory Macro**: DFFRAM512x32 (512 words × 32 bits = 2KB) with arbitration logic
+- **Memory Subsystem**: DFFRAM512x32 (512 words × 32 bits = 2KB) with arbitration logic
+  - DFFRAM512x32 placed at top level (hard macro) due to met4 power strap requirements
+  - Memory arbitration logic hardened as separate macro
 - **CF_UART**: Full-featured UART interface with FIFO support and interrupts
 - **Wishbone Interconnect**: Standard Wishbone bus for peripheral access
 - **GPIO Interface**: UART connected to GPIO pins 20 (TX) and 21 (RX)
 
 ## Architecture
 
-The system architecture consists of three main hardened macros integrated in the user project wrapper:
+The system architecture consists of three main components integrated in the user project wrapper:
 
-1. **Memory Macro** (`memory_macro`): Contains DFFRAM512x32 memory and memory arbitration logic for CPU and external Wishbone slave access
-2. **PicoRV32 SoC** (`picorv32_soc`): Contains PicoRV32 processor core, Wishbone interconnect, and peripheral interfaces (UART, GPIO)
-3. **User Project Wrapper**: Integrates both macros and provides Caravel-compatible interface
+1. **Memory Arbitration Logic** (`memory_macro`): Hardened macro containing memory arbitration logic for CPU and external Wishbone slave access (DFFRAM512x32 not included)
+2. **PicoRV32 SoC** (`picorv32_soc`): Hardened macro containing PicoRV32 processor core, Wishbone interconnect, and peripheral interfaces (UART, GPIO)
+3. **DFFRAM512x32**: Hard macro placed at top level (not hardened separately) due to met4 power strap requirements
+4. **User Project Wrapper**: Integrates all three components and provides Caravel-compatible interface
 
 ### Memory Map
 
@@ -49,15 +52,17 @@ make setup
 The design uses a macro-first hardening strategy (Option 1):
 
 ```bash
-# Harden the memory macro (includes DFFRAM512x32)
+# Harden the memory arbitration logic (standard cell logic only)
 make memory_macro
 
 # Harden the PicoRV32 SoC
 make picorv32_soc
 
-# Harden the user project wrapper (integrates both macros)
+# Harden the user project wrapper (integrates both macros + DFFRAM512x32)
 make user_project_wrapper
 ```
+
+**Note**: DFFRAM512x32 is placed at the top level in `user_project_wrapper` rather than inside `memory_macro` because it uses met4 power straps which conflict with hardening `memory_macro` as a macro. This architecture avoids PDN generation issues during macro hardening.
 
 ### Running Simulations
 
@@ -87,9 +92,9 @@ For detailed documentation, see:
 
 ```
 ├── verilog/rtl/          # RTL source files
-│   ├── memory_macro.v    # Memory macro with DFFRAM and arbitration
+│   ├── memory_macro.v    # Memory arbitration logic (DFFRAM512x32 instantiated at top level)
 │   ├── picorv32_soc.v    # PicoRV32 SoC wrapper
-│   └── user_project_wrapper.v  # Top-level wrapper
+│   └── user_project_wrapper.v  # Top-level wrapper (includes DFFRAM512x32)
 ├── openlane/             # OpenLane configurations
 │   ├── memory_macro/     # Memory macro hardening config
 │   ├── picorv32_soc/     # SoC hardening config

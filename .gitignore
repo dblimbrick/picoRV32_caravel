@@ -14,3 +14,6 @@
 /logs
 /.venv
 .DS_Store
+
+# OpenLane/LibreLane run files
+openlane/*/runs/

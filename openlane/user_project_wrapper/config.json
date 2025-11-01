@@ -4,6 +4,15 @@
         "dir::../../verilog/rtl/defines.v",
         "dir::../../verilog/rtl/user_project_wrapper.v"
     ],
+    "VERILOG_FILES_BLACKBOX": [
+        "dir::../../ip/DFFRAM512x32/hdl/gl/DFFRAM512x32.v"
+    ],
+    "EXTRA_LEFS": [
+        "dir::../../ip/DFFRAM512x32/layout/lef/DFFRAM512x32.lef"
+    ],
+    "EXTRA_GDS_FILES": [
+        "dir::../../ip/DFFRAM512x32/layout/gds/DFFRAM512x32.gds.gz"
+    ],
     "PNR_SDC_FILE": "dir::signoff.sdc",
     
     "//": "Hardening strategy variables (this is for 1-Macro-First Hardening). Visit https://docs.google.com/document/d/1pf-wbpgjeNEM-1TcvX2OJTkHjqH_C9p-LURCASS0Zo8 for more info",
@@ -20,7 +29,7 @@
     "RUN_IRDROP_REPORT": false,
     "ERROR_ON_SYNTH_CHECKS": false,
 
-    "IGNORE_DISCONNECTED_MODULES": ["u_soc"],
+    "IGNORE_DISCONNECTED_MODULES": ["u_soc", "u_memory_arb"],
 
     "//": "Macros configurations",
     "MACROS": {
@@ -63,7 +72,7 @@
                 "dir::../../lef/memory_macro.lef"
             ],
             "instances": {
-                "u_memory": {
+                "u_memory_arb": {
                     "location": [1200, 800],
                     "orientation": "N"
                 }
@@ -85,12 +94,44 @@
             "lib": {
                 "*": "dir::../../lib/memory_macro.lib"
             }
+        },
+        "DFFRAM512x32": {
+            "gds": [
+                "dir::../../ip/DFFRAM512x32/layout/gds/DFFRAM512x32.gds.gz"
+            ],
+            "lef": [
+                "dir::../../ip/DFFRAM512x32/layout/lef/DFFRAM512x32.lef"
+            ],
+            "instances": {
+                "u_dffram": {
+                    "location": [1500, 800],
+                    "orientation": "N"
+                }
+            },
+            "nl": [
+                "dir::../../ip/DFFRAM512x32/hdl/gl/DFFRAM512x32.v"
+            ],
+            "spef": {
+                "min_*": [
+                    "dir::../../ip/DFFRAM512x32/timing/spef/DFFRAM512x32.min.spef"
+                ],
+                "nom_*": [
+                    "dir::../../ip/DFFRAM512x32/timing/spef/DFFRAM512x32.nom.spef"
+                ],
+                "max_*": [
+                    "dir::../../ip/DFFRAM512x32/timing/spef/DFFRAM512x32.max.spef"
+                ]
+            },
+            "lib": {
+                "*": "dir::../../ip/DFFRAM512x32/timing/lib/nom/DFFRAM512x32.Typical.lib"
+            }
         }
     },
     "ERROR_ON_DISCONNECTED_PINS": false,
     "PDN_MACRO_CONNECTIONS": [
         "u_soc vccd1 vssd1 vccd1 vssd1", 
-        "u_memory vccd1 vssd1 vccd1 vssd1"
+        "u_memory_arb vccd1 vssd1 vccd1 vssd1",
+        "u_dffram vccd1 vssd1 VPWR VGND"
     ],
 
     "//": "PDN configurations",

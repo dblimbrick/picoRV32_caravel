@@ -78,26 +78,29 @@ module user_project_wrapper #(
     output [2:0] user_irq
 );
 
-    // Memory Interface Signals
+    // Memory Interface Signals (from PicoRV32 SoC)
     wire mem_en;
     wire [3:0] mem_we;
     wire [8:0] mem_addr;
     wire [31:0] mem_wdata;
     wire [31:0] mem_rdata;
     
+    // Memory Interface Signals (to DFFRAM512x32)
+    wire dffram_en;
+    wire [3:0] dffram_we;
+    wire [8:0] dffram_addr;
+    wire [31:0] dffram_wdata;
+    wire [31:0] dffram_rdata;
+    
     // UART Interface - pass GPIO signals directly to SoC macro
     // SoC macro will handle GPIO connections internally
 
-// Memory Macro with Arbitration (Pre-hardened Macro)
-memory_macro u_memory (
-`ifdef USE_POWER_PINS
-    .vccd1(vccd1),	// User area 1 1.8V power
-    .vssd1(vssd1),	// User area 1 digital ground
-`endif
+// Memory Arbitration Logic (Pre-hardened Macro)
+memory_macro u_memory_arb (
     .clk(wb_clk_i),
     .rst_n(wb_rst_i),
     
-    // CPU Memory Interface (to PicoRV32 SoC)
+    // CPU Memory Interface (from PicoRV32 SoC)
     .cpu_mem_en(mem_en),
     .cpu_mem_we(mem_we),
     .cpu_mem_addr(mem_addr),
@@ -112,7 +115,28 @@ memory_macro u_memory (
     .wbs_adr_i(wbs_adr_i),
     .wbs_dat_i(wbs_dat_i),
     .wbs_ack_o(wbs_ack_o),
-    .wbs_dat_o(wbs_dat_o)
+    .wbs_dat_o(wbs_dat_o),
+    
+    // Memory Interface (to DFFRAM512x32)
+    .mem_en(dffram_en),
+    .mem_we(dffram_we),
+    .mem_addr(dffram_addr),
+    .mem_wdata(dffram_wdata),
+    .mem_rdata(dffram_rdata)
+);
+
+// DFFRAM512x32 Memory Instance (Hard Macro - placed at top level)
+DFFRAM512x32 u_dffram (
+`ifdef USE_POWER_PINS
+    .VPWR(vccd1),	// User area 1 1.8V power
+    .VGND(vssd1),	// User area 1 digital ground
+`endif
+    .CLK(wb_clk_i),
+    .EN0(dffram_en),
+    .WE0(dffram_we),
+    .Di0(dffram_wdata),
+    .Do0(dffram_rdata),
+    .A0(dffram_addr)
 );
 
 // PicoRV32 SoC Wrapper (Pre-hardened Macro)

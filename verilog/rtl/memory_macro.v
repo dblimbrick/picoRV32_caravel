@@ -16,23 +16,20 @@
 `default_nettype none
 
 /*
- * Memory Macro with Arbitration
+ * Memory Arbitration Logic
  * 
- * This module provides a complete memory subsystem with:
- * - DFFRAM512x32 memory block (512 words × 32 bits = 2KB)
+ * This module provides memory arbitration between CPU and external Wishbone slave:
  * - Memory arbitration between CPU and external Wishbone slave
  * - CPU has priority access to memory
  * - External Wishbone slave can program memory when CPU is idle
+ * 
+ * Note: DFFRAM512x32 is instantiated at the top level (user_project_wrapper)
+ * to avoid met4 power strap conflicts during hardening.
  */
 
 module memory_macro #(
     parameter MEM_SIZE = 512  // 512 words × 32 bits = 2KB
 ) (
-`ifdef USE_POWER_PINS
-    inout vccd1,        // User area 1 1.8V supply
-    inout vssd1,        // User area 1 digital ground
-`endif
-
     // System signals
     input wire clk,
     input wire rst_n,
@@ -52,7 +49,14 @@ module memory_macro #(
     input wire [31:0] wbs_adr_i,
     input wire [31:0] wbs_dat_i,
     output reg wbs_ack_o,
-    output reg [31:0] wbs_dat_o
+    output reg [31:0] wbs_dat_o,
+    
+    // Memory Interface (to external DFFRAM512x32)
+    output wire mem_en,
+    output wire [3:0] mem_we,
+    output wire [8:0] mem_addr,
+    output wire [31:0] mem_wdata,
+    input wire [31:0] mem_rdata
 );
 
     // Memory address mapping (RISC-V standard)
@@ -74,26 +78,11 @@ module memory_macro #(
     wire [31:0] ext_mem_wdata = wbs_dat_i;
     wire [3:0] ext_mem_we = wbs_we_i ? wbs_sel_i : 4'h0;
     
-    // Memory interface signals (connected to DFFRAM)
-    wire mem_en = cpu_access || ext_access;
-    wire [3:0] mem_we = cpu_access ? cpu_mem_we : ext_mem_we;
-    wire [8:0] mem_addr = cpu_access ? cpu_mem_addr : ext_mem_addr;
-    wire [31:0] mem_wdata = cpu_access ? cpu_mem_wdata : ext_mem_wdata;
-    wire [31:0] mem_rdata;
-    
-    // DFFRAM512x32 Memory Instance
-    DFFRAM512x32 u_memory (
-    `ifdef USE_POWER_PINS
-        .VPWR(vccd1),
-        .VGND(vssd1),
-    `endif
-        .CLK(clk),
-        .EN0(mem_en),
-        .WE0(mem_we),
-        .Di0(mem_wdata),
-        .Do0(mem_rdata),
-        .A0(mem_addr)
-    );
+    // Memory interface signals (to external DFFRAM)
+    assign mem_en = cpu_access || ext_access;
+    assign mem_we = cpu_access ? cpu_mem_we : ext_mem_we;
+    assign mem_addr = cpu_access ? cpu_mem_addr : ext_mem_addr;
+    assign mem_wdata = cpu_access ? cpu_mem_wdata : ext_mem_wdata;
     
     // CPU memory read data
     assign cpu_mem_rdata = mem_rdata;

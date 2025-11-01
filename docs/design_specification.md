@@ -52,13 +52,16 @@ The system consists of a complete SoC integrated within the Caravel user project
 │           └────────────────────┼────────────────────┘      │
 │                                │                           │
 │  ┌─────────────────────────────▼─────────────────────────┐  │
-│  │              Memory Macro with Arbitration             │  │
-│  │  ┌─────────────────┐  ┌─────────────────────────────┐ │  │
-│  │  │ DFFRAM512x32    │  │ Memory Arbitration Logic      │ │  │
-│  │  │ Memory          │  │ (CPU Priority + External)    │ │  │
-│  │  │ (512 words ×    │  │                             │ │  │
-│  │  │ 32 bits = 2KB)  │  │                             │ │  │
-│  │  └─────────────────┘  └─────────────────────────────┘ │  │
+│  │              Memory Arbitration Logic                  │  │
+│  │              (CPU Priority + External Access)           │  │
+│  └─────────────────────────────────────────────────────┘  │
+│           │                    │                    │      │
+│           └────────────────────┼────────────────────┘      │
+│                                │                           │
+│  ┌─────────────────────────────▼─────────────────────────┐  │
+│  │              DFFRAM512x32 Memory Block                │  │
+│  │              (512 words × 32 bits = 2KB)               │  │
+│  │              (Placed at top level - hard macro)        │  │
 │  └─────────────────────────────────────────────────────┘  │
 │                                │                           │
 │  ┌─────────────────────────────▼─────────────────────────┐  │
@@ -71,13 +74,13 @@ The system consists of a complete SoC integrated within the Caravel user project
 ### Component Relationships
 - **PicoRV32 SoC Wrapper**: System integration layer with Wishbone interconnect
 - **PicoRV32 Core**: Main processor with Wishbone master interface
-- **Memory Macro**: Complete memory subsystem with DFFRAM512x32 and arbitration logic
-- **DFFRAM512x32**: Primary memory (512 words × 32 bits = 2KB) within memory macro
-- **Memory Arbitration**: Handles CPU priority access and external Wishbone slave access
+- **Memory Arbitration Logic**: Handles CPU priority access and external Wishbone slave access (implemented in `memory_macro.v`)
+- **DFFRAM512x32**: Primary memory (512 words × 32 bits = 2KB) instantiated at top level to avoid met4 power strap conflicts
 - **CF_UART**: Full-featured UART with FIFO and interrupt support, connected via Wishbone
 - **User Project Wrapper**: Caravel-compatible interface providing:
-  - Memory macro with integrated arbitration
-  - PicoRV32 SoC wrapper
+  - Memory arbitration logic (memory_macro - hardened macro)
+  - DFFRAM512x32 memory block (hard macro, placed at top level)
+  - PicoRV32 SoC wrapper (hardened macro)
   - External Wishbone slave interface for memory programming
   - Logic analyzer signals for debugging
   - GPIO pins for I/O operations
@@ -144,15 +147,15 @@ The PicoRV32 core is configured with the following parameters:
 - **Trap**: Unconnected (for future use)
 - **Interrupt**: Connected to logic analyzer signals
 
-## Memory Macro with Arbitration
+## Memory Arbitration Logic
 
-The memory macro (`memory_macro.v`) provides a complete memory subsystem that includes:
+The memory arbitration logic (`memory_macro.v`) provides arbitration between the CPU and external Wishbone slave interface. Note that DFFRAM512x32 is instantiated separately at the top level (`user_project_wrapper.v`) to avoid met4 power strap conflicts during hardening.
 
 ### Architecture
-- **DFFRAM512x32 Memory**: 512 words × 32 bits = 2KB of instruction/data memory
 - **Memory Arbitration**: Handles access between CPU and external Wishbone slave
 - **CPU Priority**: PicoRV32 CPU has priority access to memory
 - **External Access**: Caravel management core can program memory when CPU is idle
+- **DFFRAM512x32**: Instantiated at top level (not inside memory_macro) due to met4 power straps
 
 ### Interface Signals
 | Signal | Direction | Width | Description |
@@ -172,12 +175,24 @@ The memory macro (`memory_macro.v`) provides a complete memory subsystem that in
 | wbs_dat_i | Input | 32 | Wishbone slave write data |
 | wbs_ack_o | Output | 1 | Wishbone slave acknowledge |
 | wbs_dat_o | Output | 32 | Wishbone slave read data |
+| mem_en | Output | 1 | Memory enable (to DFFRAM512x32) |
+| mem_we | Output | 4 | Memory write enable (to DFFRAM512x32) |
+| mem_addr | Output | 9 | Memory address (to DFFRAM512x32) |
+| mem_wdata | Output | 32 | Memory write data (to DFFRAM512x32) |
+| mem_rdata | Input | 32 | Memory read data (from DFFRAM512x32) |
 
 ### Memory Arbitration Logic
 - **CPU Access**: Direct memory interface from PicoRV32 SoC
 - **External Access**: Wishbone slave interface for memory programming
 - **Priority**: CPU has priority, external access only when CPU is idle
 - **Address Mapping**: Standard RISC-V memory map (0x00000000 - 0x000007FF)
+- **DFFRAM512x32 Connection**: Memory arbitration logic outputs signals to DFFRAM512x32 which is instantiated at the top level
+
+### Design Rationale
+DFFRAM512x32 is instantiated at the top level (`user_project_wrapper.v`) rather than inside `memory_macro.v` because:
+- DFFRAM512x32 uses met4 power straps which conflict with hardening `memory_macro` as a macro
+- By placing DFFRAM512x32 at the top level, it can be properly connected to the chip-level power distribution network
+- The memory arbitration logic in `memory_macro` is hardened separately and connected to DFFRAM512x32 at the top level
 
 ## DFFRAM512x32 Memory Block
 
@@ -352,8 +367,9 @@ The design provides access to Caravel's GPIO pins with UART connectivity:
   - vdda1/vssa1: Analog power (if needed)
 
 ### Macro Placement
-- **PicoRV32 Core**: Located at [300, 100] μm, orientation North
-- **DFFRAM512x32**: Located at [1200, 800] μm, orientation North
+- **PicoRV32 SoC Wrapper**: Located at [300, 100] μm, orientation North (instance: u_soc)
+- **Memory Arbitration Logic**: Located at [1200, 800] μm, orientation North (instance: u_memory_arb)
+- **DFFRAM512x32**: Located at [1500, 800] μm, orientation North (instance: u_dffram)
 
 ### Power Distribution Network (PDN)
 - **Core Ring**: Enabled with 3.1 μm width
