@@ -16,6 +16,10 @@ This repository contains a complete System-on-Chip (SoC) implementation using th
 
 ## Architecture
 
+![NCAT PicoRV32 SoC Architecture](docs/source/_static/ncat_picorv32_soc_template.jpg)
+
+*Figure 1: System Architecture Diagram (NCAT Template)*
+
 The system architecture consists of three main components integrated in the user project wrapper:
 
 1. **Memory Arbitration Logic** (`memory_macro`): Hardened macro containing memory arbitration logic for CPU and external Wishbone slave access (DFFRAM512x32 not included)
