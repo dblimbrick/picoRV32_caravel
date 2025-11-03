@@ -17,3 +17,14 @@
 
 # OpenLane/LibreLane run files
 openlane/*/runs/
+
+# Large generated files (exceed GitHub limits)
+*.gds
+*.gds.gz
+signoff/**/*.sdf
+signoff/**/*.xml
+signoff/**/*.rpt
+signoff/**/*.log
+*.mag
+# Keep small essential files but ignore if regeneratable
+# Uncomment if needed: *.def, *.lef, *.lib, *.spef
