@@ -128,6 +128,13 @@
         }
     },
     "ERROR_ON_DISCONNECTED_PINS": false,
+    "PL_TARGET_DENSITY": 0.3,
+    "PL_ROUTABILITY_DRIVEN": true,
+    "PL_TIME_DRIVEN": false,
+    "PL_SKIP_INITIAL_PLACEMENT": false,
+    "PL_RANDOM_GLB_PLACEMENT": true,
+    "GPL_CELL_PADDING": 4,
+    "DPL_CELL_PADDING": 4,
     "PDN_MACRO_CONNECTIONS": [
         "u_soc vccd1 vssd1 vccd1 vssd1", 
         "u_memory_arb vccd1 vssd1 vccd1 vssd1",
