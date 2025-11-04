@@ -28,8 +28,9 @@
     "RUN_CTS": false,
     "RUN_IRDROP_REPORT": false,
     "ERROR_ON_SYNTH_CHECKS": false,
+    "RUN_KLAYOUT_STREAMOUT": false,
 
-    "IGNORE_DISCONNECTED_MODULES": ["u_soc", "u_memory_arb"],
+    "//IGNORE_DISCONNECTED_MODULES": ["u_soc", "u_memory_arb"],
 
     "//": "Macros configurations",
     "MACROS": {
@@ -42,7 +43,7 @@
             ],
             "instances": {
                 "u_soc": {
-                    "location": [300, 100],
+                    "location": [260, 350],
                     "orientation": "N"
                 }
             },
@@ -73,7 +74,7 @@
             ],
             "instances": {
                 "u_memory_arb": {
-                    "location": [1200, 800],
+                    "location": [60, 15],
                     "orientation": "N"
                 }
             },
@@ -104,7 +105,7 @@
             ],
             "instances": {
                 "u_dffram": {
-                    "location": [1500, 800],
+                    "location": [1100, 350],
                     "orientation": "N"
                 }
             },
@@ -148,9 +149,9 @@
     "//": "Magic variables",
     "MAGIC_DRC_USE_GDS": true,
 
-    "DRT_THREADS": 1,
-    "MAX_TRANSITION_CONSTRAINT": 1.5,
-    "MAX_FANOUT_CONSTRAINT": 35,
+    "//DRT_THREADS": 8,
+    "//MAX_TRANSITION_CONSTRAINT": 1.5,
+    "//MAX_FANOUT_CONSTRAINT": 35,
     
     "//": "Fixed configurations for caravel. You should NOT edit this section",
     "DESIGN_NAME": "user_project_wrapper",

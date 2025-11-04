@@ -149,14 +149,14 @@ picorv32_soc u_soc (
     .rst_n(wb_rst_i),
     
     // External Wishbone Slave Interface (unused - handled by memory macro)
-    .wbs_stb_i(1'b0),
-    .wbs_cyc_i(1'b0),
-    .wbs_we_i(1'b0),
-    .wbs_sel_i(4'h0),
-    .wbs_adr_i(32'h0),
-    .wbs_dat_i(32'h0),
-    .wbs_ack_o(),  // Unused
-    .wbs_dat_o(),  // Unused
+    // .wbs_stb_i(1'b0),
+    // .wbs_cyc_i(1'b0),
+    // .wbs_we_i(1'b0),
+    // .wbs_sel_i(4'h0),
+    // .wbs_adr_i(32'h0),
+    // .wbs_dat_i(32'h0),
+    // .wbs_ack_o(),  // Unused
+    // .wbs_dat_o(),  // Unused
     
     // Memory Interface (to memory macro)
     .mem_en(mem_en),

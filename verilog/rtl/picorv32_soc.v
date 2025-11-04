@@ -40,14 +40,14 @@ module picorv32_soc #(
     input wire rst_n,
     
     // Wishbone Slave Interface (for programming)
-    input wire wbs_stb_i,
-    input wire wbs_cyc_i,
-    input wire wbs_we_i,
-    input wire [3:0] wbs_sel_i,
-    input wire [31:0] wbs_adr_i,
-    input wire [31:0] wbs_dat_i,
-    output reg wbs_ack_o,
-    output reg [31:0] wbs_dat_o,
+    // input wire wbs_stb_i,
+    // input wire wbs_cyc_i,
+    // input wire wbs_we_i,
+    // input wire [3:0] wbs_sel_i,
+    // input wire [31:0] wbs_adr_i,
+    // input wire [31:0] wbs_dat_i,
+    // output reg wbs_ack_o,
+    // output reg [31:0] wbs_dat_o,
     
     // Memory Interface (to external memory macro)
     output wire mem_en,
@@ -220,8 +220,8 @@ module picorv32_soc #(
     
     // External Wishbone Slave Interface (for programming memory)
     // This is now handled by the memory macro
-    assign wbs_ack_o = 1'b0;  // Not used in SoC anymore
-    assign wbs_dat_o = 32'h0; // Not used in SoC anymore
+    // assign wbs_ack_o = 1'b0;  // Not used in SoC anymore
+    // assign wbs_dat_o = 32'h0; // Not used in SoC anymore
     
     // Interrupt handling
     assign cpu_irq = {30'h0, uart_irq, 1'b0};  // UART IRQ on bit 1
