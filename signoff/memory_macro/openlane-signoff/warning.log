@@ -16,7 +16,6 @@ Threshold for Threshold-surpassing long wires is not set. The checker will be sk
 'VSRC_LOC_FILES' was not given a value, which may make the results of IR drop analysis inaccurate. If you are not integrating a top-level chip for manufacture, you may ignore this warning, otherwise, see the documentation for 'VSRC_LOC_FILES'.
 Cell 'memory_macro' has (2) input pin(s) without antenna gate information. They might not be connected to a gate.
 Max Slew violations found in the following corners:
-* max_ff_n40C_1v95
 * max_ss_100C_1v60
 * max_tt_025C_1v80
 * min_ss_100C_1v60

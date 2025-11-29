@@ -43,7 +43,7 @@
     "GND_NETS": [
         "vssd1"
     ],
-    "PNR_SDC_FILE": "dir::signoff.sdc",
+    "PNR_SDC_FILE": "dir::pnr.sdc",
     "SIGNOFF_SDC_FILE": "dir::signoff.sdc",
     "MAGIC_DRC_USE_GDS": true,
     "DPL_CELL_PADDING": 4,

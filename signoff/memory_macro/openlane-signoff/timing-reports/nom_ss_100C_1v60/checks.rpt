@@ -4,58 +4,6 @@ report_checks -unconstrained
 ===========================================================================
 ======================= nom_ss_100C_1v60 Corner ===================================
 
-Startpoint: rst_n (input port clocked by clk)
-Endpoint: _152_ (recovery check against rising-edge clock clk)
-Path Group: asynchronous
-Path Type: max
-
-Fanout         Cap        Slew       Delay        Time   Description
----------------------------------------------------------------------------------------------
-                                  0.000000    0.000000   clock clk (rise edge)
-                                  5.570000    5.570000   clock network delay (propagated)
-                                 12.500000   18.070000 ^ input external delay
-     2    0.011466    0.000000    0.000000   18.070000 ^ rst_n (in)
-                                                         rst_n (net)
-                      0.000303    0.000151   18.070150 ^ input79/A (sky130_fd_sc_hd__buf_12)
-     7    0.284777    0.465940    0.267892   18.338043 ^ input79/X (sky130_fd_sc_hd__buf_12)
-                                                         net79 (net)
-                      0.737743    0.296035   18.634077 ^ fanout267/A (sky130_fd_sc_hd__buf_6)
-    33    0.146737    0.460316    0.676753   19.310831 ^ fanout267/X (sky130_fd_sc_hd__buf_6)
-                                                         net267 (net)
-                      0.465413    0.039103   19.349934 ^ _152_/RESET_B (sky130_fd_sc_hd__dfrtp_4)
-                                             19.349934   data arrival time
-
-                                 25.000000   25.000000   clock clk (rise edge)
-                                  4.650000   29.650000   clock source latency
-     2    0.031166    0.610000    0.000000   29.650000 ^ clk (in)
-                                                         clk (net)
-                      0.616654    0.003327   29.653326 ^ wire3/A (sky130_fd_sc_hd__buf_4)
-     3    0.034550    0.170281    0.509083   30.162409 ^ wire3/X (sky130_fd_sc_hd__buf_4)
-                                                         net274 (net)
-                      0.170471    0.005237   30.167645 ^ wire2/A (sky130_fd_sc_hd__buf_6)
-     3    0.077747    0.252190    0.355577   30.523222 ^ wire2/X (sky130_fd_sc_hd__buf_6)
-                                                         net273 (net)
-                      0.254159    0.017920   30.541142 ^ wire1/A (sky130_fd_sc_hd__buf_6)
-     3    0.080173    0.259907    0.395151   30.936293 ^ wire1/X (sky130_fd_sc_hd__buf_6)
-                                                         net272 (net)
-                      0.262026    0.018872   30.955164 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
-     9    0.099322    0.176136    0.398067   31.353231 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
-                                                         clknet_0_clk (net)
-                      0.176750    0.007340   31.360573 ^ clkbuf_2_3__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
-    21    0.072971    0.138824    0.330743   31.691315 ^ clkbuf_2_3__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
-                                                         clknet_2_3__leaf_clk (net)
-                      0.140338    0.011362   31.702677 ^ _152_/CLK (sky130_fd_sc_hd__dfrtp_4)
-                                 -0.250000   31.452677   clock uncertainty
-                                  0.000000   31.452677   clock reconvergence pessimism
-                                  0.282908   31.735586   library recovery time
-                                             31.735586   data required time
----------------------------------------------------------------------------------------------
-                                             31.735586   data required time
-                                            -19.349934   data arrival time
----------------------------------------------------------------------------------------------
-                                             12.385652   slack (MET)
-
-
 Startpoint: wbs_adr_i[17] (input port clocked by clk)
 Endpoint: _146_ (rising edge-triggered flip-flop clocked by clk)
 Path Group: clk
@@ -66,73 +14,73 @@ Fanout         Cap        Slew       Delay        Time   Description
                                   0.000000    0.000000   clock clk (rise edge)
                                   5.570000    5.570000   clock network delay (propagated)
                                   3.890000    9.460000 v input external delay
-     2    0.004128    0.920000    0.000000    9.460000 v wbs_adr_i[17] (in)
+     2    0.004107    0.920000    0.000000    9.460000 v wbs_adr_i[17] (in)
                                                          wbs_adr_i[17] (net)
-                      0.920085    0.000043    9.460043 v hold1/A (sky130_fd_sc_hd__dlygate4sd3_1)
-     1    0.002612    0.104685    1.503085   10.963127 v hold1/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                      0.920085    0.000044    9.460044 v hold1/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     1    0.002651    0.104957    1.541336   11.001380 v hold1/X (sky130_fd_sc_hd__dlygate4sd3_1)
                                                          net275 (net)
-                      0.104685    0.000077   10.963205 v input87/A (sky130_fd_sc_hd__clkbuf_1)
-     1    0.002492    0.047405    0.173304   11.136509 v input87/X (sky130_fd_sc_hd__clkbuf_1)
+                      0.104957    0.000080   11.001460 v input87/A (sky130_fd_sc_hd__clkbuf_1)
+     1    0.002772    0.050178    0.180521   11.181981 v input87/X (sky130_fd_sc_hd__clkbuf_1)
                                                          net87 (net)
-                      0.047405    0.000055   11.136564 v hold2/A (sky130_fd_sc_hd__dlygate4sd3_1)
-     1    0.002923    0.106663    1.115751   12.252316 v hold2/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                      0.050178    0.000068   11.182049 v hold2/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     1    0.002909    0.106539    1.144636   12.326684 v hold2/X (sky130_fd_sc_hd__dlygate4sd3_1)
                                                          net276 (net)
-                      0.106663    0.000070   12.252385 v _044_/A (sky130_fd_sc_hd__or4_1)
-     1    0.003914    0.193508    1.241710   13.494095 v _044_/X (sky130_fd_sc_hd__or4_1)
+                      0.106539    0.000071   12.326756 v _044_/A (sky130_fd_sc_hd__or4_1)
+     1    0.003914    0.193453    1.272707   13.599463 v _044_/X (sky130_fd_sc_hd__or4_1)
                                                          _035_ (net)
-                      0.193508    0.000139   13.494234 v hold3/A (sky130_fd_sc_hd__dlygate4sd3_1)
-     1    0.004643    0.127439    1.212848   14.707081 v hold3/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                      0.193453    0.000142   13.599605 v hold3/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     1    0.004629    0.127352    1.242982   14.842587 v hold3/X (sky130_fd_sc_hd__dlygate4sd3_1)
                                                          net277 (net)
-                      0.127439    0.000132   14.707213 v _048_/A (sky130_fd_sc_hd__nor4_1)
-     1    0.007470    0.657691    0.719345   15.426558 ^ _048_/Y (sky130_fd_sc_hd__nor4_1)
+                      0.127352    0.000136   14.842722 v _048_/A (sky130_fd_sc_hd__nor4_1)
+     1    0.007470    0.657691    0.737297   15.580020 ^ _048_/Y (sky130_fd_sc_hd__nor4_1)
                                                          _039_ (net)
-                      0.657691    0.000371   15.426929 ^ hold4/A (sky130_fd_sc_hd__dlygate4sd3_1)
-     1    0.007394    0.153444    1.297797   16.724728 ^ hold4/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                      0.657691    0.000380   15.580400 ^ hold4/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     1    0.007407    0.153618    1.330401   16.910801 ^ hold4/X (sky130_fd_sc_hd__dlygate4sd3_1)
                                                          net278 (net)
-                      0.153444    0.000357   16.725084 ^ wire262/A (sky130_fd_sc_hd__buf_2)
-     1    0.013024    0.117255    0.268066   16.993151 ^ wire262/X (sky130_fd_sc_hd__buf_2)
+                      0.153618    0.000368   16.911167 ^ wire262/A (sky130_fd_sc_hd__buf_2)
+     1    0.011309    0.104957    0.264992   17.176159 ^ wire262/X (sky130_fd_sc_hd__buf_2)
                                                          net262 (net)
-                      0.117257    0.000748   16.993898 ^ hold5/A (sky130_fd_sc_hd__dlygate4sd3_1)
-     7    0.052567    0.793211    1.599222   18.593121 ^ hold5/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                      0.104959    0.000643   17.176804 ^ hold5/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     7    0.057432    0.863802    1.685470   18.862272 ^ hold5/X (sky130_fd_sc_hd__dlygate4sd3_1)
                                                          net279 (net)
-                      0.793211    0.002171   18.595291 ^ _113_/C (sky130_fd_sc_hd__and3_1)
-     1    0.002416    0.089004    0.497900   19.093191 ^ _113_/X (sky130_fd_sc_hd__and3_1)
+                      0.863802    0.001142   18.863415 ^ _113_/C (sky130_fd_sc_hd__and3_1)
+     1    0.002415    0.089956    0.525269   19.388683 ^ _113_/X (sky130_fd_sc_hd__and3_1)
                                                          _009_ (net)
-                      0.089004    0.000073   19.093264 ^ hold6/A (sky130_fd_sc_hd__dlygate4sd3_1)
-     1    0.002168    0.084775    1.039018   20.132282 ^ hold6/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                      0.089956    0.000073   19.388756 ^ hold6/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     1    0.002195    0.085046    1.065796   20.454552 ^ hold6/X (sky130_fd_sc_hd__dlygate4sd3_1)
                                                          net280 (net)
-                      0.084775    0.000060   20.132343 ^ _146_/D (sky130_fd_sc_hd__dfrtp_2)
-                                             20.132343   data arrival time
+                      0.085046    0.000062   20.454615 ^ _146_/D (sky130_fd_sc_hd__dfrtp_2)
+                                             20.454615   data arrival time
 
                                  25.000000   25.000000   clock clk (rise edge)
                                   4.650000   29.650000   clock source latency
-     2    0.031166    0.610000    0.000000   29.650000 ^ clk (in)
+     2    0.031153    0.610000    0.000000   29.650000 ^ clk (in)
                                                          clk (net)
-                      0.616654    0.003327   29.653326 ^ wire3/A (sky130_fd_sc_hd__buf_4)
-     3    0.034550    0.170281    0.509083   30.162409 ^ wire3/X (sky130_fd_sc_hd__buf_4)
+                      0.616650    0.003242   29.653240 ^ wire3/A (sky130_fd_sc_hd__buf_4)
+     3    0.045449    0.214376    0.527777   30.181017 ^ wire3/X (sky130_fd_sc_hd__buf_4)
                                                          net274 (net)
-                      0.170471    0.005237   30.167645 ^ wire2/A (sky130_fd_sc_hd__buf_6)
-     3    0.077747    0.252190    0.355577   30.523222 ^ wire2/X (sky130_fd_sc_hd__buf_6)
+                      0.214630    0.006601   30.187618 ^ wire2/A (sky130_fd_sc_hd__buf_6)
+     3    0.077803    0.252653    0.366512   30.554131 ^ wire2/X (sky130_fd_sc_hd__buf_6)
                                                          net273 (net)
-                      0.254159    0.017920   30.541142 ^ wire1/A (sky130_fd_sc_hd__buf_6)
-     3    0.080173    0.259907    0.395151   30.936293 ^ wire1/X (sky130_fd_sc_hd__buf_6)
+                      0.254622    0.017486   30.571617 ^ wire1/A (sky130_fd_sc_hd__buf_6)
+     3    0.080158    0.259864    0.385398   30.957016 ^ wire1/X (sky130_fd_sc_hd__buf_6)
                                                          net272 (net)
-                      0.262026    0.018872   30.955164 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
-     9    0.099322    0.176136    0.398067   31.353231 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                      0.261982    0.018400   30.975414 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
+     9    0.099761    0.176755    0.388532   31.363947 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
                                                          clknet_0_clk (net)
-                      0.176750    0.007340   31.360573 ^ clkbuf_2_3__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
-    21    0.072971    0.138824    0.330743   31.691315 ^ clkbuf_2_3__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                      0.177373    0.007191   31.371138 ^ clkbuf_2_3__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
+    21    0.072325    0.137895    0.321499   31.692636 ^ clkbuf_2_3__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
                                                          clknet_2_3__leaf_clk (net)
-                      0.138973    0.003681   31.694996 ^ _146_/CLK (sky130_fd_sc_hd__dfrtp_2)
-                                 -0.250000   31.444996   clock uncertainty
-                                  0.000000   31.444996   clock reconvergence pessimism
-                                 -0.129951   31.315044   library setup time
-                                             31.315044   data required time
+                      0.138046    0.003613   31.696251 ^ _146_/CLK (sky130_fd_sc_hd__dfrtp_2)
+                                 -0.087500   31.608749   clock uncertainty
+                                  0.000000   31.608749   clock reconvergence pessimism
+                                 -0.130183   31.478569   library setup time
+                                             31.478569   data required time
 ---------------------------------------------------------------------------------------------
-                                             31.315044   data required time
-                                            -20.132343   data arrival time
+                                             31.478569   data required time
+                                            -20.454615   data arrival time
 ---------------------------------------------------------------------------------------------
-                                             11.182701   slack (MET)
+                                             11.023953   slack (MET)
 
 
 
@@ -154,56 +102,232 @@ max slew
 
 Pin                                        Limit        Slew       Slack
 ------------------------------------------------------------------------
-_111_/B                                 1.000000    1.760380   -0.760380 (VIOLATED)
-ANTENNA__111__B/DIODE                   1.000000    1.760378   -0.760378 (VIOLATED)
-_112_/B                                 1.000000    1.760352   -0.760352 (VIOLATED)
-ANTENNA__112__B/DIODE                   1.000000    1.760348   -0.760348 (VIOLATED)
-_114_/B                                 1.000000    1.760272   -0.760272 (VIOLATED)
-ANTENNA__114__B/DIODE                   1.000000    1.760267   -0.760267 (VIOLATED)
-ANTENNA__115__B/DIODE                   1.000000    1.760259   -0.760259 (VIOLATED)
-ANTENNA__116__B/DIODE                   1.000000    1.760259   -0.760259 (VIOLATED)
-ANTENNA__117__B/DIODE                   1.000000    1.760259   -0.760259 (VIOLATED)
-ANTENNA__118__B/DIODE                   1.000000    1.760259   -0.760259 (VIOLATED)
-ANTENNA__119__B/DIODE                   1.000000    1.760259   -0.760259 (VIOLATED)
-ANTENNA__120__B/DIODE                   1.000000    1.760259   -0.760259 (VIOLATED)
-ANTENNA__121__B/DIODE                   1.000000    1.760259   -0.760259 (VIOLATED)
-ANTENNA__122__B/DIODE                   1.000000    1.760259   -0.760259 (VIOLATED)
-ANTENNA__123__B/DIODE                   1.000000    1.760259   -0.760259 (VIOLATED)
-ANTENNA__124__B/DIODE                   1.000000    1.760259   -0.760259 (VIOLATED)
-ANTENNA__125__B/DIODE                   1.000000    1.760259   -0.760259 (VIOLATED)
-ANTENNA__126__B/DIODE                   1.000000    1.760259   -0.760259 (VIOLATED)
-ANTENNA__127__B/DIODE                   1.000000    1.760259   -0.760259 (VIOLATED)
-ANTENNA_hold11_X/DIODE                  1.000000    1.760259   -0.760259 (VIOLATED)
-_115_/B                                 1.000000    1.760259   -0.760259 (VIOLATED)
-_116_/B                                 1.000000    1.760259   -0.760259 (VIOLATED)
-_117_/B                                 1.000000    1.760259   -0.760259 (VIOLATED)
-_118_/B                                 1.000000    1.760259   -0.760259 (VIOLATED)
-_119_/B                                 1.000000    1.760259   -0.760259 (VIOLATED)
-_120_/B                                 1.000000    1.760259   -0.760259 (VIOLATED)
-_121_/B                                 1.000000    1.760259   -0.760259 (VIOLATED)
-_122_/B                                 1.000000    1.760259   -0.760259 (VIOLATED)
-_123_/B                                 1.000000    1.760259   -0.760259 (VIOLATED)
-_124_/B                                 1.000000    1.760259   -0.760259 (VIOLATED)
-_125_/B                                 1.000000    1.760259   -0.760259 (VIOLATED)
-_126_/B                                 1.000000    1.760259   -0.760259 (VIOLATED)
-_127_/B                                 1.000000    1.760259   -0.760259 (VIOLATED)
-hold11/X                                1.000000    1.760259   -0.760259 (VIOLATED)
-_093_/S                                 1.000000    1.106922   -0.106922 (VIOLATED)
-ANTENNA__093__S/DIODE                   1.000000    1.106875   -0.106875 (VIOLATED)
-_091_/S                                 1.000000    1.106690   -0.106690 (VIOLATED)
-ANTENNA__091__S/DIODE                   1.000000    1.106653   -0.106653 (VIOLATED)
-_092_/S                                 1.000000    1.106321   -0.106321 (VIOLATED)
-ANTENNA__092__S/DIODE                   1.000000    1.105875   -0.105875 (VIOLATED)
-_094_/S                                 1.000000    1.104710   -0.104710 (VIOLATED)
-ANTENNA__094__S/DIODE                   1.000000    1.104047   -0.104047 (VIOLATED)
-fanout271/A                             1.000000    1.021215   -0.021215 (VIOLATED)
-ANTENNA_fanout271_A/DIODE               1.000000    1.020961   -0.020961 (VIOLATED)
+_111_/B                                 1.000000    1.793028   -0.793028 (VIOLATED)
+ANTENNA__111__B/DIODE                   1.000000    1.793027   -0.793027 (VIOLATED)
+_112_/B                                 1.000000    1.792994   -0.792994 (VIOLATED)
+ANTENNA__112__B/DIODE                   1.000000    1.792987   -0.792987 (VIOLATED)
+ANTENNA__114__B/DIODE                   1.000000    1.792291   -0.792291 (VIOLATED)
+_114_/B                                 1.000000    1.792291   -0.792291 (VIOLATED)
+ANTENNA__115__B/DIODE                   1.000000    1.792268   -0.792268 (VIOLATED)
+_115_/B                                 1.000000    1.792265   -0.792265 (VIOLATED)
+ANTENNA__116__B/DIODE                   1.000000    1.792263   -0.792263 (VIOLATED)
+ANTENNA__117__B/DIODE                   1.000000    1.792263   -0.792263 (VIOLATED)
+ANTENNA__118__B/DIODE                   1.000000    1.792263   -0.792263 (VIOLATED)
+ANTENNA__119__B/DIODE                   1.000000    1.792263   -0.792263 (VIOLATED)
+ANTENNA__120__B/DIODE                   1.000000    1.792263   -0.792263 (VIOLATED)
+ANTENNA__121__B/DIODE                   1.000000    1.792263   -0.792263 (VIOLATED)
+ANTENNA__122__B/DIODE                   1.000000    1.792263   -0.792263 (VIOLATED)
+ANTENNA__123__B/DIODE                   1.000000    1.792263   -0.792263 (VIOLATED)
+ANTENNA__124__B/DIODE                   1.000000    1.792263   -0.792263 (VIOLATED)
+ANTENNA__125__B/DIODE                   1.000000    1.792263   -0.792263 (VIOLATED)
+ANTENNA__126__B/DIODE                   1.000000    1.792263   -0.792263 (VIOLATED)
+ANTENNA__127__B/DIODE                   1.000000    1.792263   -0.792263 (VIOLATED)
+ANTENNA_hold154_X/DIODE                 1.000000    1.792263   -0.792263 (VIOLATED)
+_116_/B                                 1.000000    1.792263   -0.792263 (VIOLATED)
+_117_/B                                 1.000000    1.792263   -0.792263 (VIOLATED)
+_118_/B                                 1.000000    1.792263   -0.792263 (VIOLATED)
+_119_/B                                 1.000000    1.792263   -0.792263 (VIOLATED)
+_120_/B                                 1.000000    1.792263   -0.792263 (VIOLATED)
+_121_/B                                 1.000000    1.792263   -0.792263 (VIOLATED)
+_122_/B                                 1.000000    1.792263   -0.792263 (VIOLATED)
+_123_/B                                 1.000000    1.792263   -0.792263 (VIOLATED)
+_124_/B                                 1.000000    1.792263   -0.792263 (VIOLATED)
+_125_/B                                 1.000000    1.792263   -0.792263 (VIOLATED)
+_126_/B                                 1.000000    1.792263   -0.792263 (VIOLATED)
+_127_/B                                 1.000000    1.792263   -0.792263 (VIOLATED)
+hold154/X                               1.000000    1.792263   -0.792263 (VIOLATED)
+output221/A                             1.000000    1.769392   -0.769392 (VIOLATED)
+ANTENNA_output221_A/DIODE               1.000000    1.769382   -0.769382 (VIOLATED)
+ANTENNA_hold145_X/DIODE                 1.000000    1.767251   -0.767251 (VIOLATED)
+hold145/X                               1.000000    1.767251   -0.767251 (VIOLATED)
+output213/A                             1.000000    1.716888   -0.716888 (VIOLATED)
+ANTENNA_output213_A/DIODE               1.000000    1.716886   -0.716886 (VIOLATED)
+ANTENNA_hold149_X/DIODE                 1.000000    1.716852   -0.716852 (VIOLATED)
+hold149/X                               1.000000    1.716852   -0.716852 (VIOLATED)
+output187/A                             1.000000    1.672870   -0.672870 (VIOLATED)
+ANTENNA_output187_A/DIODE               1.000000    1.672866   -0.672866 (VIOLATED)
+ANTENNA_hold41_X/DIODE                  1.000000    1.670777   -0.670777 (VIOLATED)
+hold41/X                                1.000000    1.670777   -0.670777 (VIOLATED)
+output202/A                             1.000000    1.643641   -0.643641 (VIOLATED)
+ANTENNA_output202_A/DIODE               1.000000    1.643629   -0.643629 (VIOLATED)
+ANTENNA_hold161_X/DIODE                 1.000000    1.641318   -0.641318 (VIOLATED)
+hold161/X                               1.000000    1.641318   -0.641318 (VIOLATED)
+output223/A                             1.000000    1.609319   -0.609319 (VIOLATED)
+ANTENNA_output223_A/DIODE               1.000000    1.609310   -0.609310 (VIOLATED)
+ANTENNA_hold65_X/DIODE                  1.000000    1.607063   -0.607063 (VIOLATED)
+hold65/X                                1.000000    1.607063   -0.607063 (VIOLATED)
+output188/A                             1.000000    1.515714   -0.515714 (VIOLATED)
+ANTENNA_output188_A/DIODE               1.000000    1.515712   -0.515712 (VIOLATED)
+ANTENNA_hold13_X/DIODE                  1.000000    1.515669   -0.515669 (VIOLATED)
+hold13/X                                1.000000    1.515669   -0.515669 (VIOLATED)
+output184/A                             1.000000    1.479371   -0.479371 (VIOLATED)
+ANTENNA_output184_A/DIODE               1.000000    1.479364   -0.479364 (VIOLATED)
+ANTENNA_hold33_X/DIODE                  1.000000    1.477391   -0.477391 (VIOLATED)
+hold33/X                                1.000000    1.477391   -0.477391 (VIOLATED)
+output189/A                             1.000000    1.476978   -0.476978 (VIOLATED)
+ANTENNA_output189_A/DIODE               1.000000    1.476969   -0.476969 (VIOLATED)
+ANTENNA_hold17_X/DIODE                  1.000000    1.475806   -0.475806 (VIOLATED)
+hold17/X                                1.000000    1.475806   -0.475806 (VIOLATED)
+output183/A                             1.000000    1.472821   -0.472821 (VIOLATED)
+ANTENNA_output183_A/DIODE               1.000000    1.472817   -0.472817 (VIOLATED)
+ANTENNA_hold21_X/DIODE                  1.000000    1.471022   -0.471022 (VIOLATED)
+hold21/X                                1.000000    1.471022   -0.471022 (VIOLATED)
+output191/A                             1.000000    1.465863   -0.465863 (VIOLATED)
+ANTENNA_output191_A/DIODE               1.000000    1.465854   -0.465854 (VIOLATED)
+ANTENNA_hold137_X/DIODE                 1.000000    1.464496   -0.464496 (VIOLATED)
+hold137/X                               1.000000    1.464496   -0.464496 (VIOLATED)
+_055_/A1                                1.000000    1.460197   -0.460197 (VIOLATED)
+ANTENNA__055__A1/DIODE                  1.000000    1.460192   -0.460192 (VIOLATED)
+ANTENNA_hold8_X/DIODE                   1.000000    1.458819   -0.458819 (VIOLATED)
+hold8/X                                 1.000000    1.458819   -0.458819 (VIOLATED)
+output194/A                             1.000000    1.454779   -0.454779 (VIOLATED)
+ANTENNA_output194_A/DIODE               1.000000    1.454777   -0.454777 (VIOLATED)
+ANTENNA_hold105_X/DIODE                 1.000000    1.454743   -0.454743 (VIOLATED)
+hold105/X                               1.000000    1.454743   -0.454743 (VIOLATED)
+_086_/A1                                1.000000    1.448426   -0.448426 (VIOLATED)
+ANTENNA__086__A1/DIODE                  1.000000    1.448424   -0.448424 (VIOLATED)
+ANTENNA_hold120_X/DIODE                 1.000000    1.446479   -0.446479 (VIOLATED)
+hold120/X                               1.000000    1.446479   -0.446479 (VIOLATED)
+_085_/A1                                1.000000    1.441029   -0.441029 (VIOLATED)
+ANTENNA__085__A1/DIODE                  1.000000    1.441027   -0.441027 (VIOLATED)
+output222/A                             1.000000    1.440414   -0.440414 (VIOLATED)
+ANTENNA_output222_A/DIODE               1.000000    1.440407   -0.440407 (VIOLATED)
+ANTENNA_hold116_X/DIODE                 1.000000    1.439644   -0.439644 (VIOLATED)
+hold116/X                               1.000000    1.439644   -0.439644 (VIOLATED)
+ANTENNA_hold157_X/DIODE                 1.000000    1.438607   -0.438607 (VIOLATED)
+hold157/X                               1.000000    1.438607   -0.438607 (VIOLATED)
+output185/A                             1.000000    1.434779   -0.434779 (VIOLATED)
+ANTENNA_output185_A/DIODE               1.000000    1.434770   -0.434770 (VIOLATED)
+ANTENNA_hold29_X/DIODE                  1.000000    1.432948   -0.432948 (VIOLATED)
+hold29/X                                1.000000    1.432948   -0.432948 (VIOLATED)
+output195/A                             1.000000    1.429456   -0.429456 (VIOLATED)
+ANTENNA_output195_A/DIODE               1.000000    1.429446   -0.429446 (VIOLATED)
+ANTENNA_hold109_X/DIODE                 1.000000    1.428046   -0.428046 (VIOLATED)
+hold109/X                               1.000000    1.428046   -0.428046 (VIOLATED)
+output193/A                             1.000000    1.414985   -0.414985 (VIOLATED)
+ANTENNA_output193_A/DIODE               1.000000    1.414981   -0.414982 (VIOLATED)
+ANTENNA_hold168_X/DIODE                 1.000000    1.413662   -0.413662 (VIOLATED)
+hold168/X                               1.000000    1.413662   -0.413662 (VIOLATED)
+_088_/A1                                1.000000    1.384820   -0.384820 (VIOLATED)
+ANTENNA__088__A1/DIODE                  1.000000    1.384816   -0.384816 (VIOLATED)
+ANTENNA_hold52_X/DIODE                  1.000000    1.384259   -0.384259 (VIOLATED)
+hold52/X                                1.000000    1.384259   -0.384259 (VIOLATED)
+output186/A                             1.000000    1.374450   -0.374450 (VIOLATED)
+ANTENNA_output186_A/DIODE               1.000000    1.374444   -0.374444 (VIOLATED)
+ANTENNA_hold37_X/DIODE                  1.000000    1.373880   -0.373880 (VIOLATED)
+hold37/X                                1.000000    1.373880   -0.373880 (VIOLATED)
+_083_/A1                                1.000000    1.343326   -0.343326 (VIOLATED)
+ANTENNA__083__A1/DIODE                  1.000000    1.343324   -0.343324 (VIOLATED)
+ANTENNA_hold96_X/DIODE                  1.000000    1.342848   -0.342848 (VIOLATED)
+hold96/X                                1.000000    1.342848   -0.342848 (VIOLATED)
+_084_/A1                                1.000000    1.313084   -0.313084 (VIOLATED)
+ANTENNA__084__A1/DIODE                  1.000000    1.313079   -0.313079 (VIOLATED)
+ANTENNA_hold48_X/DIODE                  1.000000    1.311719   -0.311719 (VIOLATED)
+hold48/X                                1.000000    1.311719   -0.311719 (VIOLATED)
+_093_/A1                                1.000000    1.273029   -0.273030 (VIOLATED)
+ANTENNA__093__A1/DIODE                  1.000000    1.273029   -0.273029 (VIOLATED)
+ANTENNA_hold80_X/DIODE                  1.000000    1.272323   -0.272323 (VIOLATED)
+hold80/X                                1.000000    1.272323   -0.272323 (VIOLATED)
+_087_/A1                                1.000000    1.268987   -0.268987 (VIOLATED)
+ANTENNA__087__A1/DIODE                  1.000000    1.268982   -0.268982 (VIOLATED)
+ANTENNA_hold124_X/DIODE                 1.000000    1.267446   -0.267446 (VIOLATED)
+hold124/X                               1.000000    1.267446   -0.267446 (VIOLATED)
+output198/A                             1.000000    1.252871   -0.252871 (VIOLATED)
+ANTENNA_output198_A/DIODE               1.000000    1.252864   -0.252864 (VIOLATED)
+ANTENNA_hold73_X/DIODE                  1.000000    1.252517   -0.252517 (VIOLATED)
+hold73/X                                1.000000    1.252517   -0.252517 (VIOLATED)
+output192/A                             1.000000    1.232852   -0.232852 (VIOLATED)
+ANTENNA_output192_A/DIODE               1.000000    1.232842   -0.232842 (VIOLATED)
+ANTENNA_hold164_X/DIODE                 1.000000    1.232401   -0.232401 (VIOLATED)
+hold164/X                               1.000000    1.232401   -0.232401 (VIOLATED)
+output211/A                             1.000000    1.204835   -0.204835 (VIOLATED)
+ANTENNA_output211_A/DIODE               1.000000    1.204831   -0.204831 (VIOLATED)
+ANTENNA_hold69_X/DIODE                  1.000000    1.204505   -0.204505 (VIOLATED)
+hold69/X                                1.000000    1.204505   -0.204505 (VIOLATED)
+output197/A                             1.000000    1.200077   -0.200077 (VIOLATED)
+ANTENNA_output197_A/DIODE               1.000000    1.200072   -0.200072 (VIOLATED)
+ANTENNA_hold141_X/DIODE                 1.000000    1.199588   -0.199588 (VIOLATED)
+hold141/X                               1.000000    1.199588   -0.199588 (VIOLATED)
+_089_/A1                                1.000000    1.198096   -0.198096 (VIOLATED)
+ANTENNA__089__A1/DIODE                  1.000000    1.198094   -0.198094 (VIOLATED)
+ANTENNA_hold100_X/DIODE                 1.000000    1.196852   -0.196852 (VIOLATED)
+hold100/X                               1.000000    1.196852   -0.196852 (VIOLATED)
+_078_/A1                                1.000000    1.191177   -0.191177 (VIOLATED)
+ANTENNA__078__A1/DIODE                  1.000000    1.191175   -0.191175 (VIOLATED)
+ANTENNA_hold128_X/DIODE                 1.000000    1.190714   -0.190714 (VIOLATED)
+hold128/X                               1.000000    1.190714   -0.190714 (VIOLATED)
+_092_/A1                                1.000000    1.160357   -0.160357 (VIOLATED)
+ANTENNA__092__A1/DIODE                  1.000000    1.160356   -0.160356 (VIOLATED)
+ANTENNA_hold68_X/DIODE                  1.000000    1.159916   -0.159916 (VIOLATED)
+hold68/X                                1.000000    1.159916   -0.159916 (VIOLATED)
+output214/A                             1.000000    1.156227   -0.156227 (VIOLATED)
+ANTENNA_output214_A/DIODE               1.000000    1.156222   -0.156222 (VIOLATED)
+ANTENNA_hold113_X/DIODE                 1.000000    1.155898   -0.155898 (VIOLATED)
+hold113/X                               1.000000    1.155898   -0.155898 (VIOLATED)
+_090_/A1                                1.000000    1.151812   -0.151812 (VIOLATED)
+ANTENNA__090__A1/DIODE                  1.000000    1.151808   -0.151808 (VIOLATED)
+ANTENNA_hold92_X/DIODE                  1.000000    1.151134   -0.151134 (VIOLATED)
+hold92/X                                1.000000    1.151134   -0.151134 (VIOLATED)
+_080_/A1                                1.000000    1.148968   -0.148968 (VIOLATED)
+ANTENNA__080__A1/DIODE                  1.000000    1.148967   -0.148967 (VIOLATED)
+ANTENNA_hold72_X/DIODE                  1.000000    1.148403   -0.148403 (VIOLATED)
+hold72/X                                1.000000    1.148403   -0.148403 (VIOLATED)
+output209/A                             1.000000    1.117666   -0.117666 (VIOLATED)
+ANTENNA_output209_A/DIODE               1.000000    1.117662   -0.117662 (VIOLATED)
+ANTENNA_hold93_X/DIODE                  1.000000    1.117428   -0.117428 (VIOLATED)
+hold93/X                                1.000000    1.117428   -0.117428 (VIOLATED)
+_094_/A1                                1.000000    1.086779   -0.086779 (VIOLATED)
+ANTENNA__094__A1/DIODE                  1.000000    1.086777   -0.086777 (VIOLATED)
+ANTENNA_hold112_X/DIODE                 1.000000    1.086555   -0.086555 (VIOLATED)
+hold112/X                               1.000000    1.086555   -0.086555 (VIOLATED)
+_077_/A1                                1.000000    1.076790   -0.076790 (VIOLATED)
+ANTENNA__077__A1/DIODE                  1.000000    1.076788   -0.076788 (VIOLATED)
+ANTENNA_hold108_X/DIODE                 1.000000    1.076383   -0.076383 (VIOLATED)
+hold108/X                               1.000000    1.076383   -0.076383 (VIOLATED)
+output182/A                             1.000000    1.072303   -0.072303 (VIOLATED)
+ANTENNA_output182_A/DIODE               1.000000    1.072294   -0.072294 (VIOLATED)
+ANTENNA_hold25_X/DIODE                  1.000000    1.071896   -0.071896 (VIOLATED)
+hold25/X                                1.000000    1.071896   -0.071896 (VIOLATED)
+output212/A                             1.000000    1.070735   -0.070735 (VIOLATED)
+ANTENNA_output212_A/DIODE               1.000000    1.070729   -0.070729 (VIOLATED)
+ANTENNA_hold81_X/DIODE                  1.000000    1.070344   -0.070344 (VIOLATED)
+hold81/X                                1.000000    1.070344   -0.070344 (VIOLATED)
+ANTENNA__081__A1/DIODE                  1.000000    1.066201   -0.066201 (VIOLATED)
+_081_/A1                                1.000000    1.066194   -0.066194 (VIOLATED)
+ANTENNA_hold76_X/DIODE                  1.000000    1.065640   -0.065640 (VIOLATED)
+hold76/X                                1.000000    1.065640   -0.065640 (VIOLATED)
+output199/A                             1.000000    1.058735   -0.058735 (VIOLATED)
+ANTENNA_output199_A/DIODE               1.000000    1.058731   -0.058731 (VIOLATED)
+ANTENNA_hold77_X/DIODE                  1.000000    1.058416   -0.058416 (VIOLATED)
+hold77/X                                1.000000    1.058416   -0.058416 (VIOLATED)
+_091_/A1                                1.000000    1.056795   -0.056795 (VIOLATED)
+ANTENNA__091__A1/DIODE                  1.000000    1.056794   -0.056794 (VIOLATED)
+ANTENNA_hold88_X/DIODE                  1.000000    1.056285   -0.056285 (VIOLATED)
+hold88/X                                1.000000    1.056285   -0.056285 (VIOLATED)
+output196/A                             1.000000    1.049589   -0.049589 (VIOLATED)
+ANTENNA_output196_A/DIODE               1.000000    1.049582   -0.049582 (VIOLATED)
+ANTENNA_hold129_X/DIODE                 1.000000    1.049239   -0.049239 (VIOLATED)
+hold129/X                               1.000000    1.049239   -0.049239 (VIOLATED)
+output210/A                             1.000000    1.031776   -0.031776 (VIOLATED)
+ANTENNA_output210_A/DIODE               1.000000    1.031769   -0.031769 (VIOLATED)
+ANTENNA_hold89_X/DIODE                  1.000000    1.031449   -0.031449 (VIOLATED)
+hold89/X                                1.000000    1.031449   -0.031449 (VIOLATED)
+_079_/A1                                1.000000    1.024271   -0.024271 (VIOLATED)
+ANTENNA_86/DIODE                        1.000000    1.024269   -0.024269 (VIOLATED)
+ANTENNA__079__A1/DIODE                  1.000000    1.024268   -0.024268 (VIOLATED)
+ANTENNA_57/DIODE                        1.000000    1.024267   -0.024267 (VIOLATED)
+ANTENNA_hold140_X/DIODE                 1.000000    1.024022   -0.024022 (VIOLATED)
+hold140/X                               1.000000    1.024022   -0.024022 (VIOLATED)
+output201/A                             1.000000    1.005178   -0.005178 (VIOLATED)
+ANTENNA_output201_A/DIODE               1.000000    1.005173   -0.005173 (VIOLATED)
+ANTENNA_hold97_X/DIODE                  1.000000    1.005003   -0.005003 (VIOLATED)
+hold97/X                                1.000000    1.005003   -0.005003 (VIOLATED)
 
 max fanout
 
 Pin                                   Limit Fanout  Slack
 ---------------------------------------------------------
-fanout271/X                              16     63    -47 (VIOLATED)
+fanout271/X                              16     61    -45 (VIOLATED)
 fanout269/X                              16     57    -41 (VIOLATED)
 fanout270/X                              16     52    -36 (VIOLATED)
 fanout260/X                              16     33    -17 (VIOLATED)
@@ -211,7 +335,7 @@ fanout261/X                              16     33    -17 (VIOLATED)
 fanout264/X                              16     33    -17 (VIOLATED)
 fanout267/X                              16     33    -17 (VIOLATED)
 fanout268/X                              16     33    -17 (VIOLATED)
-hold11/X                                 16     33    -17 (VIOLATED)
+hold154/X                                16     33    -17 (VIOLATED)
 clkbuf_2_1__f_clk/X                      16     21     -5 (VIOLATED)
 clkbuf_2_3__f_clk/X                      16     21     -5 (VIOLATED)
 clkbuf_2_0__f_clk/X                      16     17        (VIOLATED)
@@ -221,7 +345,13 @@ max capacitance
 
 Pin                                        Limit         Cap       Slack
 ------------------------------------------------------------------------
-hold11/X                                0.100718    0.119003   -0.018285 (VIOLATED)
+hold154/X                               0.100718    0.121173   -0.020455 (VIOLATED)
+hold145/X                               0.100718    0.119735   -0.019017 (VIOLATED)
+hold149/X                               0.100718    0.115967   -0.015249 (VIOLATED)
+hold41/X                                0.100718    0.113281   -0.012563 (VIOLATED)
+hold161/X                               0.100718    0.111255   -0.010537 (VIOLATED)
+hold65/X                                0.100718    0.108890   -0.008172 (VIOLATED)
+hold13/X                                0.100718    0.102266   -0.001548 (VIOLATED)
 
 
 
@@ -237,15 +367,61 @@ Found 5 unannotated drivers.
 Found 0 partially unannotated drivers.
 
 ===========================================================================
-max slew violation count 44
+max slew violation count 220
 max fanout violation count 13
-max cap violation count 1
+max cap violation count 7
 ============================================================================
 
 ===========================================================================
 check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
 ===========================================================================
-Warning: There are 32 input ports missing set_input_delay.
+Warning: There are 79 input ports missing set_input_delay.
+  cpu_mem_addr[0]
+  cpu_mem_addr[1]
+  cpu_mem_addr[2]
+  cpu_mem_addr[3]
+  cpu_mem_addr[4]
+  cpu_mem_addr[5]
+  cpu_mem_addr[6]
+  cpu_mem_addr[7]
+  cpu_mem_addr[8]
+  cpu_mem_en
+  cpu_mem_wdata[0]
+  cpu_mem_wdata[10]
+  cpu_mem_wdata[11]
+  cpu_mem_wdata[12]
+  cpu_mem_wdata[13]
+  cpu_mem_wdata[14]
+  cpu_mem_wdata[15]
+  cpu_mem_wdata[16]
+  cpu_mem_wdata[17]
+  cpu_mem_wdata[18]
+  cpu_mem_wdata[19]
+  cpu_mem_wdata[1]
+  cpu_mem_wdata[20]
+  cpu_mem_wdata[21]
+  cpu_mem_wdata[22]
+  cpu_mem_wdata[23]
+  cpu_mem_wdata[24]
+  cpu_mem_wdata[25]
+  cpu_mem_wdata[26]
+  cpu_mem_wdata[27]
+  cpu_mem_wdata[28]
+  cpu_mem_wdata[29]
+  cpu_mem_wdata[2]
+  cpu_mem_wdata[30]
+  cpu_mem_wdata[31]
+  cpu_mem_wdata[3]
+  cpu_mem_wdata[4]
+  cpu_mem_wdata[5]
+  cpu_mem_wdata[6]
+  cpu_mem_wdata[7]
+  cpu_mem_wdata[8]
+  cpu_mem_wdata[9]
+  cpu_mem_we[0]
+  cpu_mem_we[1]
+  cpu_mem_we[2]
+  cpu_mem_we[3]
   mem_rdata[0]
   mem_rdata[10]
   mem_rdata[11]
@@ -278,6 +454,7 @@ Warning: There are 32 input ports missing set_input_delay.
   mem_rdata[7]
   mem_rdata[8]
   mem_rdata[9]
+  rst_n
 Warning: There are 78 unconstrained endpoints.
   cpu_mem_rdata[0]
   cpu_mem_rdata[10]

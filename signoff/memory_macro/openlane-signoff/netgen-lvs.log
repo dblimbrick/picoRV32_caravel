@@ -94,8 +94,8 @@ No property perim found for device sky130_fd_pr__special_pfet_01v8_hvt
 No property topography found for device sky130_fd_pr__special_pfet_01v8_hvt
 No property value found for device sky130_fd_pr__diode_pw2nd_05v5
 No property mult found for device sky130_fd_pr__diode_pw2nd_05v5
-Comparison output logged to file /home/marwan/picoRV32_caravel/openlane/memory_macro/runs/25_11_03_14_37/67-netgen-lvs/reports/lvs.netgen.rpt
-Logging to file "/home/marwan/picoRV32_caravel/openlane/memory_macro/runs/25_11_03_14_37/67-netgen-lvs/reports/lvs.netgen.rpt" enabled
+Comparison output logged to file /home/marwan/picoRV32_caravel/openlane/memory_macro/runs/25_11_28_01_45/67-netgen-lvs/reports/lvs.netgen.rpt
+Logging to file "/home/marwan/picoRV32_caravel/openlane/memory_macro/runs/25_11_28_01_45/67-netgen-lvs/reports/lvs.netgen.rpt" enabled
 
 Contents of circuit 1:  Circuit: 'sky130_fd_sc_hd__fill_4'
 Circuit sky130_fd_sc_hd__fill_4 contains 0 device instances.
@@ -162,6 +162,17 @@ Circuit sky130_fd_sc_hd__fill_8 contains 0 device instances.
 Circuit contains 0 nets, and 4 disconnected pins.
 
 Circuit sky130_fd_sc_hd__fill_8 contains no devices.
+
+Contents of circuit 1:  Circuit: 'sky130_fd_sc_hd__dlygate4sd3_1'
+Circuit sky130_fd_sc_hd__dlygate4sd3_1 contains 0 device instances.
+Circuit contains 0 nets, and 6 disconnected pins.
+Contents of circuit 2:  Circuit: 'sky130_fd_sc_hd__dlygate4sd3_1'
+Circuit sky130_fd_sc_hd__dlygate4sd3_1 contains 8 device instances.
+  Class: sky130_fd_pr__nfet_01v8 instances:   4
+  Class: sky130_fd_pr__pfet_01v8_hvt instances:   4
+Circuit contains 9 nets.
+
+Circuit sky130_fd_sc_hd__dlygate4sd3_1 contains no devices.
 
 Contents of circuit 1:  Circuit: 'sky130_fd_sc_hd__buf_12'
 Circuit sky130_fd_sc_hd__buf_12 contains 0 device instances.
@@ -295,17 +306,6 @@ Circuit sky130_fd_sc_hd__nor4b_1 contains 10 device instances.
 Circuit contains 13 nets.
 
 Circuit sky130_fd_sc_hd__nor4b_1 contains no devices.
-
-Contents of circuit 1:  Circuit: 'sky130_fd_sc_hd__dlygate4sd3_1'
-Circuit sky130_fd_sc_hd__dlygate4sd3_1 contains 0 device instances.
-Circuit contains 0 nets, and 6 disconnected pins.
-Contents of circuit 2:  Circuit: 'sky130_fd_sc_hd__dlygate4sd3_1'
-Circuit sky130_fd_sc_hd__dlygate4sd3_1 contains 8 device instances.
-  Class: sky130_fd_pr__nfet_01v8 instances:   4
-  Class: sky130_fd_pr__pfet_01v8_hvt instances:   4
-Circuit contains 9 nets.
-
-Circuit sky130_fd_sc_hd__dlygate4sd3_1 contains no devices.
 
 Contents of circuit 1:  Circuit: 'sky130_fd_sc_hd__buf_2'
 Circuit sky130_fd_sc_hd__buf_2 contains 0 device instances.
@@ -496,7 +496,7 @@ Circuit contains 11 nets.
 Circuit sky130_fd_sc_hd__or3_2 contains no devices.
 
 Contents of circuit 1:  Circuit: 'memory_macro'
-Circuit memory_macro contains 58403 device instances.
+Circuit memory_macro contains 58893 device instances.
   Class: sky130_fd_sc_hd__a21o_1 instances:   1
   Class: sky130_fd_sc_hd__clkbuf_16 instances:   6
   Class: sky130_fd_sc_hd__or4_1 instances:   2
@@ -504,8 +504,8 @@ Circuit memory_macro contains 58403 device instances.
   Class: sky130_fd_sc_hd__or4_4 instances:   1
   Class: sky130_fd_sc_hd__buf_1 instances:   4
   Class: sky130_fd_sc_hd__buf_2 instances:  16
-  Class: sky130_fd_sc_hd__buf_4 instances:  46
-  Class: sky130_fd_sc_hd__buf_6 instances:  12
+  Class: sky130_fd_sc_hd__buf_4 instances:  55
+  Class: sky130_fd_sc_hd__buf_6 instances:  13
   Class: sky130_fd_sc_hd__buf_8 instances:   4
   Class: sky130_fd_sc_hd__dfrtp_2 instances:   8
   Class: sky130_fd_sc_hd__dfrtp_4 instances:  25
@@ -515,28 +515,28 @@ Circuit memory_macro contains 58403 device instances.
   Class: sky130_fd_sc_hd__clkbuf_8 instances:  42
   Class: sky130_fd_sc_hd__or3_2 instances:   1
   Class: sky130_fd_sc_hd__and2b_2 instances:   1
-  Class: sky130_fd_sc_hd__buf_12 instances: 116
+  Class: sky130_fd_sc_hd__buf_12 instances: 159
   Class: sky130_fd_sc_hd__clkinv_2 instances:   2
   Class: sky130_fd_sc_hd__and3_1 instances:  32
   Class: sky130_fd_sc_hd__decap_3 instances: 130
-  Class: sky130_fd_sc_hd__dlygate4sd3_1 instances:  13
+  Class: sky130_fd_sc_hd__dlygate4sd3_1 instances: 158
   Class: sky130_fd_sc_hd__nor4b_1 instances:   1
   Class: sky130_fd_sc_hd__mux2_4 instances:   3
   Class: sky130_fd_sc_hd__mux2_8 instances:  38
   Class: sky130_fd_sc_hd__and2_4 instances:   1
   Class: sky130_fd_sc_hd__nor4_1 instances:   1
-  Class: sky130_fd_sc_hd__diode_2 instances: 995
+  Class: sky130_fd_sc_hd__diode_2 instances: 1175
   Class: sky130_fd_sc_hd__dlymetal6s2s_1 instances:   3
   Class: sky130_fd_sc_hd__a22o_4 instances:   4
   Class: sky130_fd_sc_hd__tapvpwrvgnd_1 instances: 7236
-  Class: sky130_fd_sc_hd__fill_1 instances: 7221
-  Class: sky130_fd_sc_hd__fill_2 instances: 7488
-  Class: sky130_fd_sc_hd__fill_4 instances: 7470
-  Class: sky130_fd_sc_hd__fill_8 instances: 476
-  Class: sky130_ef_sc_hd__decap_40_12 instances: 26940
-Circuit contains 598 nets, and 2 disconnected pins.
+  Class: sky130_fd_sc_hd__fill_1 instances: 7246
+  Class: sky130_fd_sc_hd__fill_2 instances: 7616
+  Class: sky130_fd_sc_hd__fill_4 instances: 7723
+  Class: sky130_fd_sc_hd__fill_8 instances: 485
+  Class: sky130_ef_sc_hd__decap_40_12 instances: 26637
+Circuit contains 796 nets, and 2 disconnected pins.
 Contents of circuit 2:  Circuit: 'memory_macro'
-Circuit memory_macro contains 58403 device instances.
+Circuit memory_macro contains 58893 device instances.
   Class: sky130_fd_sc_hd__a21o_1 instances:   1
   Class: sky130_fd_sc_hd__clkbuf_16 instances:   6
   Class: sky130_fd_sc_hd__or4_1 instances:   2
@@ -544,8 +544,8 @@ Circuit memory_macro contains 58403 device instances.
   Class: sky130_fd_sc_hd__or4_4 instances:   1
   Class: sky130_fd_sc_hd__buf_1 instances:   4
   Class: sky130_fd_sc_hd__buf_2 instances:  16
-  Class: sky130_fd_sc_hd__buf_4 instances:  46
-  Class: sky130_fd_sc_hd__buf_6 instances:  12
+  Class: sky130_fd_sc_hd__buf_4 instances:  55
+  Class: sky130_fd_sc_hd__buf_6 instances:  13
   Class: sky130_fd_sc_hd__buf_8 instances:   4
   Class: sky130_fd_sc_hd__dfrtp_2 instances:   8
   Class: sky130_fd_sc_hd__dfrtp_4 instances:  25
@@ -555,32 +555,32 @@ Circuit memory_macro contains 58403 device instances.
   Class: sky130_fd_sc_hd__clkbuf_8 instances:  42
   Class: sky130_fd_sc_hd__or3_2 instances:   1
   Class: sky130_fd_sc_hd__and2b_2 instances:   1
-  Class: sky130_fd_sc_hd__buf_12 instances: 116
+  Class: sky130_fd_sc_hd__buf_12 instances: 159
   Class: sky130_fd_sc_hd__clkinv_2 instances:   2
   Class: sky130_fd_sc_hd__and3_1 instances:  32
   Class: sky130_fd_sc_hd__decap_3 instances: 130
-  Class: sky130_fd_sc_hd__dlygate4sd3_1 instances:  13
+  Class: sky130_fd_sc_hd__dlygate4sd3_1 instances: 158
   Class: sky130_fd_sc_hd__nor4b_1 instances:   1
   Class: sky130_fd_sc_hd__mux2_4 instances:   3
   Class: sky130_fd_sc_hd__mux2_8 instances:  38
   Class: sky130_fd_sc_hd__and2_4 instances:   1
   Class: sky130_fd_sc_hd__nor4_1 instances:   1
-  Class: sky130_fd_sc_hd__diode_2 instances: 995
+  Class: sky130_fd_sc_hd__diode_2 instances: 1175
   Class: sky130_fd_sc_hd__dlymetal6s2s_1 instances:   3
   Class: sky130_fd_sc_hd__a22o_4 instances:   4
   Class: sky130_fd_sc_hd__tapvpwrvgnd_1 instances: 7236
-  Class: sky130_fd_sc_hd__fill_1 instances: 7221
-  Class: sky130_fd_sc_hd__fill_2 instances: 7488
-  Class: sky130_fd_sc_hd__fill_4 instances: 7470
-  Class: sky130_fd_sc_hd__fill_8 instances: 476
-  Class: sky130_ef_sc_hd__decap_40_12 instances: 26940
-Circuit contains 598 nets, and 2 disconnected pins.
+  Class: sky130_fd_sc_hd__fill_1 instances: 7246
+  Class: sky130_fd_sc_hd__fill_2 instances: 7616
+  Class: sky130_fd_sc_hd__fill_4 instances: 7723
+  Class: sky130_fd_sc_hd__fill_8 instances: 485
+  Class: sky130_ef_sc_hd__decap_40_12 instances: 26637
+Circuit contains 796 nets, and 2 disconnected pins.
 
 Circuit was modified by parallel/series device merging.
 New circuit summary:
 
 Contents of circuit 1:  Circuit: 'memory_macro'
-Circuit memory_macro contains 879 device instances.
+Circuit memory_macro contains 1167 device instances.
   Class: sky130_fd_sc_hd__a21o_1 instances:   1
   Class: sky130_fd_sc_hd__clkbuf_16 instances:   6
   Class: sky130_fd_sc_hd__or4_1 instances:   2
@@ -588,8 +588,8 @@ Circuit memory_macro contains 879 device instances.
   Class: sky130_fd_sc_hd__or4_4 instances:   1
   Class: sky130_fd_sc_hd__buf_1 instances:   4
   Class: sky130_fd_sc_hd__buf_2 instances:  16
-  Class: sky130_fd_sc_hd__buf_4 instances:  46
-  Class: sky130_fd_sc_hd__buf_6 instances:  12
+  Class: sky130_fd_sc_hd__buf_4 instances:  55
+  Class: sky130_fd_sc_hd__buf_6 instances:  13
   Class: sky130_fd_sc_hd__buf_8 instances:   4
   Class: sky130_fd_sc_hd__dfrtp_2 instances:   8
   Class: sky130_fd_sc_hd__dfrtp_4 instances:  25
@@ -599,17 +599,17 @@ Circuit memory_macro contains 879 device instances.
   Class: sky130_fd_sc_hd__clkbuf_8 instances:  42
   Class: sky130_fd_sc_hd__or3_2 instances:   1
   Class: sky130_fd_sc_hd__and2b_2 instances:   1
-  Class: sky130_fd_sc_hd__buf_12 instances: 116
+  Class: sky130_fd_sc_hd__buf_12 instances: 159
   Class: sky130_fd_sc_hd__clkinv_2 instances:   2
   Class: sky130_fd_sc_hd__and3_1 instances:  32
   Class: sky130_fd_sc_hd__decap_3 instances:   1
-  Class: sky130_fd_sc_hd__dlygate4sd3_1 instances:  13
+  Class: sky130_fd_sc_hd__dlygate4sd3_1 instances: 158
   Class: sky130_fd_sc_hd__nor4b_1 instances:   1
   Class: sky130_fd_sc_hd__mux2_4 instances:   3
   Class: sky130_fd_sc_hd__mux2_8 instances:  38
   Class: sky130_fd_sc_hd__and2_4 instances:   1
   Class: sky130_fd_sc_hd__nor4_1 instances:   1
-  Class: sky130_fd_sc_hd__diode_2 instances: 425
+  Class: sky130_fd_sc_hd__diode_2 instances: 515
   Class: sky130_fd_sc_hd__dlymetal6s2s_1 instances:   3
   Class: sky130_fd_sc_hd__a22o_4 instances:   4
   Class: sky130_fd_sc_hd__tapvpwrvgnd_1 instances:   1
@@ -618,9 +618,9 @@ Circuit memory_macro contains 879 device instances.
   Class: sky130_fd_sc_hd__fill_4 instances:   1
   Class: sky130_fd_sc_hd__fill_8 instances:   1
   Class: sky130_ef_sc_hd__decap_40_12 instances:   1
-Circuit contains 598 nets, and 2 disconnected pins.
+Circuit contains 796 nets, and 2 disconnected pins.
 Contents of circuit 2:  Circuit: 'memory_macro'
-Circuit memory_macro contains 879 device instances.
+Circuit memory_macro contains 1167 device instances.
   Class: sky130_fd_sc_hd__a21o_1 instances:   1
   Class: sky130_fd_sc_hd__clkbuf_16 instances:   6
   Class: sky130_fd_sc_hd__or4_1 instances:   2
@@ -628,8 +628,8 @@ Circuit memory_macro contains 879 device instances.
   Class: sky130_fd_sc_hd__or4_4 instances:   1
   Class: sky130_fd_sc_hd__buf_1 instances:   4
   Class: sky130_fd_sc_hd__buf_2 instances:  16
-  Class: sky130_fd_sc_hd__buf_4 instances:  46
-  Class: sky130_fd_sc_hd__buf_6 instances:  12
+  Class: sky130_fd_sc_hd__buf_4 instances:  55
+  Class: sky130_fd_sc_hd__buf_6 instances:  13
   Class: sky130_fd_sc_hd__buf_8 instances:   4
   Class: sky130_fd_sc_hd__dfrtp_2 instances:   8
   Class: sky130_fd_sc_hd__dfrtp_4 instances:  25
@@ -639,17 +639,17 @@ Circuit memory_macro contains 879 device instances.
   Class: sky130_fd_sc_hd__clkbuf_8 instances:  42
   Class: sky130_fd_sc_hd__or3_2 instances:   1
   Class: sky130_fd_sc_hd__and2b_2 instances:   1
-  Class: sky130_fd_sc_hd__buf_12 instances: 116
+  Class: sky130_fd_sc_hd__buf_12 instances: 159
   Class: sky130_fd_sc_hd__clkinv_2 instances:   2
   Class: sky130_fd_sc_hd__and3_1 instances:  32
   Class: sky130_fd_sc_hd__decap_3 instances:   1
-  Class: sky130_fd_sc_hd__dlygate4sd3_1 instances:  13
+  Class: sky130_fd_sc_hd__dlygate4sd3_1 instances: 158
   Class: sky130_fd_sc_hd__nor4b_1 instances:   1
   Class: sky130_fd_sc_hd__mux2_4 instances:   3
   Class: sky130_fd_sc_hd__mux2_8 instances:  38
   Class: sky130_fd_sc_hd__and2_4 instances:   1
   Class: sky130_fd_sc_hd__nor4_1 instances:   1
-  Class: sky130_fd_sc_hd__diode_2 instances: 425
+  Class: sky130_fd_sc_hd__diode_2 instances: 515
   Class: sky130_fd_sc_hd__dlymetal6s2s_1 instances:   3
   Class: sky130_fd_sc_hd__a22o_4 instances:   4
   Class: sky130_fd_sc_hd__tapvpwrvgnd_1 instances:   1
@@ -658,14 +658,14 @@ Circuit memory_macro contains 879 device instances.
   Class: sky130_fd_sc_hd__fill_4 instances:   1
   Class: sky130_fd_sc_hd__fill_8 instances:   1
   Class: sky130_ef_sc_hd__decap_40_12 instances:   1
-Circuit contains 598 nets, and 2 disconnected pins.
+Circuit contains 796 nets, and 2 disconnected pins.
 
-Circuit 1 contains 879 devices, Circuit 2 contains 879 devices.
-Circuit 1 contains 598 nets,    Circuit 2 contains 598 nets.
+Circuit 1 contains 1167 devices, Circuit 2 contains 1167 devices.
+Circuit 1 contains 796 nets,    Circuit 2 contains 796 nets.
 
 
 Final result: 
 Circuits match uniquely.
 .
-Logging to file "/home/marwan/picoRV32_caravel/openlane/memory_macro/runs/25_11_03_14_37/67-netgen-lvs/reports/lvs.netgen.rpt" disabled
+Logging to file "/home/marwan/picoRV32_caravel/openlane/memory_macro/runs/25_11_28_01_45/67-netgen-lvs/reports/lvs.netgen.rpt" disabled
 LVS Done.

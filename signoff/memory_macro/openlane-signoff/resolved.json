@@ -226,7 +226,7 @@
     "ERROR_ON_UNMAPPED_CELLS": true,
     "ERROR_ON_SYNTH_CHECKS": true,
     "ERROR_ON_NL_ASSIGN_STATEMENTS": true,
-    "PNR_SDC_FILE": "/home/marwan/picoRV32_caravel/openlane/memory_macro/signoff.sdc",
+    "PNR_SDC_FILE": "/home/marwan/picoRV32_caravel/openlane/memory_macro/pnr.sdc",
     "SIGNOFF_SDC_FILE": "/home/marwan/picoRV32_caravel/openlane/memory_macro/signoff.sdc",
     "PDN_CONNECT_MACROS_TO_GRID": true,
     "PDN_MACRO_CONNECTIONS": null,
