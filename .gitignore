@@ -12,3 +12,10 @@
 /dependencies
 /mgmt_core_wrapper
 /logs
+/.venv
+.DS_Store
+/venv-cocotb
+openlane/.version*
+
+# OpenLane/LibreLane run files
+openlane/*/runs/

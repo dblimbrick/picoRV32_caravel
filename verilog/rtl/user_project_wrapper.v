@@ -78,77 +78,102 @@ module user_project_wrapper #(
     output [2:0] user_irq
 );
 
-/*--------------------------------------*/
-/* User project is instantiated  here   */
-/*--------------------------------------*/
+    // Memory Interface Signals (from PicoRV32 SoC)
+    wire mem_en;
+    wire [3:0] mem_we;
+    wire [8:0] mem_addr;
+    wire [31:0] mem_wdata;
+    wire [31:0] mem_rdata;
+    
+    // Memory Interface Signals (to DFFRAM512x32)
+    wire dffram_en;
+    wire [3:0] dffram_we;
+    wire [8:0] dffram_addr;
+    wire [31:0] dffram_wdata;
+    wire [31:0] dffram_rdata;
+    
+    // UART Interface - pass GPIO signals directly to SoC macro
+    // SoC macro will handle GPIO connections internally
 
-    //Intermediate signals
-//    wire [31:0] mem_rdata  = la_data_in[31:0];
-//    wire [31:0] mem_wdata  = la_data_in[63:32];
-//    wire [31:0] mem_addr   = la_data_in[95:64];
-//    wire [31:0] pcpi_rs1   = la_data_in[127:96];
-
-// Memory interface
-wire [31:0] mem_rdata;    // unused
-wire [31:0] mem_wdata;    // unused
-wire [31:0] mem_addr;     // unused
-wire mem_valid;           // unused
-wire mem_ready;           // unused
-wire mem_instr;           // unused
-wire [31:0] mem_la_addr;  // unused
-wire mem_la_read;         // unused
-wire [31:0] mem_la_wdata; // unused
-wire mem_la_write;        // unused
-wire [3:0] mem_la_wstrb;  // unused
-
-// PCPI interface
-wire [31:0] pcpi_insn;    // unused
-wire [31:0] pcpi_rs1;     // unused
-wire [31:0] pcpi_rs2;     // unused
-wire [31:0] pcpi_rd;      // unused
-wire pcpi_wait;           // unused
-wire pcpi_ready;          // unused
-wire pcpi_wr;             // unused
-
-// IRQ/Eoi/trace
-wire [31:0] eoi;          // unused
-wire [31:0] irq;          // unused
-wire [35:0] trace_data;   // unused
-wire trap;                // unused
-
-picorv32 u_picorv32 (
-
-`ifdef USE_POWER_PINS
-	.vccd1(vccd1),	// User area 1 1.8V power
-	.vssd1(vssd1),	// User area 1 digital ground
-`endif
-    .clk         (wb_clk_i),
-    .resetn      (wb_rst_i),
-    .trap        (trap),
-    .mem_instr   (mem_instr),
-    .mem_la_read (mem_la_read),
-    .mem_la_write(mem_la_write),
-    .mem_ready   (mem_ready),
-    .mem_valid   (mem_valid),
-    .mem_addr    (mem_addr),
-    .mem_wdata   (mem_wdata),
-    .mem_wstrb   (mem_wstrb),
-    .mem_rdata   (mem_rdata),
-    .mem_la_addr (mem_la_addr),
-    .mem_la_wdata(mem_la_wdata),
-    .mem_la_wstrb(mem_la_wstrb),
-    .pcpi_ready  (pcpi_ready),
-    .pcpi_valid  (pcpi_valid),
-    .pcpi_wait   (pcpi_wait),
-    .pcpi_wr     (pcpi_wr),
-    .pcpi_insn   (pcpi_insn),
-    .pcpi_rd     (pcpi_rd),
-    .pcpi_rs1    (pcpi_rs1),
-    .pcpi_rs2    (pcpi_rs2),
-    .trace_valid (trace_valid),
-    .trace_data  (trace_data),
-    .eoi         (eoi),
+// Memory Arbitration Logic (Pre-hardened Macro)
+memory_macro u_memory_arb (
+    .clk(wb_clk_i),
+    .rst_n(wb_rst_i),
+    
+    // CPU Memory Interface (from PicoRV32 SoC)
+    .cpu_mem_en(mem_en),
+    .cpu_mem_we(mem_we),
+    .cpu_mem_addr(mem_addr),
+    .cpu_mem_wdata(mem_wdata),
+    .cpu_mem_rdata(mem_rdata),
+    
+    // External Wishbone Slave Interface (for programming)
+    .wbs_stb_i(wbs_stb_i),
+    .wbs_cyc_i(wbs_cyc_i),
+    .wbs_we_i(wbs_we_i),
+    .wbs_sel_i(wbs_sel_i),
+    .wbs_adr_i(wbs_adr_i),
+    .wbs_dat_i(wbs_dat_i),
+    .wbs_ack_o(wbs_ack_o),
+    .wbs_dat_o(wbs_dat_o),
+    
+    // Memory Interface (to DFFRAM512x32)
+    .mem_en(dffram_en),
+    .mem_we(dffram_we),
+    .mem_addr(dffram_addr),
+    .mem_wdata(dffram_wdata),
+    .mem_rdata(dffram_rdata)
 );
+
+// DFFRAM512x32 Memory Instance (Hard Macro - placed at top level)
+DFFRAM512x32 u_dffram (
+`ifdef USE_POWER_PINS
+    .VPWR(vccd1),	// User area 1 1.8V power
+    .VGND(vssd1),	// User area 1 digital ground
+`endif
+    .CLK(wb_clk_i),
+    .EN0(dffram_en),
+    .WE0(dffram_we),
+    .Di0(dffram_wdata),
+    .Do0(dffram_rdata),
+    .A0(dffram_addr)
+);
+
+// PicoRV32 SoC Wrapper (Pre-hardened Macro)
+picorv32_soc u_soc (
+`ifdef USE_POWER_PINS
+    .vccd1(vccd1),	// User area 1 1.8V power
+    .vssd1(vssd1),	// User area 1 digital ground
+`endif
+    .clk(wb_clk_i),
+    .rst_n(wb_rst_i),
+    
+    // External Wishbone Slave Interface (unused - handled by memory macro)
+    // .wbs_stb_i(1'b0),
+    // .wbs_cyc_i(1'b0),
+    // .wbs_we_i(1'b0),
+    // .wbs_sel_i(4'h0),
+    // .wbs_adr_i(32'h0),
+    // .wbs_dat_i(32'h0),
+    // .wbs_ack_o(),  // Unused
+    // .wbs_dat_o(),  // Unused
+    
+    // Memory Interface (to memory macro)
+    .mem_en(mem_en),
+    .mem_we(mem_we),
+    .mem_addr(mem_addr),
+    .mem_wdata(mem_wdata),
+    .mem_rdata(mem_rdata),
+    
+    // GPIO Interface (for UART connection)
+    .io_out(io_out),
+    .io_in(io_in),
+    .io_oeb(io_oeb),
+    
+    // Interrupts
+    .irq_out(user_irq)
+);
+
 endmodule
 
 `default_nettype wire

@@ -19,7 +19,75 @@
 
 ## Overview
 
-This repository contains a sample user project for the [Caravel](https://github.com/efabless/caravel.git) chip user space. It includes a simple counter demonstrating how to use Caravel's utilities such as IO pads, logic analyzer probes, and the Wishbone port. The repository also follows the recommended structure for open-mpw shuttle projects.
+This repository contains a complete System-on-Chip (SoC) implementation using the PicoRV32 RISC-V processor core integrated within the Caravel user project wrapper. The design implements a fully functional microcontroller system with memory, UART communication, and GPIO interfaces, following the NCAT PicoRV32 SoC template architecture.
+
+### Key Features
+
+- **RISC-V RV32I Processor**: PicoRV32 core with Wishbone interface
+- **Memory Subsystem**: 2KB DFFRAM512x32 memory with arbitration logic (DFFRAM512x32 placed at top level)
+- **UART Interface**: CF_UART with FIFO support, 16-byte TX/RX FIFOs, and interrupt capabilities
+- **Memory Programming**: External Wishbone slave interface for memory programming via Caravel management core
+- **GPIO Interface**: UART connected to GPIO pins 20 (TX) and 21 (RX)
+- **Standard RISC-V Memory Map**: Memory starts at 0x00000000
+
+For complete design specifications, see the [Design Specification](design_specification.md) document.
+
+## System Architecture
+
+The system architecture follows the NCAT PicoRV32 SoC template, consisting of:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Caravel User Project Wrapper            │
+│  ┌─────────────────────────────────────────────────────────┐ │
+│  │              PicoRV32 SoC Wrapper                       │ │
+│  │  ┌─────────────┐  ┌─────────────────┐                    │ │
+│  │  │ PicoRV32    │  │ CF_UART         │                    │ │
+│  │  │ Core        │  │ Interface       │                    │ │
+│  │  │ (Wishbone)  │  │ (Wishbone)      │                    │ │
+│  │  └─────────────┘  └─────────────────┘                    │ │
+│  │           │              │                               │ │
+│  │           └──────────────┘                               │ │
+│  │                          │                               │ │
+│  │  ┌───────────────────────▼─────────────────────────────┐ │ │
+│  │  │           Internal Wishbone Bus                     │ │ │
+│  │  │           (Memory + Peripheral Access)              │ │ │
+│  │  └─────────────────────────────────────────────────────┘ │ │
+│  └─────────────────────────────────────────────────────────┘ │
+│           │                    │                    │      │
+│           └────────────────────┼────────────────────┘      │
+│                                │                           │
+│  ┌─────────────────────────────▼─────────────────────────┐  │
+│  │              Memory Arbitration Logic                  │  │
+│  │              (CPU Priority + External Access)           │  │
+│  └─────────────────────────────────────────────────────┘  │
+│           │                    │                    │      │
+│           └────────────────────┼────────────────────┘      │
+│                                │                           │
+│  ┌─────────────────────────────▼─────────────────────────┐  │
+│  │              DFFRAM512x32 Memory Block                │  │
+│  │              (512 words × 32 bits = 2KB)               │  │
+│  └─────────────────────────────────────────────────────┘  │
+│                                │                           │
+│  ┌─────────────────────────────▼─────────────────────────┐  │
+│  │              External Wishbone Slave Interface         │  │
+│  │              (for memory programming)                   │  │
+│  └─────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Memory Map
+
+| Address Range | Peripheral | Description |
+|---------------|------------|-------------|
+| 0x00000000 - 0x000007FF | DFFRAM512x32 | 2KB instruction/data memory (512 words × 32 bits) |
+| 0x00002000 - 0x00002FFF | CF_UART | UART registers and FIFO |
+| 0x00003000 - 0x00003FFF | GPIO | General purpose I/O (placeholder) |
+
+### GPIO Connections
+
+- **GPIO 20**: UART TX output (`io_out[20]`)
+- **GPIO 21**: UART RX input (`io_in[21]`)
 
 ## Prerequisites
 
@@ -56,24 +124,30 @@ This repository contains a sample user project for the [Caravel](https://github.
 
 3. Start hardening your design:
 
-   - For hardening, provide an RTL Verilog model of your design to OpenLane.
-   - Create a subdirectory for each macro in your project under the `openlane/` directory with OpenLane configuration files.
+   This project uses a macro-first hardening strategy. Harden the macros in order:
 
      ```bash
-     make <module_name>
+     # Harden the memory arbitration logic (standard cell logic only)
+     make memory_macro
+     
+     # Harden the PicoRV32 SoC
+     make picorv32_soc
      ```
 
-   Refer to [Hardening the User Project using OpenLane](#hardening-the-user-project-using-openlane) for examples.
+   Refer to [Hardening the User Project using OpenLane](#hardening-the-user-project-using-openlane) for detailed examples.
 
 4. Integrate modules into the user_project_wrapper:
 
-   - Update environment variables `VERILOG_FILES_BLACKBOX`, `EXTRA_LEFS`, and `EXTRA_GDS_FILES` in `openlane/user_project_wrapper/config.tcl` to point to your module.
-   - Instantiate your module(s) in `verilog/rtl/user_project_wrapper.v`.
-   - Harden the user_project_wrapper with your module(s):
+   The user_project_wrapper configuration includes references to both hardened macros plus DFFRAM512x32 (placed as a hard macro). Harden the wrapper:
 
      ```bash
      make user_project_wrapper
      ```
+
+   This will integrate:
+   - `memory_macro` (hardened macro with arbitration logic)
+   - `picorv32_soc` (hardened macro)
+   - `DFFRAM512x32` (hard macro, placed at top level due to met4 power straps)
 
 5. Run cocotb simulation on your design:
 
@@ -214,19 +288,52 @@ For more details, refer to the [Knowledgebase article](https://info.efabless.com
 
 ### Running OpenLane
 
-For this project, we chose the first option: harden the user macro first, then insert it into the user project wrapper without standard cells at the top level.
+For this project, we chose the first option: harden the user macros first, then insert them into the user project wrapper without standard cells at the top level.
+
+The design consists of two macros that must be hardened in order, plus DFFRAM512x32 which is placed at the top level:
+
+1. **memory_macro**: Contains memory arbitration logic (standard cell logic only, no DFFRAM512x32)
+2. **picorv32_soc**: Contains PicoRV32 processor core, Wishbone interconnect, and peripherals
+3. **DFFRAM512x32**: Hard macro placed at top level in user_project_wrapper (not hardened separately)
+
+**Note**: DFFRAM512x32 is placed at the top level rather than inside memory_macro because it uses met4 power straps which conflict with hardening memory_macro as a macro. This architecture avoids PDN generation issues.
 
 To reproduce this process, run:
 
 ```bash
 # DO NOT cd into openlane
 
-# Harden user_proj_example
-make user_proj_example
+# Step 1: Harden the memory arbitration logic (standard cell logic only)
+make memory_macro
 
-# Harden user_project_wrapper
+# Step 2: Harden the PicoRV32 SoC
+make picorv32_soc
+
+# Step 3: Harden the user_project_wrapper (integrates both macros + DFFRAM512x32)
 make user_project_wrapper
 ```
+
+### Architecture Details
+
+#### Memory Arbitration Logic (`memory_macro`)
+
+The memory macro provides memory arbitration logic between CPU and external Wishbone slave:
+- **Memory Arbitration**: Handles CPU priority access and external Wishbone slave access
+- **DFFRAM512x32**: Not included in memory_macro; instantiated at top level due to met4 power strap conflicts
+- **CPU Priority**: PicoRV32 CPU has priority access to memory
+- **External Access**: Caravel management core can program memory when CPU is idle
+
+See `openlane/memory_macro/config.json` for hardening configuration.
+
+#### PicoRV32 SoC (`picorv32_soc`)
+
+The SoC macro provides the processor and peripheral integration:
+- **PicoRV32 Core**: RISC-V RV32I processor with Wishbone master interface
+- **Wishbone Interconnect**: Routes memory and peripheral accesses
+- **CF_UART**: Full-featured UART interface with FIFO support
+- **GPIO Interface**: UART connections to GPIO pins 20/21
+
+See `openlane/picorv32_soc/config.json` for hardening configuration.
 
 For more information, refer to the [OpenLane Documentation](https://openlane.readthedocs.io/en/latest/index.html).
 

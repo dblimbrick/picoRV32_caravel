@@ -1,0 +1,1168 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+Startpoint: _13680_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _12630_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  0.000000    0.000000   clock clk (rise edge)
+                                  5.570000    5.570000   clock source latency
+     2    0.064095    0.610000    0.000000    5.570000 ^ clk (in)
+                                                         clk (net)
+                      0.635071    0.012536    5.582536 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
+    17    0.186078    0.201154    0.382083    5.964619 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_0_clk (net)
+                      0.203448    0.017111    5.981730 ^ clkbuf_3_7_0_clk/A (sky130_fd_sc_hd__clkbuf_8)
+     9    0.093370    0.167229    0.272045    6.253776 ^ clkbuf_3_7_0_clk/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_3_7_0_clk (net)
+                      0.167670    0.006955    6.260731 ^ clkbuf_5_31__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
+    19    0.111854    0.126103    0.235736    6.496467 ^ clkbuf_5_31__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_5_31__leaf_clk (net)
+                      0.126317    0.003518    6.499985 ^ clkbuf_leaf_115_clk/A (sky130_fd_sc_hd__clkbuf_8)
+     7    0.032901    0.070898    0.177864    6.677849 ^ clkbuf_leaf_115_clk/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_leaf_115_clk (net)
+                      0.070901    0.000525    6.678374 ^ _13680_/CLK (sky130_fd_sc_hd__dfxtp_4)
+    13    0.084259    0.240528    0.496969    7.175343 ^ _13680_/Q (sky130_fd_sc_hd__dfxtp_4)
+                                                         u_picorv32.picorv32_core.cpu_state[1] (net)
+                      0.240604    0.004201    7.179544 ^ hold3040/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     5    0.046511    0.456650    0.882015    8.061560 ^ hold3040/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                                         net3648 (net)
+                      0.456656    0.002428    8.063988 ^ _08942_/C (sky130_fd_sc_hd__and4_1)
+     5    0.019622    0.201102    0.378159    8.442146 ^ _08942_/X (sky130_fd_sc_hd__and4_1)
+                                                         _04563_ (net)
+                      0.201102    0.000822    8.442969 ^ _08951_/D (sky130_fd_sc_hd__and4_1)
+     6    0.021098    0.212083    0.344317    8.787287 ^ _08951_/X (sky130_fd_sc_hd__and4_1)
+                                                         _04569_ (net)
+                      0.212083    0.000649    8.787936 ^ _08958_/D (sky130_fd_sc_hd__and4_2)
+     6    0.030088    0.177562    0.365425    9.153361 ^ _08958_/X (sky130_fd_sc_hd__and4_2)
+                                                         _04573_ (net)
+                      0.177579    0.001799    9.155161 ^ _08966_/D (sky130_fd_sc_hd__and4_1)
+     6    0.026014    0.254257    0.372196    9.527357 ^ _08966_/X (sky130_fd_sc_hd__and4_1)
+                                                         _04578_ (net)
+                      0.254260    0.001367    9.528724 ^ _08974_/D (sky130_fd_sc_hd__and4_1)
+     6    0.027035    0.263583    0.392577    9.921301 ^ _08974_/X (sky130_fd_sc_hd__and4_1)
+                                                         _04583_ (net)
+                      0.263588    0.001555    9.922855 ^ _08982_/D (sky130_fd_sc_hd__and4_1)
+     6    0.023865    0.234863    0.373884   10.296740 ^ _08982_/X (sky130_fd_sc_hd__and4_1)
+                                                         _04588_ (net)
+                      0.234866    0.001276   10.298016 ^ _08990_/D (sky130_fd_sc_hd__and4_2)
+     6    0.026379    0.160012    0.354930   10.652946 ^ _08990_/X (sky130_fd_sc_hd__and4_2)
+                                                         _04593_ (net)
+                      0.160032    0.001825   10.654772 ^ _08998_/D (sky130_fd_sc_hd__and4_1)
+     6    0.019976    0.202075    0.329187   10.983959 ^ _08998_/X (sky130_fd_sc_hd__and4_1)
+                                                         _04598_ (net)
+                      0.202076    0.000879   10.984838 ^ _09006_/D (sky130_fd_sc_hd__and4_1)
+     6    0.018760    0.191323    0.328869   11.313707 ^ _09006_/X (sky130_fd_sc_hd__and4_1)
+                                                         _04603_ (net)
+                      0.191323    0.000393   11.314100 ^ _09014_/D (sky130_fd_sc_hd__and4_1)
+     6    0.020831    0.209567    0.340745   11.654845 ^ _09014_/X (sky130_fd_sc_hd__and4_1)
+                                                         _04608_ (net)
+                      0.209567    0.000581   11.655426 ^ _09022_/D (sky130_fd_sc_hd__and4_2)
+    13    0.066088    0.345253    0.490210   12.145636 ^ _09022_/X (sky130_fd_sc_hd__and4_2)
+                                                         _04613_ (net)
+                      0.345625    0.009348   12.154984 ^ _09030_/D (sky130_fd_sc_hd__and4_1)
+     6    0.019739    0.200903    0.357979   12.512962 ^ _09030_/X (sky130_fd_sc_hd__and4_1)
+                                                         _04618_ (net)
+                      0.200903    0.000679   12.513642 ^ _09038_/D (sky130_fd_sc_hd__and4_1)
+     6    0.020148    0.203569    0.337964   12.851606 ^ _09038_/X (sky130_fd_sc_hd__and4_1)
+                                                         _04623_ (net)
+                      0.203569    0.000466   12.852073 ^ _09046_/D (sky130_fd_sc_hd__and4_1)
+     6    0.029535    0.286304    0.399352   13.251425 ^ _09046_/X (sky130_fd_sc_hd__and4_1)
+                                                         _04628_ (net)
+                      0.286311    0.001764   13.253188 ^ _09054_/D (sky130_fd_sc_hd__and4_1)
+     6    0.024257    0.238433    0.380523   13.633712 ^ _09054_/X (sky130_fd_sc_hd__and4_1)
+                                                         _04633_ (net)
+                      0.238433    0.000928   13.634640 ^ _09062_/D (sky130_fd_sc_hd__and4_1)
+     6    0.026520    0.258920    0.386277   14.020916 ^ _09062_/X (sky130_fd_sc_hd__and4_1)
+                                                         _04638_ (net)
+                      0.258925    0.001541   14.022457 ^ _09070_/D (sky130_fd_sc_hd__and4_1)
+     6    0.023093    0.228695    0.368096   14.390553 ^ _09070_/X (sky130_fd_sc_hd__and4_1)
+                                                         _04643_ (net)
+                      0.228695    0.000838   14.391392 ^ _09078_/D (sky130_fd_sc_hd__and4_2)
+     6    0.028615    0.170575    0.362721   14.754113 ^ _09078_/X (sky130_fd_sc_hd__and4_2)
+                                                         _04648_ (net)
+                      0.170592    0.001799   14.755913 ^ _09086_/D (sky130_fd_sc_hd__and4_1)
+     6    0.019315    0.196234    0.326789   15.082702 ^ _09086_/X (sky130_fd_sc_hd__and4_1)
+                                                         _04653_ (net)
+                      0.196234    0.000494   15.083196 ^ _09094_/D (sky130_fd_sc_hd__and4_2)
+     6    0.023660    0.146887    0.337328   15.420524 ^ _09094_/X (sky130_fd_sc_hd__and4_2)
+                                                         _04658_ (net)
+                      0.146892    0.001062   15.421586 ^ _09102_/D (sky130_fd_sc_hd__and4_1)
+     5    0.021862    0.218547    0.339609   15.761195 ^ _09102_/X (sky130_fd_sc_hd__and4_1)
+                                                         _04663_ (net)
+                      0.218548    0.000776   15.761971 ^ _09107_/A2 (sky130_fd_sc_hd__a21oi_1)
+     1    0.003535    0.062823    0.105072   15.867043 v _09107_/Y (sky130_fd_sc_hd__a21oi_1)
+                                                         _04666_ (net)
+                      0.062823    0.000115   15.867159 v hold2168/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     1    0.004346    0.060210    0.567294   16.434452 v hold2168/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                                         net2776 (net)
+                      0.060210    0.000153   16.434605 v _09109_/A (sky130_fd_sc_hd__nor2_1)
+     1    0.002895    0.077678    0.103260   16.537865 ^ _09109_/Y (sky130_fd_sc_hd__nor2_1)
+                                                         _00396_ (net)
+                      0.077678    0.000089   16.537954 ^ hold2169/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     1    0.002143    0.047665    0.538384   17.076338 ^ hold2169/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                                         net2777 (net)
+                      0.047665    0.000060   17.076397 ^ _12630_/D (sky130_fd_sc_hd__dfxtp_1)
+                                             17.076397   data arrival time
+
+                                 25.000000   25.000000   clock clk (rise edge)
+                                  4.650000   29.650000   clock source latency
+     2    0.064095    0.610000    0.000000   29.650000 ^ clk (in)
+                                                         clk (net)
+                      0.635071    0.012536   29.662535 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
+    17    0.186078    0.201154    0.382084   30.044619 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_0_clk (net)
+                      0.201818    0.009397   30.054016 ^ clkbuf_3_2_0_clk/A (sky130_fd_sc_hd__clkbuf_8)
+     9    0.083815    0.151591    0.260282   30.314299 ^ clkbuf_3_2_0_clk/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_3_2_0_clk (net)
+                      0.152012    0.006473   30.320770 ^ clkbuf_5_11__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
+    21    0.109016    0.123248    0.228809   30.549580 ^ clkbuf_5_11__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_5_11__leaf_clk (net)
+                      0.123600    0.004679   30.554258 ^ clkbuf_leaf_55_clk/A (sky130_fd_sc_hd__clkbuf_8)
+    13    0.042466    0.085791    0.188386   30.742645 ^ clkbuf_leaf_55_clk/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_leaf_55_clk (net)
+                      0.085795    0.000714   30.743359 ^ _12630_/CLK (sky130_fd_sc_hd__dfxtp_1)
+                                 -0.250000   30.493359   clock uncertainty
+                                  0.920000   31.413359   clock reconvergence pessimism
+                                 -0.048788   31.364569   library setup time
+                                             31.364569   data required time
+---------------------------------------------------------------------------------------------
+                                             31.364569   data required time
+                                            -17.076397   data arrival time
+---------------------------------------------------------------------------------------------
+                                             14.288171   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+max slew
+
+Pin                                        Limit        Slew       Slack
+------------------------------------------------------------------------
+ANTENNA__07240__A1/DIODE                1.000000    1.079401   -0.079401 (VIOLATED)
+_07240_/A1                              1.000000    1.079401   -0.079401 (VIOLATED)
+ANTENNA__07013__B2/DIODE                1.000000    1.079398   -0.079398 (VIOLATED)
+ANTENNA__09229__A0/DIODE                1.000000    1.079397   -0.079397 (VIOLATED)
+_09229_/A0                              1.000000    1.079397   -0.079397 (VIOLATED)
+ANTENNA__06667__A0/DIODE                1.000000    1.079394   -0.079394 (VIOLATED)
+ANTENNA_hold2659_X/DIODE                1.000000    1.079394   -0.079394 (VIOLATED)
+_06667_/A0                              1.000000    1.079394   -0.079394 (VIOLATED)
+_07013_/B2                              1.000000    1.079394   -0.079394 (VIOLATED)
+hold2659/X                              1.000000    1.079394   -0.079394 (VIOLATED)
+ANTENNA__09165__C_N/DIODE               1.000000    1.042061   -0.042061 (VIOLATED)
+ANTENNA__06227__C_N/DIODE               1.000000    1.042059   -0.042059 (VIOLATED)
+ANTENNA__07384__C_N/DIODE               1.000000    1.042057   -0.042057 (VIOLATED)
+_06398_/B                               1.000000    1.042021   -0.042021 (VIOLATED)
+_06227_/C_N                             1.000000    1.042021   -0.042021 (VIOLATED)
+_09165_/C_N                             1.000000    1.042021   -0.042021 (VIOLATED)
+_07384_/C_N                             1.000000    1.042020   -0.042020 (VIOLATED)
+ANTENNA__06398__B/DIODE                 1.000000    1.042003   -0.042003 (VIOLATED)
+ANTENNA__06225__Y/DIODE                 1.000000    1.041993   -0.041993 (VIOLATED)
+_06225_/Y                               1.000000    1.041991   -0.041991 (VIOLATED)
+ANTENNA__06683__A0/DIODE                1.000000    1.040365   -0.040365 (VIOLATED)
+_06683_/A0                              1.000000    1.040361   -0.040361 (VIOLATED)
+_07214_/A1                              1.000000    1.040338   -0.040338 (VIOLATED)
+ANTENNA__07214__A1/DIODE                1.000000    1.040336   -0.040336 (VIOLATED)
+ANTENNA__06979__B2/DIODE                1.000000    1.040001   -0.040001 (VIOLATED)
+_06979_/B2                              1.000000    1.039996   -0.039996 (VIOLATED)
+ANTENNA__09223__A1/DIODE                1.000000    1.039970   -0.039970 (VIOLATED)
+ANTENNA_hold2426_X/DIODE                1.000000    1.039970   -0.039970 (VIOLATED)
+_09223_/A1                              1.000000    1.039970   -0.039970 (VIOLATED)
+hold2426/X                              1.000000    1.039970   -0.039970 (VIOLATED)
+
+max fanout
+
+Pin                                   Limit Fanout  Slack
+---------------------------------------------------------
+_06691_/X                                16     33    -17 (VIOLATED)
+_11912_/X                                16     33    -17 (VIOLATED)
+_13218_/Q                                16     33    -17 (VIOLATED)
+fanout105/X                              16     33    -17 (VIOLATED)
+fanout109/X                              16     33    -17 (VIOLATED)
+fanout111/X                              16     33    -17 (VIOLATED)
+fanout112/X                              16     33    -17 (VIOLATED)
+fanout122/X                              16     33    -17 (VIOLATED)
+fanout124/X                              16     33    -17 (VIOLATED)
+fanout125/X                              16     33    -17 (VIOLATED)
+fanout126/X                              16     33    -17 (VIOLATED)
+fanout127/X                              16     33    -17 (VIOLATED)
+fanout128/X                              16     33    -17 (VIOLATED)
+fanout131/X                              16     33    -17 (VIOLATED)
+fanout134/X                              16     33    -17 (VIOLATED)
+fanout135/X                              16     33    -17 (VIOLATED)
+fanout136/X                              16     33    -17 (VIOLATED)
+fanout139/X                              16     33    -17 (VIOLATED)
+fanout140/X                              16     33    -17 (VIOLATED)
+fanout145/X                              16     33    -17 (VIOLATED)
+fanout147/X                              16     33    -17 (VIOLATED)
+fanout148/X                              16     33    -17 (VIOLATED)
+fanout149/X                              16     33    -17 (VIOLATED)
+fanout150/X                              16     33    -17 (VIOLATED)
+fanout151/X                              16     33    -17 (VIOLATED)
+fanout152/X                              16     33    -17 (VIOLATED)
+fanout153/X                              16     33    -17 (VIOLATED)
+fanout154/X                              16     33    -17 (VIOLATED)
+fanout155/X                              16     33    -17 (VIOLATED)
+fanout156/X                              16     33    -17 (VIOLATED)
+fanout157/X                              16     33    -17 (VIOLATED)
+fanout158/X                              16     33    -17 (VIOLATED)
+fanout159/X                              16     33    -17 (VIOLATED)
+fanout160/X                              16     33    -17 (VIOLATED)
+fanout161/X                              16     33    -17 (VIOLATED)
+fanout162/X                              16     33    -17 (VIOLATED)
+fanout163/X                              16     33    -17 (VIOLATED)
+fanout164/X                              16     33    -17 (VIOLATED)
+fanout165/X                              16     33    -17 (VIOLATED)
+fanout166/X                              16     33    -17 (VIOLATED)
+fanout167/X                              16     33    -17 (VIOLATED)
+fanout168/X                              16     33    -17 (VIOLATED)
+fanout169/X                              16     33    -17 (VIOLATED)
+fanout170/X                              16     33    -17 (VIOLATED)
+fanout171/X                              16     33    -17 (VIOLATED)
+fanout172/X                              16     33    -17 (VIOLATED)
+fanout173/X                              16     33    -17 (VIOLATED)
+fanout174/X                              16     33    -17 (VIOLATED)
+fanout175/X                              16     33    -17 (VIOLATED)
+fanout176/X                              16     33    -17 (VIOLATED)
+fanout177/X                              16     33    -17 (VIOLATED)
+fanout178/X                              16     33    -17 (VIOLATED)
+fanout179/X                              16     33    -17 (VIOLATED)
+fanout180/X                              16     33    -17 (VIOLATED)
+fanout181/X                              16     33    -17 (VIOLATED)
+fanout182/X                              16     33    -17 (VIOLATED)
+fanout183/X                              16     33    -17 (VIOLATED)
+fanout184/X                              16     33    -17 (VIOLATED)
+fanout185/X                              16     33    -17 (VIOLATED)
+fanout186/X                              16     33    -17 (VIOLATED)
+fanout187/X                              16     33    -17 (VIOLATED)
+fanout188/X                              16     33    -17 (VIOLATED)
+fanout189/X                              16     33    -17 (VIOLATED)
+fanout190/X                              16     33    -17 (VIOLATED)
+fanout191/X                              16     33    -17 (VIOLATED)
+fanout192/X                              16     33    -17 (VIOLATED)
+fanout193/X                              16     33    -17 (VIOLATED)
+fanout194/X                              16     33    -17 (VIOLATED)
+fanout195/X                              16     33    -17 (VIOLATED)
+fanout196/X                              16     33    -17 (VIOLATED)
+fanout197/X                              16     33    -17 (VIOLATED)
+fanout198/X                              16     33    -17 (VIOLATED)
+fanout199/X                              16     33    -17 (VIOLATED)
+fanout200/X                              16     33    -17 (VIOLATED)
+fanout201/X                              16     33    -17 (VIOLATED)
+fanout202/X                              16     33    -17 (VIOLATED)
+fanout203/X                              16     33    -17 (VIOLATED)
+fanout204/X                              16     33    -17 (VIOLATED)
+fanout205/X                              16     33    -17 (VIOLATED)
+fanout206/X                              16     33    -17 (VIOLATED)
+fanout211/X                              16     33    -17 (VIOLATED)
+fanout212/X                              16     33    -17 (VIOLATED)
+fanout213/X                              16     33    -17 (VIOLATED)
+fanout214/X                              16     33    -17 (VIOLATED)
+fanout215/X                              16     33    -17 (VIOLATED)
+fanout216/X                              16     33    -17 (VIOLATED)
+fanout217/X                              16     33    -17 (VIOLATED)
+fanout218/X                              16     33    -17 (VIOLATED)
+fanout221/X                              16     33    -17 (VIOLATED)
+fanout223/X                              16     33    -17 (VIOLATED)
+fanout225/X                              16     33    -17 (VIOLATED)
+fanout226/X                              16     33    -17 (VIOLATED)
+fanout227/X                              16     33    -17 (VIOLATED)
+fanout228/X                              16     33    -17 (VIOLATED)
+fanout229/X                              16     33    -17 (VIOLATED)
+fanout230/X                              16     33    -17 (VIOLATED)
+fanout231/X                              16     33    -17 (VIOLATED)
+fanout233/X                              16     33    -17 (VIOLATED)
+fanout235/X                              16     33    -17 (VIOLATED)
+fanout236/X                              16     33    -17 (VIOLATED)
+fanout237/X                              16     33    -17 (VIOLATED)
+fanout240/X                              16     33    -17 (VIOLATED)
+fanout241/X                              16     33    -17 (VIOLATED)
+fanout242/X                              16     33    -17 (VIOLATED)
+fanout243/X                              16     33    -17 (VIOLATED)
+fanout244/X                              16     33    -17 (VIOLATED)
+fanout245/X                              16     33    -17 (VIOLATED)
+fanout246/X                              16     33    -17 (VIOLATED)
+fanout248/X                              16     33    -17 (VIOLATED)
+fanout250/X                              16     33    -17 (VIOLATED)
+fanout254/X                              16     33    -17 (VIOLATED)
+fanout257/X                              16     33    -17 (VIOLATED)
+fanout259/X                              16     33    -17 (VIOLATED)
+fanout260/X                              16     33    -17 (VIOLATED)
+fanout261/X                              16     33    -17 (VIOLATED)
+fanout262/X                              16     33    -17 (VIOLATED)
+fanout263/X                              16     33    -17 (VIOLATED)
+fanout264/X                              16     33    -17 (VIOLATED)
+fanout265/X                              16     33    -17 (VIOLATED)
+fanout266/X                              16     33    -17 (VIOLATED)
+fanout268/X                              16     33    -17 (VIOLATED)
+fanout270/X                              16     33    -17 (VIOLATED)
+fanout271/X                              16     33    -17 (VIOLATED)
+fanout276/X                              16     33    -17 (VIOLATED)
+fanout278/X                              16     33    -17 (VIOLATED)
+fanout281/X                              16     33    -17 (VIOLATED)
+fanout282/X                              16     33    -17 (VIOLATED)
+fanout283/X                              16     33    -17 (VIOLATED)
+fanout285/X                              16     33    -17 (VIOLATED)
+fanout286/X                              16     33    -17 (VIOLATED)
+fanout287/X                              16     33    -17 (VIOLATED)
+fanout289/X                              16     33    -17 (VIOLATED)
+fanout290/X                              16     33    -17 (VIOLATED)
+fanout291/X                              16     33    -17 (VIOLATED)
+fanout293/X                              16     33    -17 (VIOLATED)
+fanout294/X                              16     33    -17 (VIOLATED)
+fanout295/X                              16     33    -17 (VIOLATED)
+fanout297/X                              16     33    -17 (VIOLATED)
+fanout298/X                              16     33    -17 (VIOLATED)
+fanout299/X                              16     33    -17 (VIOLATED)
+fanout300/X                              16     33    -17 (VIOLATED)
+fanout301/X                              16     33    -17 (VIOLATED)
+fanout302/X                              16     33    -17 (VIOLATED)
+fanout303/X                              16     33    -17 (VIOLATED)
+fanout305/X                              16     33    -17 (VIOLATED)
+fanout306/X                              16     33    -17 (VIOLATED)
+fanout307/X                              16     33    -17 (VIOLATED)
+fanout310/X                              16     33    -17 (VIOLATED)
+fanout311/X                              16     33    -17 (VIOLATED)
+fanout312/X                              16     33    -17 (VIOLATED)
+fanout313/X                              16     33    -17 (VIOLATED)
+fanout314/X                              16     33    -17 (VIOLATED)
+fanout315/X                              16     33    -17 (VIOLATED)
+fanout316/X                              16     33    -17 (VIOLATED)
+fanout317/X                              16     33    -17 (VIOLATED)
+fanout318/X                              16     33    -17 (VIOLATED)
+fanout320/X                              16     33    -17 (VIOLATED)
+fanout321/X                              16     33    -17 (VIOLATED)
+fanout323/X                              16     33    -17 (VIOLATED)
+fanout324/X                              16     33    -17 (VIOLATED)
+fanout325/X                              16     33    -17 (VIOLATED)
+fanout326/X                              16     33    -17 (VIOLATED)
+fanout328/X                              16     33    -17 (VIOLATED)
+fanout330/X                              16     33    -17 (VIOLATED)
+fanout332/X                              16     33    -17 (VIOLATED)
+fanout333/X                              16     33    -17 (VIOLATED)
+fanout335/X                              16     33    -17 (VIOLATED)
+fanout336/X                              16     33    -17 (VIOLATED)
+fanout339/X                              16     33    -17 (VIOLATED)
+fanout340/X                              16     33    -17 (VIOLATED)
+fanout343/X                              16     33    -17 (VIOLATED)
+fanout344/X                              16     33    -17 (VIOLATED)
+fanout346/X                              16     33    -17 (VIOLATED)
+fanout348/X                              16     33    -17 (VIOLATED)
+fanout350/X                              16     33    -17 (VIOLATED)
+fanout352/X                              16     33    -17 (VIOLATED)
+fanout354/X                              16     33    -17 (VIOLATED)
+fanout356/X                              16     33    -17 (VIOLATED)
+fanout359/X                              16     33    -17 (VIOLATED)
+fanout361/X                              16     33    -17 (VIOLATED)
+fanout362/X                              16     33    -17 (VIOLATED)
+fanout364/X                              16     33    -17 (VIOLATED)
+fanout365/X                              16     33    -17 (VIOLATED)
+fanout366/X                              16     33    -17 (VIOLATED)
+fanout367/X                              16     33    -17 (VIOLATED)
+fanout369/X                              16     33    -17 (VIOLATED)
+fanout370/X                              16     33    -17 (VIOLATED)
+fanout372/X                              16     33    -17 (VIOLATED)
+fanout374/X                              16     33    -17 (VIOLATED)
+fanout375/X                              16     33    -17 (VIOLATED)
+fanout376/X                              16     33    -17 (VIOLATED)
+fanout377/X                              16     33    -17 (VIOLATED)
+fanout378/X                              16     33    -17 (VIOLATED)
+fanout379/X                              16     33    -17 (VIOLATED)
+fanout380/X                              16     33    -17 (VIOLATED)
+fanout381/X                              16     33    -17 (VIOLATED)
+fanout382/X                              16     33    -17 (VIOLATED)
+fanout385/X                              16     33    -17 (VIOLATED)
+fanout386/X                              16     33    -17 (VIOLATED)
+fanout387/X                              16     33    -17 (VIOLATED)
+fanout388/X                              16     33    -17 (VIOLATED)
+fanout389/X                              16     33    -17 (VIOLATED)
+fanout391/X                              16     33    -17 (VIOLATED)
+fanout395/X                              16     33    -17 (VIOLATED)
+fanout396/X                              16     33    -17 (VIOLATED)
+fanout397/X                              16     33    -17 (VIOLATED)
+fanout398/X                              16     33    -17 (VIOLATED)
+fanout399/X                              16     33    -17 (VIOLATED)
+fanout400/X                              16     33    -17 (VIOLATED)
+fanout401/X                              16     33    -17 (VIOLATED)
+fanout404/X                              16     33    -17 (VIOLATED)
+fanout405/X                              16     33    -17 (VIOLATED)
+fanout406/X                              16     33    -17 (VIOLATED)
+fanout407/X                              16     33    -17 (VIOLATED)
+fanout408/X                              16     33    -17 (VIOLATED)
+fanout409/X                              16     33    -17 (VIOLATED)
+fanout410/X                              16     33    -17 (VIOLATED)
+fanout411/X                              16     33    -17 (VIOLATED)
+fanout415/X                              16     33    -17 (VIOLATED)
+fanout417/X                              16     33    -17 (VIOLATED)
+fanout418/X                              16     33    -17 (VIOLATED)
+fanout420/X                              16     33    -17 (VIOLATED)
+fanout422/X                              16     33    -17 (VIOLATED)
+fanout423/X                              16     33    -17 (VIOLATED)
+fanout424/X                              16     33    -17 (VIOLATED)
+fanout425/X                              16     33    -17 (VIOLATED)
+fanout426/X                              16     33    -17 (VIOLATED)
+fanout427/X                              16     33    -17 (VIOLATED)
+fanout428/X                              16     33    -17 (VIOLATED)
+fanout429/X                              16     33    -17 (VIOLATED)
+fanout432/X                              16     33    -17 (VIOLATED)
+fanout433/X                              16     33    -17 (VIOLATED)
+fanout434/X                              16     33    -17 (VIOLATED)
+fanout435/X                              16     33    -17 (VIOLATED)
+fanout436/X                              16     33    -17 (VIOLATED)
+fanout438/X                              16     33    -17 (VIOLATED)
+fanout441/X                              16     33    -17 (VIOLATED)
+fanout442/X                              16     33    -17 (VIOLATED)
+fanout443/X                              16     33    -17 (VIOLATED)
+fanout444/X                              16     33    -17 (VIOLATED)
+fanout445/X                              16     33    -17 (VIOLATED)
+fanout446/X                              16     33    -17 (VIOLATED)
+fanout447/X                              16     33    -17 (VIOLATED)
+fanout450/X                              16     33    -17 (VIOLATED)
+fanout451/X                              16     33    -17 (VIOLATED)
+fanout452/X                              16     33    -17 (VIOLATED)
+fanout453/X                              16     33    -17 (VIOLATED)
+fanout454/X                              16     33    -17 (VIOLATED)
+fanout456/X                              16     33    -17 (VIOLATED)
+fanout463/X                              16     33    -17 (VIOLATED)
+fanout464/X                              16     33    -17 (VIOLATED)
+fanout465/X                              16     33    -17 (VIOLATED)
+fanout466/X                              16     33    -17 (VIOLATED)
+fanout467/X                              16     33    -17 (VIOLATED)
+fanout468/X                              16     33    -17 (VIOLATED)
+fanout469/X                              16     33    -17 (VIOLATED)
+fanout470/X                              16     33    -17 (VIOLATED)
+fanout471/X                              16     33    -17 (VIOLATED)
+fanout473/X                              16     33    -17 (VIOLATED)
+fanout474/X                              16     33    -17 (VIOLATED)
+fanout475/X                              16     33    -17 (VIOLATED)
+fanout476/X                              16     33    -17 (VIOLATED)
+fanout477/X                              16     33    -17 (VIOLATED)
+fanout478/X                              16     33    -17 (VIOLATED)
+fanout479/X                              16     33    -17 (VIOLATED)
+fanout480/X                              16     33    -17 (VIOLATED)
+fanout483/X                              16     33    -17 (VIOLATED)
+fanout486/X                              16     33    -17 (VIOLATED)
+fanout490/X                              16     33    -17 (VIOLATED)
+fanout497/X                              16     33    -17 (VIOLATED)
+fanout503/X                              16     33    -17 (VIOLATED)
+fanout504/X                              16     33    -17 (VIOLATED)
+fanout511/X                              16     33    -17 (VIOLATED)
+fanout512/X                              16     33    -17 (VIOLATED)
+fanout515/X                              16     33    -17 (VIOLATED)
+fanout517/X                              16     33    -17 (VIOLATED)
+fanout518/X                              16     33    -17 (VIOLATED)
+fanout92/X                               16     33    -17 (VIOLATED)
+fanout97/X                               16     33    -17 (VIOLATED)
+fanout99/X                               16     33    -17 (VIOLATED)
+_06250_/Y                                16     31    -15 (VIOLATED)
+fanout247/X                              16     31    -15 (VIOLATED)
+fanout258/X                              16     31    -15 (VIOLATED)
+fanout272/X                              16     31    -15 (VIOLATED)
+fanout288/X                              16     31    -15 (VIOLATED)
+fanout308/X                              16     31    -15 (VIOLATED)
+fanout319/X                              16     31    -15 (VIOLATED)
+fanout322/X                              16     31    -15 (VIOLATED)
+fanout331/X                              16     31    -15 (VIOLATED)
+fanout392/X                              16     31    -15 (VIOLATED)
+fanout485/X                              16     31    -15 (VIOLATED)
+fanout492/X                              16     31    -15 (VIOLATED)
+fanout500/X                              16     31    -15 (VIOLATED)
+_06175_/Y                                16     29    -13 (VIOLATED)
+_13687_/Q                                16     29    -13 (VIOLATED)
+fanout327/X                              16     29    -13 (VIOLATED)
+fanout355/X                              16     29    -13 (VIOLATED)
+fanout363/X                              16     29    -13 (VIOLATED)
+fanout368/X                              16     29    -13 (VIOLATED)
+fanout390/X                              16     29    -13 (VIOLATED)
+fanout416/X                              16     29    -13 (VIOLATED)
+fanout430/X                              16     29    -13 (VIOLATED)
+fanout437/X                              16     29    -13 (VIOLATED)
+fanout439/X                              16     29    -13 (VIOLATED)
+fanout448/X                              16     29    -13 (VIOLATED)
+fanout455/X                              16     29    -13 (VIOLATED)
+fanout457/X                              16     29    -13 (VIOLATED)
+_06136_/Y                                16     28    -12 (VIOLATED)
+fanout383/X                              16     27    -11 (VIOLATED)
+fanout402/X                              16     27    -11 (VIOLATED)
+fanout431/X                              16     27    -11 (VIOLATED)
+fanout449/X                              16     27    -11 (VIOLATED)
+fanout462/X                              16     27    -11 (VIOLATED)
+fanout510/X                              16     27    -11 (VIOLATED)
+_06178_/Y                                16     25     -9 (VIOLATED)
+_06688_/Y                                16     25     -9 (VIOLATED)
+clkbuf_5_10__f_clk/X                     16     25     -9 (VIOLATED)
+fanout224/X                              16     25     -9 (VIOLATED)
+fanout284/X                              16     25     -9 (VIOLATED)
+fanout296/X                              16     25     -9 (VIOLATED)
+fanout334/X                              16     25     -9 (VIOLATED)
+fanout351/X                              16     25     -9 (VIOLATED)
+fanout484/X                              16     25     -9 (VIOLATED)
+_06412_/X                                16     23     -7 (VIOLATED)
+fanout256/X                              16     23     -7 (VIOLATED)
+fanout347/X                              16     23     -7 (VIOLATED)
+fanout419/X                              16     23     -7 (VIOLATED)
+fanout482/X                              16     23     -7 (VIOLATED)
+fanout519/X                              16     23     -7 (VIOLATED)
+_06176_/Y                                16     21     -5 (VIOLATED)
+_11203_/X                                16     21     -5 (VIOLATED)
+clkbuf_5_11__f_clk/X                     16     21     -5 (VIOLATED)
+fanout249/X                              16     21     -5 (VIOLATED)
+fanout269/X                              16     21     -5 (VIOLATED)
+fanout342/X                              16     21     -5 (VIOLATED)
+fanout349/X                              16     21     -5 (VIOLATED)
+fanout360/X                              16     21     -5 (VIOLATED)
+fanout413/X                              16     21     -5 (VIOLATED)
+fanout514/X                              16     21     -5 (VIOLATED)
+hold2744/X                               16     21     -5 (VIOLATED)
+_06109_/Y                                16     19     -3 (VIOLATED)
+_11205_/X                                16     19     -3 (VIOLATED)
+_13219_/Q                                16     19     -3 (VIOLATED)
+clkbuf_5_15__f_clk/X                     16     19     -3 (VIOLATED)
+clkbuf_5_16__f_clk/X                     16     19     -3 (VIOLATED)
+clkbuf_5_17__f_clk/X                     16     19     -3 (VIOLATED)
+clkbuf_5_18__f_clk/X                     16     19     -3 (VIOLATED)
+clkbuf_5_19__f_clk/X                     16     19     -3 (VIOLATED)
+clkbuf_5_20__f_clk/X                     16     19     -3 (VIOLATED)
+clkbuf_5_23__f_clk/X                     16     19     -3 (VIOLATED)
+clkbuf_5_30__f_clk/X                     16     19     -3 (VIOLATED)
+clkbuf_5_31__f_clk/X                     16     19     -3 (VIOLATED)
+clkbuf_5_9__f_clk/X                      16     19     -3 (VIOLATED)
+clkbuf_leaf_49_clk/X                     16     19     -3 (VIOLATED)
+fanout129/X                              16     19     -3 (VIOLATED)
+fanout222/X                              16     19     -3 (VIOLATED)
+fanout267/X                              16     19     -3 (VIOLATED)
+fanout277/X                              16     19     -3 (VIOLATED)
+fanout304/X                              16     19     -3 (VIOLATED)
+fanout341/X                              16     19     -3 (VIOLATED)
+fanout345/X                              16     19     -3 (VIOLATED)
+fanout358/X                              16     19     -3 (VIOLATED)
+fanout371/X                              16     19     -3 (VIOLATED)
+fanout393/X                              16     19     -3 (VIOLATED)
+fanout421/X                              16     19     -3 (VIOLATED)
+fanout440/X                              16     19     -3 (VIOLATED)
+fanout458/X                              16     19     -3 (VIOLATED)
+fanout461/X                              16     19     -3 (VIOLATED)
+fanout472/X                              16     19     -3 (VIOLATED)
+hold1501/X                               16     19     -3 (VIOLATED)
+hold2923/X                               16     19     -3 (VIOLATED)
+_06207_/X                                16     17        (VIOLATED)
+_06261_/X                                16     17        (VIOLATED)
+_06687_/X                                16     17        (VIOLATED)
+_13518_/Q                                16     17        (VIOLATED)
+_13519_/Q                                16     17        (VIOLATED)
+clkbuf_0_clk/X                           16     17        (VIOLATED)
+clkbuf_5_12__f_clk/X                     16     17        (VIOLATED)
+clkbuf_5_14__f_clk/X                     16     17        (VIOLATED)
+clkbuf_5_22__f_clk/X                     16     17        (VIOLATED)
+clkbuf_5_29__f_clk/X                     16     17        (VIOLATED)
+clkbuf_5_2__f_clk/X                      16     17        (VIOLATED)
+clkbuf_5_8__f_clk/X                      16     17        (VIOLATED)
+clkbuf_leaf_46_clk/X                     16     17        (VIOLATED)
+clkbuf_leaf_67_clk/X                     16     17        (VIOLATED)
+fanout146/X                              16     17        (VIOLATED)
+fanout251/X                              16     17        (VIOLATED)
+fanout255/X                              16     17        (VIOLATED)
+fanout309/X                              16     17        (VIOLATED)
+fanout329/X                              16     17        (VIOLATED)
+fanout337/X                              16     17        (VIOLATED)
+fanout338/X                              16     17        (VIOLATED)
+fanout353/X                              16     17        (VIOLATED)
+fanout373/X                              16     17        (VIOLATED)
+fanout384/X                              16     17        (VIOLATED)
+fanout394/X                              16     17        (VIOLATED)
+fanout403/X                              16     17        (VIOLATED)
+fanout412/X                              16     17        (VIOLATED)
+fanout414/X                              16     17        (VIOLATED)
+fanout487/X                              16     17        (VIOLATED)
+fanout496/X                              16     17        (VIOLATED)
+fanout505/X                              16     17        (VIOLATED)
+hold2037/X                               16     17        (VIOLATED)
+hold2550/X                               16     17        (VIOLATED)
+hold2617/X                               16     17        (VIOLATED)
+hold2625/X                               16     17        (VIOLATED)
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 338 unannotated drivers.
+ io_in[0]
+ io_in[10]
+ io_in[11]
+ io_in[12]
+ io_in[13]
+ io_in[14]
+ io_in[15]
+ io_in[16]
+ io_in[17]
+ io_in[18]
+ io_in[19]
+ io_in[1]
+ io_in[20]
+ io_in[22]
+ io_in[23]
+ io_in[24]
+ io_in[25]
+ io_in[26]
+ io_in[27]
+ io_in[28]
+ io_in[29]
+ io_in[2]
+ io_in[30]
+ io_in[31]
+ io_in[32]
+ io_in[33]
+ io_in[34]
+ io_in[35]
+ io_in[36]
+ io_in[37]
+ io_in[3]
+ io_in[4]
+ io_in[5]
+ io_in[6]
+ io_in[7]
+ io_in[8]
+ io_in[9]
+ _13585__560/HI
+ _13586__571/HI
+ _13587__570/HI
+ _13588__569/HI
+ _13589__568/HI
+ _13590__567/HI
+ _13591__566/HI
+ _13592__565/HI
+ _13593__564/HI
+ _13594__563/HI
+ _13595__562/HI
+ _13596__561/HI
+ clkload0/Y
+ clkload1/X
+ clkload10/Y
+ clkload100/X
+ clkload101/X
+ clkload102/Y
+ clkload103/X
+ clkload104/Y
+ clkload105/Y
+ clkload106/Y
+ clkload107/Y
+ clkload108/Y
+ clkload109/Y
+ clkload11/Y
+ clkload110/Y
+ clkload111/Y
+ clkload112/Y
+ clkload113/Y
+ clkload114/Y
+ clkload115/Y
+ clkload116/Y
+ clkload117/X
+ clkload118/Y
+ clkload119/X
+ clkload12/X
+ clkload120/X
+ clkload121/X
+ clkload122/Y
+ clkload123/X
+ clkload124/Y
+ clkload125/X
+ clkload126/Y
+ clkload127/Y
+ clkload128/Y
+ clkload129/Y
+ clkload13/X
+ clkload130/Y
+ clkload131/Y
+ clkload132/Y
+ clkload133/Y
+ clkload134/Y
+ clkload135/Y
+ clkload136/Y
+ clkload137/Y
+ clkload138/X
+ clkload139/Y
+ clkload14/X
+ clkload140/Y
+ clkload141/Y
+ clkload142/X
+ clkload143/Y
+ clkload144/Y
+ clkload145/Y
+ clkload146/X
+ clkload147/Y
+ clkload148/X
+ clkload149/Y
+ clkload15/X
+ clkload150/Y
+ clkload151/Y
+ clkload152/X
+ clkload153/Y
+ clkload154/X
+ clkload155/Y
+ clkload156/Y
+ clkload157/Y
+ clkload158/Y
+ clkload159/Y
+ clkload16/Y
+ clkload160/X
+ clkload161/X
+ clkload162/Y
+ clkload163/Y
+ clkload164/Y
+ clkload165/X
+ clkload166/Y
+ clkload167/Y
+ clkload168/Y
+ clkload169/Y
+ clkload17/Y
+ clkload170/Y
+ clkload171/X
+ clkload172/X
+ clkload173/X
+ clkload174/X
+ clkload175/Y
+ clkload176/Y
+ clkload177/Y
+ clkload178/Y
+ clkload179/Y
+ clkload18/X
+ clkload180/Y
+ clkload181/X
+ clkload182/Y
+ clkload183/Y
+ clkload184/Y
+ clkload185/Y
+ clkload186/Y
+ clkload187/Y
+ clkload188/Y
+ clkload189/Y
+ clkload19/X
+ clkload190/Y
+ clkload191/Y
+ clkload192/X
+ clkload193/Y
+ clkload194/Y
+ clkload195/X
+ clkload196/Y
+ clkload197/Y
+ clkload198/Y
+ clkload199/X
+ clkload2/Y
+ clkload20/X
+ clkload200/X
+ clkload201/Y
+ clkload202/Y
+ clkload203/Y
+ clkload204/X
+ clkload205/Y
+ clkload206/Y
+ clkload207/Y
+ clkload208/Y
+ clkload209/Y
+ clkload21/Y
+ clkload210/Y
+ clkload211/Y
+ clkload22/Y
+ clkload23/X
+ clkload24/Y
+ clkload25/Y
+ clkload26/X
+ clkload27/Y
+ clkload28/X
+ clkload29/Y
+ clkload3/X
+ clkload30/Y
+ clkload31/Y
+ clkload32/Y
+ clkload33/Y
+ clkload34/Y
+ clkload35/Y
+ clkload36/X
+ clkload37/Y
+ clkload38/Y
+ clkload39/Y
+ clkload4/X
+ clkload40/X
+ clkload41/Y
+ clkload42/Y
+ clkload43/Y
+ clkload44/Y
+ clkload45/Y
+ clkload46/Y
+ clkload47/Y
+ clkload48/Y
+ clkload49/Y
+ clkload5/Y
+ clkload50/Y
+ clkload51/Y
+ clkload52/Y
+ clkload53/X
+ clkload54/Y
+ clkload55/Y
+ clkload56/Y
+ clkload57/X
+ clkload58/X
+ clkload59/Y
+ clkload6/Y
+ clkload60/Y
+ clkload61/X
+ clkload62/Y
+ clkload63/Y
+ clkload64/Y
+ clkload65/Y
+ clkload66/Y
+ clkload67/Y
+ clkload68/X
+ clkload69/Y
+ clkload7/Y
+ clkload70/Y
+ clkload71/Y
+ clkload72/Y
+ clkload73/Y
+ clkload74/Y
+ clkload75/Y
+ clkload76/Y
+ clkload77/Y
+ clkload78/Y
+ clkload79/Y
+ clkload8/Y
+ clkload80/Y
+ clkload81/Y
+ clkload82/Y
+ clkload83/X
+ clkload84/Y
+ clkload85/Y
+ clkload86/Y
+ clkload87/Y
+ clkload88/Y
+ clkload89/Y
+ clkload9/Y
+ clkload90/Y
+ clkload91/Y
+ clkload92/Y
+ clkload93/X
+ clkload94/Y
+ clkload95/Y
+ clkload96/Y
+ clkload97/X
+ clkload98/Y
+ clkload99/Y
+ picorv32_soc_520/HI
+ picorv32_soc_521/HI
+ picorv32_soc_522/HI
+ picorv32_soc_523/HI
+ picorv32_soc_524/HI
+ picorv32_soc_525/HI
+ picorv32_soc_526/HI
+ picorv32_soc_527/HI
+ picorv32_soc_528/HI
+ picorv32_soc_529/HI
+ picorv32_soc_530/HI
+ picorv32_soc_531/HI
+ picorv32_soc_532/HI
+ picorv32_soc_533/HI
+ picorv32_soc_534/HI
+ picorv32_soc_535/HI
+ picorv32_soc_536/HI
+ picorv32_soc_537/HI
+ picorv32_soc_538/HI
+ picorv32_soc_539/HI
+ picorv32_soc_540/HI
+ picorv32_soc_541/HI
+ picorv32_soc_542/HI
+ picorv32_soc_543/HI
+ picorv32_soc_544/HI
+ picorv32_soc_545/HI
+ picorv32_soc_546/HI
+ picorv32_soc_547/HI
+ picorv32_soc_548/HI
+ picorv32_soc_549/HI
+ picorv32_soc_550/HI
+ picorv32_soc_551/HI
+ picorv32_soc_552/HI
+ picorv32_soc_553/HI
+ picorv32_soc_554/HI
+ picorv32_soc_555/HI
+ picorv32_soc_556/HI
+ picorv32_soc_557/HI
+ picorv32_soc_558/HI
+ picorv32_soc_559/HI
+ picorv32_soc_572/LO
+ picorv32_soc_573/LO
+ picorv32_soc_574/LO
+ picorv32_soc_575/LO
+ picorv32_soc_576/LO
+ picorv32_soc_577/LO
+ picorv32_soc_578/LO
+ picorv32_soc_579/LO
+ picorv32_soc_580/LO
+ picorv32_soc_581/LO
+ picorv32_soc_582/LO
+ picorv32_soc_583/LO
+ picorv32_soc_584/LO
+ picorv32_soc_585/LO
+ picorv32_soc_586/LO
+ picorv32_soc_587/LO
+ picorv32_soc_588/LO
+ picorv32_soc_589/LO
+ picorv32_soc_590/LO
+ picorv32_soc_591/LO
+ picorv32_soc_592/LO
+ picorv32_soc_593/LO
+ picorv32_soc_594/LO
+ picorv32_soc_595/LO
+ picorv32_soc_596/LO
+ picorv32_soc_597/LO
+ picorv32_soc_598/LO
+ picorv32_soc_599/LO
+ picorv32_soc_600/LO
+ picorv32_soc_601/LO
+ picorv32_soc_602/LO
+ picorv32_soc_603/LO
+ picorv32_soc_604/LO
+ picorv32_soc_605/LO
+ picorv32_soc_606/LO
+ picorv32_soc_607/LO
+ picorv32_soc_608/LO
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 30
+max fanout violation count 406
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 71 input ports missing set_input_delay.
+  io_in[0]
+  io_in[10]
+  io_in[11]
+  io_in[12]
+  io_in[13]
+  io_in[14]
+  io_in[15]
+  io_in[16]
+  io_in[17]
+  io_in[18]
+  io_in[19]
+  io_in[1]
+  io_in[20]
+  io_in[21]
+  io_in[22]
+  io_in[23]
+  io_in[24]
+  io_in[25]
+  io_in[26]
+  io_in[27]
+  io_in[28]
+  io_in[29]
+  io_in[2]
+  io_in[30]
+  io_in[31]
+  io_in[32]
+  io_in[33]
+  io_in[34]
+  io_in[35]
+  io_in[36]
+  io_in[37]
+  io_in[3]
+  io_in[4]
+  io_in[5]
+  io_in[6]
+  io_in[7]
+  io_in[8]
+  io_in[9]
+  mem_rdata[0]
+  mem_rdata[10]
+  mem_rdata[11]
+  mem_rdata[12]
+  mem_rdata[13]
+  mem_rdata[14]
+  mem_rdata[15]
+  mem_rdata[16]
+  mem_rdata[17]
+  mem_rdata[18]
+  mem_rdata[19]
+  mem_rdata[1]
+  mem_rdata[20]
+  mem_rdata[21]
+  mem_rdata[22]
+  mem_rdata[23]
+  mem_rdata[24]
+  mem_rdata[25]
+  mem_rdata[26]
+  mem_rdata[27]
+  mem_rdata[28]
+  mem_rdata[29]
+  mem_rdata[2]
+  mem_rdata[30]
+  mem_rdata[31]
+  mem_rdata[3]
+  mem_rdata[4]
+  mem_rdata[5]
+  mem_rdata[6]
+  mem_rdata[7]
+  mem_rdata[8]
+  mem_rdata[9]
+  rst_n
+Warning: There are 138 unconstrained endpoints.
+  io_oeb[0]
+  io_oeb[10]
+  io_oeb[11]
+  io_oeb[12]
+  io_oeb[13]
+  io_oeb[14]
+  io_oeb[15]
+  io_oeb[16]
+  io_oeb[17]
+  io_oeb[18]
+  io_oeb[19]
+  io_oeb[1]
+  io_oeb[20]
+  io_oeb[21]
+  io_oeb[22]
+  io_oeb[23]
+  io_oeb[24]
+  io_oeb[25]
+  io_oeb[26]
+  io_oeb[27]
+  io_oeb[28]
+  io_oeb[29]
+  io_oeb[2]
+  io_oeb[30]
+  io_oeb[31]
+  io_oeb[32]
+  io_oeb[33]
+  io_oeb[34]
+  io_oeb[35]
+  io_oeb[36]
+  io_oeb[37]
+  io_oeb[3]
+  io_oeb[4]
+  io_oeb[5]
+  io_oeb[6]
+  io_oeb[7]
+  io_oeb[8]
+  io_oeb[9]
+  io_out[0]
+  io_out[10]
+  io_out[11]
+  io_out[12]
+  io_out[13]
+  io_out[14]
+  io_out[15]
+  io_out[16]
+  io_out[17]
+  io_out[18]
+  io_out[19]
+  io_out[1]
+  io_out[20]
+  io_out[21]
+  io_out[22]
+  io_out[23]
+  io_out[24]
+  io_out[25]
+  io_out[26]
+  io_out[27]
+  io_out[28]
+  io_out[29]
+  io_out[2]
+  io_out[30]
+  io_out[31]
+  io_out[32]
+  io_out[33]
+  io_out[34]
+  io_out[35]
+  io_out[36]
+  io_out[37]
+  io_out[3]
+  io_out[4]
+  io_out[5]
+  io_out[6]
+  io_out[7]
+  io_out[8]
+  io_out[9]
+  irq_out[0]
+  irq_out[1]
+  irq_out[2]
+  mem_addr[0]
+  mem_addr[1]
+  mem_addr[2]
+  mem_addr[3]
+  mem_addr[4]
+  mem_addr[5]
+  mem_addr[6]
+  mem_addr[7]
+  mem_addr[8]
+  mem_en
+  mem_wdata[0]
+  mem_wdata[10]
+  mem_wdata[11]
+  mem_wdata[12]
+  mem_wdata[13]
+  mem_wdata[14]
+  mem_wdata[15]
+  mem_wdata[16]
+  mem_wdata[17]
+  mem_wdata[18]
+  mem_wdata[19]
+  mem_wdata[1]
+  mem_wdata[20]
+  mem_wdata[21]
+  mem_wdata[22]
+  mem_wdata[23]
+  mem_wdata[24]
+  mem_wdata[25]
+  mem_wdata[26]
+  mem_wdata[27]
+  mem_wdata[28]
+  mem_wdata[29]
+  mem_wdata[2]
+  mem_wdata[30]
+  mem_wdata[31]
+  mem_wdata[3]
+  mem_wdata[4]
+  mem_wdata[5]
+  mem_wdata[6]
+  mem_wdata[7]
+  mem_wdata[8]
+  mem_wdata[9]
+  mem_we[0]
+  mem_we[1]
+  mem_we[2]
+  mem_we[3]
+  _13532_/D
+  _13585_/D
+  _13586_/D
+  _13587_/D
+  _13588_/D
+  _13589_/D
+  _13590_/D
+  _13591_/D
+  _13592_/D
+  _13593_/D
+  _13594_/D
+  _13595_/D
+  _13596_/D
