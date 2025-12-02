@@ -30,6 +30,12 @@ This document specifies the design of a complete System-on-Chip (SoC) implementa
 
 The system consists of a complete SoC integrated within the Caravel user project wrapper:
 
+![NCAT PicoRV32 SoC Architecture](source/_static/ncat_picorv32_soc_template.jpg)
+
+*Figure 1: System Architecture Diagram (NCAT Template)*
+
+The architecture diagram above shows the complete system integration. Below is a text-based representation for reference:
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    Caravel User Project Wrapper            │

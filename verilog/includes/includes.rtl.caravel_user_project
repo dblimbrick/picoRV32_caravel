@@ -16,5 +16,11 @@
 # Caravel user project includes
 -v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v	     
 -v $(USER_PROJECT_VERILOG)/rtl/picorv32.v
+-v $(USER_PROJECT_VERILOG)/rtl/picorv32_soc.v
+-v /Users/jeffdi/Projects/picoRV32_caravel/ip/DFFRAM512x32/hdl/rtl/DFFRAM.v
+-v /Users/jeffdi/Projects/picoRV32_caravel/ip/DFFRAM512x32/hdl/rtl/DFFRAM512x32.v
+-v /Users/jeffdi/Projects/picoRV32_caravel/ip/CF_IP_UTIL/hdl/cf_util_lib.v
+-v /Users/jeffdi/Projects/picoRV32_caravel/ip/CF_UART/hdl/rtl/CF_UART.v
+-v /Users/jeffdi/Projects/picoRV32_caravel/ip/CF_UART/hdl/rtl/bus_wrappers/CF_UART_WB.v
 
  
