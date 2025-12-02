@@ -1,8 +1,8 @@
-CARAVEL_ROOT: /home/marwan/picoRV32_caravel/caravel
-MCW_ROOT: /home/marwan/picoRV32_caravel/mgmt_core_wrapper
+CARAVEL_ROOT: /Users/jeffdi/Projects/picoRV32_caravel/caravel
+MCW_ROOT: /Users/jeffdi/Projects/picoRV32_caravel/mgmt_core_wrapper
 PDK: sky130A
-PDK_ROOT: /home/marwan/picoRV32_caravel/dependencies/pdks
-USER_PROJECT_ROOT: /home/marwan/picoRV32_caravel
+PDK_ROOT: /Users/jeffdi/Projects/pdk
+USER_PROJECT_ROOT: /Users/jeffdi/Projects/picoRV32_caravel
 caravan: false
 clk: 25
 emailto:

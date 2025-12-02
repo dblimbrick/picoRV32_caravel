@@ -14,12 +14,6 @@
 
 # SPDX-License-Identifier: Apache-2.0
 
-# yaml file contain general design information that would mostly need to be updated in the first run only 
-includes: 
-    - counter_la/counter_la.yaml
-    - counter_wb/counter_wb.yaml
-    - counter_la_reset/counter_la_reset.yaml
-    - counter_la_clk/counter_la_clk.yaml
-    - dffram_programming/dffram_programming.yaml
-
-
+# YAML file containing general design information for DFFRAM programming test
+Tests: 
+    - {name: dffram_programming, sim: RTL}
